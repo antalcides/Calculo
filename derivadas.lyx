@@ -1,0 +1,8309 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass libro-matua
+\begin_preamble
+%\usepackage[utf8x]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+%\usepackage{makeidx}
+\usepackage{imakeidx}
+\makeindex[program=truexindy,options=-M texindy -L spanish -C utf8]
+%\usepackage[totoc]{idxlayout}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\graphicspath{{ps/}{logo/}{image/}{sections/Figures/}}
+%\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{fancyvrb}
+\usepackage{cancel}
+\raggedbottom %para que no distibuya los espacios verticales en una hoja
+\usepackage{pgf}
+\usepackage{mathrsfs}
+\usetikzlibrary{fit,shapes}
+\usepackage{mivenndiagram}
+\usepackage{tikz-cd}% diagramas commutativos
+\usetikzlibrary{matrix}
+\usetikzlibrary{intersections}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usepackage{zahlen}
+\usepackage{fixltx2e}
+\usepackage{mathtools}
+\usepackage{theoremref}
+\usepackage{scalefnt} % para escalar las fuentes
+\usepackage{psfrag}
+\usepackage{floatflt}
+\usepackage{marvosym}
+\MakeRobust{\eqref}
+\mathtoolsset{showonlyrefs=true,showmanualtags=true}
+\def\myref#1{\textcolor{ptctitle}{\thesection .\ref{#1}}}
+\usepackage[hmargin=2cm,bmargin=3cm,tmargin=4.5cm,centering]{geometry}
+\def\yy{\rowcolor{ptcbackground}}
+\def\yyy{\rowcolor{gray!50}}
+\def\xxx{\rowcolor{ptctitle!50}}
+\def\ccc{\cellcolor{ptctitle!50}}
+\usepackage{multirow}
+\def\maxwidth{8cm}
+% Length to control the \fancyheadoffset and the calculation of \headline
+% simultaneously
+\RequirePackage{hyperref}
+\hypersetup{
+             linktoc=all,
+             hidelinks,
+             pdfborder={0 0 0},
+            colorlinks=true,
+            linkcolor = ptctitle,
+            backref=true,
+            pagebackref=true,
+            hyperindex=true,
+            breaklinks=true,
+            urlcolor=ocre,
+            citecolor = ocre,
+            bookmarks=true,
+            bookmarksopen=false,
+            pdftitle={Title},
+            pdfauthor={Author}
+                              }
+\newlength\FHoffset
+\setlength\FHoffset{0.5cm}
+
+\addtolength\headwidth{2\FHoffset}
+
+\fancyheadoffset{\FHoffset}
+
+% these lengths will control the headrule trimming to the left and right 
+\newlength\FHleft
+\newlength\FHright
+
+% here the trimmings are controlled by the user
+\setlength\FHleft{1cm}
+\setlength\FHright{0cm}
+
+% The new definition of headrule that will take into acount the trimming(s)
+\newbox\FHline
+\setbox\FHline=\hbox{\hsize=\paperwidth%
+  \hspace*{\FHleft}%
+  \rule{\dimexpr\headwidth-\FHleft-\FHright\relax}{\headrulewidth}\hspace*{\FHright}%
+}
+\renewcommand\headrule{\vskip-.7\baselineskip\copy\FHline}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\providecommand\phantomsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\fullwidthcolor#1{\color{#1}\leaders\vrule\hskip\textwidth\hskip-\textwidth\kern0pt}
+\def\resetLTcolor{\global\let\zz\zzb}
+\def\yy{\rowcolor{ptcbackground}}
+\def\yyy{\rowcolor{gray!50}}
+\def\xxx{\rowcolor{ptctitle!50}}
+\def\ccc{\cellcolor{ptctitle!50}}
+\def\yya{\cellcolor{gray!50}}
+\def\yyb{\cellcolor{ptcbackground}}
+\def\maxwidth{8cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\firstcircle{(0,0) circle (1.5cm)} 
+\def\secondcircle{(45:2cm) circle (1.5cm)}
+\def\thirdcircle{(0:2cm) circle (1.5cm)} 
+\def\rectangulo{(-2,-2) rectangle (4,3.6)}
+\def\fourcircle{(1.1,1) circle (1.5cm)}
+\def\fivecircle{(-2,1) circle (1.5cm)}
+\def\rect{(-4,-2) rectangle (4,3.6)} 
+\def\sixcircle{(1.5,1) circle (1.5cm)} 
+\def\sevencircle{(1.1,1) circle (0.8cm)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% pies de p\'agina %%%%%%%%%%%%%%%%
+ \fancyfoot[LE]{\hspace*{-0.2\headwidth}\colorbox{ptctitle!20}{\makebox[\dimexpr 0.6\headwidth-2\fboxsep][r]{\strut\bf\color{ptctitle}C\'alculo diferencial}}%
+               \colorbox{zanahoria!60}{\makebox[\dimexpr 0.6\headwidth-2\fboxsep][l]{\strut\bf\color{white}\sffamily\itshape\small\protect\nouppercase{Antalcides Olivo\hfill Autor2 \hfill Autor3}}}}               
+               %%%%%%%%%%%%%%%%%%%%%%
+                \fancyfoot[LO]{\hspace*{-0.2\headwidth}\colorbox{ptctitle!20}{\makebox[\dimexpr0.6\headwidth-2\fboxsep][c]{\strut\bf\color{ptctitle}C\'alculo diferencial}}%
+               \colorbox{zanahoria!60}{\makebox[\dimexpr0.6\headwidth-2\fboxsep][r]{\strut\bf\color{white}\sffamily\itshape\small\protect\nouppercase{Antalcides Olivo\hfill Autor2 \hfill Autor3}}}}               
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% conjuntos n\'umericos
+\newcommand{\CC}{\mathbb{C}}
+%\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\pp}{\mathbb{\overline{P}}}
+\newcommand{\DD}{\mathbb{D}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\XX}{\mathbb{X}}
+\newcommand{\der}{\mathcal{D}}
+\newcommand{\kk}{\mathcal{K}}
+\newcommand{\mm}[1]{{\mathcal{M}\/}(#1)}
+\newcommand{\nequiv}{{\equiv \hspace*{-3.7mm}/}}
+\newcommand{\capa}[1]{\mbox{{\em Cap\/}}(#1)}
+\newcommand{\gra}[1]{\mbox{{\em grad\/}}(#1)}
+\newcommand{\sop}[1]{\mbox{{\em supp\/}}(#1)}
+\newcommand{\esup}[1]{{\mbox{\rm ess\,sup\/}}#1}
+\newcommand{\lqqd}{\hfill $\blacksquare$}
+\newcommand{\II}{\mathbb{I}}
+%\newcommand{\na}{I\! N}
+%\newcommand{\re}{I\! R}
+{\makeatletter   % dies ist lokal, damit man die Datei wahlweise
+                 % mit \input oder mit \documentstyle[...] einlesen kann.
+ 
+\gdef\re{\relax\ifmmode I\hskip -3\p@ R\else
+    \hbox{$I\hskip -3\p@ R$}\fi} %Reales
+\gdef\na{\relax\ifmmode I\hskip -2.7\p@ N\else
+    \hbox{$I\hskip -2.7\p@ N$}\fi} % Naturales
+\gdef\en{\relax\ifmmode Z\hskip -4.8\p@ Z\else
+    \hbox{$Z\hskip -4.8\p@ Z$}\fi} %Enteros
+\gdef\co{\relax\ifmmode C\hskip-4.8\p@\vrule \@height 5.8\p@ \@depth\z@
+    \hskip 6.3\p@\else
+    \hbox{$C\hskip-4.8\p@\vrule \@height 5.8\p@ \@depth\z@ \hskip 6.3\p@$}\fi}% Complejos
+\gdef\ra{\relax\ifmmode Q\hskip-5.0\p@\vrule
+          \@height 6.0\p@ \@depth \z@ \hskip 6\p@\else
+    \hbox{$Q\hskip-5.0\p@\vrule \@height 6.0\p@ \@depth \z@ \hskip 6\p@$}\fi}% Racionales
+\gdef\hz{\relax\ifmmode I\hskip -3\p@ H\else
+    \hbox{$I\hskip -3\p@ H$}\fi} % Espacio de Hilbert
+\gdef\kz{\relax\ifmmode I\hskip -3\p@ K\else
+    \hbox{$I\hskip -3\p@ K$}\fi} % campo K
+    \gdef\ir{\relax\ifmmode I\hskip -3\p@ I\else
+    \hbox{$I\hskip -3\p@ K$}\fi} % Irracionales}
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+   % \renewcommand\p@axioma{\thesection.\theaxioma}
+   \makeatother
+\input{macros.tex}
+\end_preamble
+\options 2m,twoside,svgnames,x11names,HTML,twoside,12pt
+\use_default_options true
+\master calculod.lyx
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding utf8x
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Derivadas
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+PartialToc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypersetup{linkcolor=ptctitle}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm*
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\shape italic
+\size small
+El arte de nombrar y de medir con exactitud aquello 
+\begin_inset Newline newline
+\end_inset
+
+ de lo que ni siquiera puede concebirse su existencia.
+
+\shape default
+ 
+\begin_inset Newline newline
+\end_inset
+
+ Voltaire
+\size default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -1mm*
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+Introducción
+\end_layout
+
+\begin_layout Standard
+Los orígenes del Cálculo estuvieron motivados por el deseo de resolver diversos
+ problemas vinculados al movimiento de los cuerpos, así como problemas de
+ tipo geométrico de importancia en Óptica y problemas de cálculo de valores
+ máximos y mínimos de una función dada.
+ Simplificando, podemos destacar dos problemas principales: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\bullet$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Determinar la tangente a una curva en un punto (el problema de las tangentes).
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\bullet$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Determinar el área encerrada por una curva (el problema de las cuadraturas).
+ 
+\end_layout
+
+\begin_layout Standard
+Son los conceptos de derivada e integral, respectivamente, los que permiten
+ resolver satisfactoriamente dichos problemas.
+ Mientras que el concepto de integral tiene sus raíces en la antigüedad
+ clásica, la otra idea fundamental del Cálculo, la derivada, no se formuló
+ hasta el siglo XVII.
+ Fue el descubrimiento efectuado por Sir Isaac Newton (1642 - 1727) y Gottfried
+ Wilhelm Leibniz (1646 - 1716) de la relación entre estas dos ideas, tan
+ dispares en apariencia, lo que inició el magnífico desarrollo del Cálculo.
+ Si bien los trabajos de Newton y Leibniz son decisivos por sus aportaciones
+ e influencia, no hay que olvidar que ellos son el punto culminante de un
+ largo proceso en el que han participado científicos de la talla de Johannes
+ Kepler (1571 - 1630), René Descartes (1596 - 1650), Pierre de Fermat (1601
+ - 1665), John Wallis (1616 -1703) e Isaac Barrow (1630 - 1677) entre otros.
+\end_layout
+
+\begin_layout Subsection
+Concepto de derivada.
+ Interpretación física y geométrica
+\end_layout
+
+\begin_layout Standard
+Para entender los resultados del Cálculo diferencial es necesario, antes
+ que nada, comprender la idea básica del mismo: el concepto de derivada.
+ La derivada de una función puede interpretarse geométricamente como la
+ pendiente de una curva, y físicamente como una razón 
+\begin_inset Quotes eld
+\end_inset
+
+instantánea
+\begin_inset Quotes erd
+\end_inset
+
+ de cambio.
+ 
+\end_layout
+
+\begin_layout Subsection
+Tangente a una curva
+\end_layout
+
+\begin_layout Standard
+En la primera mitad del siglo XVII no se conocían métodos generales para
+ calcular la tangente a una curva en un punto de la misma.
+ Este problema se presentaba con frecuencia en mecánica, en óptica y en
+ geometría, y generalmente se resolvía, de forma geométrica, con técnicas
+ adaptadas a cada caso particular.
+ La dificultad está en que, siendo la tangente una recta, se precisa conocer
+ dos puntos de la misma, o bien un punto y su pendiente, para poderla determinar.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pdf/derivada-1.pdf
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Recta secante
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{sect}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Supongamos que queremos hallar la tangente a una curva de ecuación cartesiana
+ 
+\begin_inset Formula $y=f(x)$
+\end_inset
+
+ en el punto 
+\begin_inset Formula $(a,f(a))$
+\end_inset
+
+.
+ La estrategia, usada primero por Pierre de Fermat y más tarde por Newton,
+ consiste en aproximar la tangente por rectas secantes cuyas pendientes
+ sí pueden calcularse directamente.
+ En particular, consideremos la recta que une el punto 
+\begin_inset Formula $(a,f(a))$
+\end_inset
+
+ con un punto cercano, 
+\begin_inset Formula $(x,f(x))$
+\end_inset
+
+, de la gráfica de 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ Esta recta se llama una secante (recta que corta a la curva, pero no es
+ tangente a la curva).
+ La pendiente de esta secante es: 
+\begin_inset Formula 
+\[
+\frac{f(x)-f(a)}{x-a}
+\]
+
+\end_inset
+
+dicho número suele llamarse 
+\emph on
+cociente incremental de 
+\begin_inset Formula $f$
+\end_inset
+
+ en 
+\begin_inset Formula $a$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+begin{floatingfigure}{95cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+flushleft
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+caption{Recta secante}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+label{sect}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+end{floatingfigure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Observa que una secante es una buena aproximación de la tangente, siempre
+ que el punto 
+\begin_inset Formula $Q(x,f(x))$
+\end_inset
+
+ esté próximo al punto 
+\begin_inset Formula $P(a,f(a))$
+\end_inset
+
+.
+ Estas consideraciones llevan a 
+\emph on
+definir la tangente a la gráfica de 
+\begin_inset Formula $f$
+\end_inset
+
+ en el punto 
+\begin_inset Formula $P(a,f(a))$
+\end_inset
+
+ como la recta que pasa por dicho punto y cuya pendiente es igual al límite
+\emph default
+: 
+\begin_inset Formula 
+\[
+\lim_{x\to a}\frac{f(x)-f(a)}{x-a}
+\]
+
+\end_inset
+
+supuesto, claro está, que dicho límite exista.
+ 
+\end_layout
+
+\begin_layout Subsection
+Razón de cambio puntual y velocidad instantánea
+\end_layout
+
+\begin_layout Standard
+Muchas leyes de la Física, la Química, la Biología o la Economía, son funciones
+ que relacionan una variable 
+\begin_inset Quotes eld
+\end_inset
+
+dependiente
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $y$
+\end_inset
+
+ con otra variable 
+\begin_inset Quotes eld
+\end_inset
+
+independiente
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $x$
+\end_inset
+
+, lo que suele escribirse en la forma 
+\begin_inset Formula $y=f(x)$
+\end_inset
+
+.
+ Si la variable independiente cambia de un valor inicial 
+\begin_inset Formula $a$
+\end_inset
+
+ a otro 
+\begin_inset Formula $x$
+\end_inset
+
+, la variable 
+\begin_inset Formula $y$
+\end_inset
+
+ lo hace de 
+\begin_inset Formula $f(a)$
+\end_inset
+
+ a 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ La 
+\emph on
+razón de cambio promedio de 
+\begin_inset Formula $y=f(x)$
+\end_inset
+
+ con respecto a 
+\begin_inset Formula $x$
+\end_inset
+
+ en el intervalo 
+\begin_inset Formula $[a,x]$
+\end_inset
+
+
+\emph default
+ es: 
+\begin_inset Formula 
+\[
+\textrm{Razón de cambio promedio\ }=\frac{f(x)-f(a)}{x-a}
+\]
+
+\end_inset
+
+Con frecuencia interesa considerar la razón de cambio en intervalos cada
+ vez más pequeños.
+ Esto lleva a definir lo que podemos llamar 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+razón de cambio puntual de 
+\begin_inset Formula $y=f(x)$
+\end_inset
+
+ con respecto a 
+\begin_inset Formula $x$
+\end_inset
+
+ en el punto 
+\begin_inset Formula $a$
+\end_inset
+
+
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ como: 
+\begin_inset Formula 
+\[
+\lim_{x\to a}\frac{f(x)-f(a)}{x-a}.
+\]
+
+\end_inset
+
+El ejemplo más conocido de esto que decimos es el de un móvil que se mueve
+ a lo largo de una recta sobre la cual hemos elegido un origen.
+ Sea 
+\begin_inset Formula $s(t)$
+\end_inset
+
+ la posición del móvil en el tiempo 
+\begin_inset Formula $t$
+\end_inset
+
+, es decir, la distancia con signo del móvil al origen en el tiempo 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ La razón de cambio promedio tiene en este caso una interpretación física
+ natural: 
+\begin_inset Formula 
+\[
+\frac{s(a+h)-s(a)}{h}
+\]
+
+\end_inset
+
+Es la 
+\emph on
+velocidad media
+\emph default
+ del móvil en el intervalo de tiempo comprendido entre 
+\begin_inset Formula $a$
+\end_inset
+
+ y 
+\begin_inset Formula $a+h$
+\end_inset
+
+.
+ Parece intuitivo que, en cada instante, el móvil se mueve con una determinada
+ 
+\emph on
+velocidad instantánea
+\emph default
+.
+ Pero no hay manera de medir directamente una velocidad instantánea; un
+ instante quiere decir una posición en la recta: la velocidad instantánea
+ del móvil para 
+\begin_inset Formula $t=a$
+\end_inset
+
+ es la velocidad que tiene cuando está en la posición 
+\begin_inset Formula $s(a)$
+\end_inset
+
+.
+ La velocidad instantánea es una abstracción de un característica física
+ del movimiento, pero no es una magnitud que podamos observar directamente.
+ La única definición razonable de velocidad instantánea es como la razón
+ de cambio puntual: 
+\begin_inset Formula 
+\[
+\lim_{h\to0}\frac{s(a+h)-s(a)}{h}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Notación
+\series default
+.
+\begin_inset space \space{}
+\end_inset
+
+En lo que sigue usaremos las letras 
+\begin_inset Formula $I$
+\end_inset
+
+, 
+\begin_inset Formula $J$
+\end_inset
+
+ para representar intervalos no vacíos de números reales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{Derivada en un punto}{def}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "def:derivada"
+
+\end_inset
+
+ Se dice que una función 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+func
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+I
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+es 
+\series bold
+derivable en un punto 
+\begin_inset Formula $a\in I$
+\end_inset
+
+
+\series default
+, si existe el límite: 
+\begin_inset Formula 
+\[
+\lim_{x\to a}\frac{f(x)-f(a)}{x-a}.
+\]
+
+\end_inset
+
+Explícitamente, 
+\begin_inset Formula $f$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+ si hay un número 
+\begin_inset Formula $L\in\R$
+\end_inset
+
+ verificando que para cada número 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ existe algún número 
+\begin_inset Formula $\delta>0$
+\end_inset
+
+ tal que para todo 
+\begin_inset Formula $x\in I$
+\end_inset
+
+ con 
+\begin_inset Formula $x\neq a$
+\end_inset
+
+ y 
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 1
+width ""
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mid x-a\mid<\delta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ se tiene que: 
+\begin_inset Formula 
+\[
+\left|\frac{f(x)-f(a)}{x-a}\ -\ L\right|\leqslant\varepsilon.
+\]
+
+\end_inset
+
+Dicho número 
+\begin_inset Formula $L$
+\end_inset
+
+ se llama 
+\series bold
+derivada de 
+\begin_inset Formula $f$
+\end_inset
+
+ en 
+\begin_inset Formula $a$
+\end_inset
+
+
+\series default
+ y lo representaremos por 
+\begin_inset Formula $f\tl(a)$
+\end_inset
+
+ (notación debida a Lagrange).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{Derivada de una función}{}
+\end_layout
+
+\end_inset
+
+ Dada una función 
+\begin_inset Formula $f:I\rightarrow\R$
+\end_inset
+
+ derivable en todo punto de 
+\begin_inset Formula $I$
+\end_inset
+
+, la 
+\series bold
+función derivada
+\series default
+ de 
+\begin_inset Formula $f$
+\end_inset
+
+ es la función 
+\begin_inset Formula $f\tl:I\rightarrow\R$
+\end_inset
+
+ que a cada punto 
+\begin_inset Formula $x\in I$
+\end_inset
+
+ hace corresponder la derivada de 
+\begin_inset Formula $f$
+\end_inset
+
+ en dicho punto.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ideabox}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "ob:propiedadlocalderivada"
+
+\end_inset
+
+ 
+\series bold
+i)
+\series default
+
+\begin_inset space \space{}
+\end_inset
+
+El límite 
+\begin_inset Formula $\ {\displaystyle \lim_{x\to a}\frac{f(x)-f(a)}{x-a}}$
+\end_inset
+
+ se puede escribir también de la forma 
+\begin_inset Formula $\ {\displaystyle \lim_{h\to0}\frac{f(a+h)-f(a)}{h}.}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+ii)
+\series default
+
+\begin_inset space \space{}
+\end_inset
+
+La derivabilidad de 
+\begin_inset Formula $f$
+\end_inset
+
+ en un punto 
+\begin_inset Formula $a\in I$
+\end_inset
+
+ es una 
+\emph on
+propiedad local
+\emph default
+, depende solamente del comportamiento de 
+\begin_inset Formula $f$
+\end_inset
+
+ en los puntos de 
+\begin_inset Formula $I$
+\end_inset
+
+ próximos al punto 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Concretamente, si 
+\begin_inset Formula $J$
+\end_inset
+
+ es cualquier 
+\emph on
+intervalo abierto
+\emph default
+ que contiene el punto 
+\begin_inset Formula $a$
+\end_inset
+
+, se verifica que 
+\begin_inset Formula $f$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+ si, y sólo si, la función restricción 
+\begin_inset Formula $f_{|I\cap J}$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+ y, por supuesto, en tal caso ambas funciones tienen la misma derivada en
+ 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+La notación diferencial de Leibniz.
+\series default
+
+\begin_inset space \space{}
+\end_inset
+
+La notación 
+\begin_inset Formula $\dfrac{\df{f(x)}}{\df{x}}$
+\end_inset
+
+ para representar la derivada de 
+\begin_inset Formula $f$
+\end_inset
+
+ en 
+\begin_inset Formula $x$
+\end_inset
+
+ es debida a Leibniz.
+\end_layout
+
+\begin_layout Standard
+Leibniz interpretaba ese símbolo como un 
+\begin_inset Quotes eld
+\end_inset
+
+cociente diferencial
+\begin_inset Quotes erd
+\end_inset
+
+ pues él lo entendía así: como un cociente de cantidades infinitesimales,
+ y lo manejaba como un cociente; por ejemplo, se puede multiplicar o dividir,
+ según convenga, por 
+\begin_inset Formula $\df{x}$
+\end_inset
+
+ o 
+\begin_inset Formula $\df{f(x)}$
+\end_inset
+
+.
+ En el capítulo 5 hemos visto los problemas que planteaba el uso de cantidades
+ infinitesimales, y cómo, finalmente, a partir del último tercio del siglo
+ XIX, fueron totalmente abandonadas.
+ Por eso, la interpretación de Leibniz de la derivada, aunque intuitiva,
+ no es la que se sigue en la gran mayoría de los cursos de cálculo
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Aunque sí en los cursos de Análisis No Estándar basados en los hiperreales
+ de A.
+ Robinson.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A pesar de lo dicho, es frecuente, sobre todo en libros de ingeniería, usar
+ la notación de Leibniz y manejarla como él lo hacía.
+ Creo que esto es útil porque la notación de Leibniz tiene una gran fuerza
+ heurística, y no debe presentar ningún problema, siempre que no acabes
+ creyendo que una derivada, tal como la hemos definido, es un cociente de
+ infinitésimos.
+ Y siempre que dicha notación se use como un mero simbolismo y no se hagan
+ demostraciones apoyadas en su supuesta significación.
+\end_layout
+
+\begin_layout Standard
+Una dificultad de la notación de Leibniz es que no es cómoda para representar
+ la derivada en un punto concreto.
+ Podemos entender que 
+\begin_inset Formula $\dfrac{\df{f(x)}}{\df{x}}$
+\end_inset
+
+ es la función derivada 
+\begin_inset Formula $f\tl(x)$
+\end_inset
+
+, pero ¿cómo indicamos la derivada en punto concreto 
+\begin_inset Formula $a$
+\end_inset
+
+? Las notaciones 
+\begin_inset Formula $\dfrac{\df{f(a)}}{\df{x}}$
+\end_inset
+
+ y 
+\begin_inset Formula $\dfrac{\df{f(x)}}{\df{x}}(a)$
+\end_inset
+
+ son confusas.
+ Lo que suele hacerse es escribir: 
+\begin_inset Formula 
+\[
+\left.\dfrac{\df{f(x)}}{\df{x}}\right|_{x=a}
+\]
+
+\end_inset
+
+que, realmente, es una notación incómoda.
+ Una posible mejora sería escribir 
+\begin_inset Formula $\dfrac{\df{f}}{\df{x}}(x)$
+\end_inset
+
+ para representar 
+\begin_inset Formula $f\tl(x)$
+\end_inset
+
+, en cuyo caso 
+\begin_inset Formula $\dfrac{\df{f}}{\df{x}}(a)$
+\end_inset
+
+ indicaría 
+\begin_inset Formula $f\tl(a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La verdad es que la mayoría de los libros de ingeniería que usan estas notacione
+s lo hacen sin preocuparse mucho por su significado, y esa es una causa
+ importante de que muchas veces no se entienda bien lo que escriben.
+ Las notaciones son importantes y hay que manejarlas cuidadosamente.
+ Y todavía más, cuando una notación se supone que tiene un significado casi
+ mágico, y que por su fuerza simbólica ella sola, por sí misma, proporciona
+ demostraciones.
+ Volveremos a considerar este asunto más adelante.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{Recta tangente}{}
+\end_layout
+
+\end_inset
+
+ Supuesto que 
+\begin_inset Formula $f$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+, la recta de ecuación cartesiana: 
+\begin_inset Formula 
+\[
+y=f(a)+f\tl(a)(x-a)
+\]
+
+\end_inset
+
+se llama 
+\series bold
+recta tangente
+\series default
+ a la gráfica de 
+\begin_inset Formula $f$
+\end_inset
+
+ en el punto 
+\begin_inset Formula $(a,f(a))$
+\end_inset
+
+, y también recta tangente a 
+\begin_inset Formula $f$
+\end_inset
+
+ en 
+\begin_inset Formula $x=a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Cuando 
+\begin_inset Formula $f\tl(a)\neq0$
+\end_inset
+
+, la recta de ecuación: 
+\begin_inset Formula 
+\[
+y=f(a)-\dfrac{1}{f\tl(a)}(x-a)
+\]
+
+\end_inset
+
+es la 
+\series bold
+recta normal
+\series default
+ a la gráfica de 
+\begin_inset Formula $f$
+\end_inset
+
+ en el punto 
+\begin_inset Formula $(a,f(a))$
+\end_inset
+
+, y también recta normal a 
+\begin_inset Formula $f$
+\end_inset
+
+ en 
+\begin_inset Formula $x=a$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Elementos de una curva relacionados con la derivada
+\end_layout
+
+\begin_layout Standard
+En la figura
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "figcurva"
+
+\end_inset
+
+ se han representado algunos elementos de una curva que se expresan por
+ medio de la derivada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pdf/rtan.pdf
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "figcurva"
+
+\end_inset
+
+
+\size small
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Elementos de una curva relacionados con la derivada
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+La pendiente de la tangente es 
+\begin_inset Formula $\tg(\theta)=y\tl$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+La pendiente de la normal es 
+\begin_inset Formula $\tg(\alpha)=\tg(\pi/2+\theta)=-1/y\tl$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+El segmento 
+\begin_inset Formula $\overline{TM}$
+\end_inset
+
+ es la 
+\series bold
+subtangente
+\series default
+.
+ Su longitud viene dada por 
+\begin_inset Formula $\overline{TM}=y\cotg(\theta)=y/y\tl$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+El segmento 
+\begin_inset Formula $\overline{MN}$
+\end_inset
+
+ es la 
+\series bold
+subnormal
+\series default
+.
+ Su longitud viene dada por 
+\begin_inset Formula $\overline{MN}=y\tg(\theta)=yy\tl$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Los segmentos interceptados en los ejes 
+\begin_inset Formula $OX$
+\end_inset
+
+ y 
+\begin_inset Formula $OY$
+\end_inset
+
+ por la tangente son 
+\begin_inset Formula 
+\[
+\begin{cases}
+\overline{OT}=\overline{OM}-\overline{TM}=x-y/y\tl\\
+\overline{OV}=\overline{PM}-\overline{PQ}=y-x\tg(\theta)=y-xy\tl
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Los segmentos interceptados en los ejes 
+\begin_inset Formula $OX$
+\end_inset
+
+ y 
+\begin_inset Formula $OY$
+\end_inset
+
+ por la normal son 
+\begin_inset Formula 
+\[
+\begin{cases}
+\overline{ON}=\overline{OM}+\overline{MN}=x+y\tg(\theta)=x+yy\tl\\
+\overline{OU}=\overline{OH}+\overline{HU}=y+x\tg(\phi)=y+x\tg(\pi/2-\theta)=y+x/y\tl
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Derivadas laterales
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{Derivadas laterales}{}
+\end_layout
+
+\end_inset
+
+ Se dice que 
+\begin_inset Formula $f$
+\end_inset
+
+ es 
+\series bold
+derivable por la izquierda en 
+\begin_inset Formula $a$
+\end_inset
+
+
+\series default
+ si existe el límite: 
+\begin_inset Formula 
+\[
+\lim_{\substack{x\to a\\
+x<a
+}
+}\frac{f(x)-f(a)}{x-a}.
+\]
+
+\end_inset
+
+El valor de dicho límite se llama la 
+\series bold
+derivada por la izquierda
+\series default
+ de 
+\begin_inset Formula $f$
+\end_inset
+
+ en 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Análogamente se dice que 
+\begin_inset Formula $f$
+\end_inset
+
+ es 
+\series bold
+derivable por la derecha en 
+\begin_inset Formula $a,$
+\end_inset
+
+
+\series default
+ si existe el límite: 
+\begin_inset Formula 
+\[
+\lim_{\substack{x\to a\\
+x>a
+}
+}\frac{f(x)-f(a)}{x-a}.
+\]
+
+\end_inset
+
+El valor de dicho límite se llama la 
+\series bold
+derivada por la derecha
+\series default
+ de 
+\begin_inset Formula $f$
+\end_inset
+
+ en 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta la relación que hay entre el límite de una función en
+ un punto y los límites laterales, es claro que: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+i)
+\end_layout
+
+\end_inset
+
+Si 
+\begin_inset Formula $a=\max I$
+\end_inset
+
+, entonces la derivabilidad de 
+\begin_inset Formula $f$
+\end_inset
+
+ en 
+\begin_inset Formula $a$
+\end_inset
+
+ es lo mismo que la derivabilidad por la izquierda de 
+\begin_inset Formula $f$
+\end_inset
+
+ en 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+ii)
+\end_layout
+
+\end_inset
+
+Si 
+\begin_inset Formula $a=\min I$
+\end_inset
+
+, entonces la derivabilidad de 
+\begin_inset Formula $f$
+\end_inset
+
+ en 
+\begin_inset Formula $a$
+\end_inset
+
+ es lo mismo que la derivabilidad por la derecha de 
+\begin_inset Formula $f$
+\end_inset
+
+ en 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+iii)
+\end_layout
+
+\end_inset
+
+Si 
+\begin_inset Formula $a$
+\end_inset
+
+ no es un extremo de 
+\begin_inset Formula $I$
+\end_inset
+
+, entonces equivalen las afirmaciones: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+a)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $f$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+b)
+\end_layout
+
+\end_inset
+
+Las derivadas por la izquierda y por la derecha de 
+\begin_inset Formula $f$
+\end_inset
+
+ en 
+\begin_inset Formula $a$
+\end_inset
+
+ existen y coinciden.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Propiedades de las funciones derivables.
+ Reglas de derivación
+\end_layout
+
+\begin_layout Standard
+El siguiente resultado nos dice que la derivabilidad es una propiedad más
+ fuerte que la continuidad.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{proposicion}{}{}
+\end_layout
+
+\end_inset
+
+ Toda función derivable en un punto es continua en dicho punto.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{proposicion}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{prueba}
+\end_layout
+
+\end_inset
+
+ En efecto, si 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+func
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+I
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+, de la igualdad: 
+\begin_inset Formula 
+\[
+f(x)=f(a)+(x-a)\frac{f(x)-f(a)}{x-a}\quad(x\en I,\ x\neq a)
+\]
+
+\end_inset
+
+se sigue que 
+\begin_inset Formula $\dis\lim_{x\to a}f(x)=f(a)$
+\end_inset
+
+, es decir, 
+\begin_inset Formula $f$
+\end_inset
+
+ es continua en 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{prueba}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{teo}{Reglas de derivación}{}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Sean 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+func
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f,g
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+I
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+dos funciones.
+ Se verifican las siguientes afirmaciones: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+i)
+\end_layout
+
+\end_inset
+
+La funciones suma, 
+\begin_inset Formula $f+g$
+\end_inset
+
+, y producto, 
+\begin_inset Formula $fg$
+\end_inset
+
+, son derivables en todo punto 
+\begin_inset Formula $a\en I$
+\end_inset
+
+ en el que 
+\begin_inset Formula $f$
+\end_inset
+
+ y 
+\begin_inset Formula $g$
+\end_inset
+
+ sean derivables, y las derivadas respectivas vienen dadas por:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(f+g)^{\prime}(a)=f\tl(a)+g\tl(a);\quad(fg)^{\prime}(a)=f\tl(a)g(a)+f(a)g\tl(a)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+ii)
+\end_layout
+
+\end_inset
+
+Si 
+\begin_inset Formula $g(x)\neq0$
+\end_inset
+
+ para todo 
+\begin_inset Formula $x\in I$
+\end_inset
+
+, la función cociente 
+\begin_inset Formula $f/g$
+\end_inset
+
+ es derivable en todo punto 
+\begin_inset Formula $a\en I$
+\end_inset
+
+ en el que 
+\begin_inset Formula $f$
+\end_inset
+
+ y 
+\begin_inset Formula $g$
+\end_inset
+
+ sean derivables, en cuyo caso se verifica que: 
+\begin_inset Formula 
+\[
+\left(\frac{f}{g}\right)^{\prime}(a)=\frac{f\tl(a)g(a)-f(a)g\tl(a)}{(g(a))^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{teo}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{prueba}
+\end_layout
+
+\end_inset
+
+ Las reglas de derivación se prueban muy fácilmente haciendo uso de las
+ propiedades algebraicas de los límites y la definición de derivada.
+ Es suficiente que tengas en cuenta las siguientes igualdades: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\dfrac{(f+g)(x)-(f+g)(a)}{x-a} & = & \dfrac{f(x)-f(a)}{x-a}+\dfrac{g(x)-g(a)}{x-a}\\
+\dfrac{(fg)(x)-(fg)(a)}{x-a} & = & \dfrac{f(x)-f(a)}{x-a}g(x)+f(a)\dfrac{g(x)-g(a)}{x-a}\\
+\dfrac{\frac{1}{g}(x)-\frac{1}{g}(a)}{x-a} & = & -\dfrac{g(x)-g(a)}{x-a}\dfrac{1}{g(x)g(a)}
+\end{eqnarray*}
+
+\end_inset
+
+De la primera y segunda igualdades se deduce, tomando límites para 
+\begin_inset Formula $x\to a$
+\end_inset
+
+ , las reglas para la derivada de una suma y de un producto.
+ Igualmente, de la tercera igualdad, se deduce la derivada de 
+\begin_inset Formula $\frac{1}{g}$
+\end_inset
+
+, de donde, se obtiene la derivada de 
+\begin_inset Formula $\frac{f}{g}=f\frac{1}{g}$
+\end_inset
+
+ haciendo uso de la regla para derivar un producto.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{prueba}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como las funciones constantes tienen derivada nula en todo punto y la función
+ identidad, 
+\begin_inset Formula $f(x)=x$
+\end_inset
+
+, tiene derivada igual a 1 en todo punto, aplicando las reglas de derivación
+ anteriores se obtiene el siguiente corolario.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{coro}{}{}
+\end_layout
+
+\end_inset
+
+ Las funciones polinómicas son derivables en todo punto y las funciones
+ racionales son derivables en todo punto de su conjunto natural de definición.
+ Además la derivada de la función polinómica 
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 1
+width ""
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ f(x)=a_{0}+a_{1}x+a_{2}x^{2}+\cdots+a_{n}x^{n}$
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ en cada punto 
+\begin_inset Formula $x\in\R$
+\end_inset
+
+ viene dada por: 
+\begin_inset Formula 
+\[
+f\tl(x)=a_{1}+2a_{2}x+3a_{3}x^{2}+\cdots+na_{n}x^{n-1}
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{coro}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{teo}{Derivación de una función compuesta o regla de la cadena}{}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sean 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+func
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+I
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+func
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+g
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+J
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+con 
+\begin_inset Formula $f(I)\subset J$
+\end_inset
+
+, y sea 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+func
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+h=g
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+!
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+circ
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+!
+\end_layout
+
+\end_inset
+
+f
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+I
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+la función compuesta.
+ Supongamos que 
+\begin_inset Formula $f$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $a\en I$
+\end_inset
+
+ y que 
+\begin_inset Formula $g$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $f(a)$
+\end_inset
+
+.
+ Entonces 
+\begin_inset Formula $h$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+ y 
+\begin_inset Formula $h\tl(a)=g\tl(f(a))f\tl(a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+En particular, si 
+\begin_inset Formula $g$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $J$
+\end_inset
+
+, la función compuesta 
+\begin_inset Formula $h=g\!\circ\!f$
+\end_inset
+
+ es derivable en todo punto de 
+\begin_inset Formula $I$
+\end_inset
+
+ donde 
+\begin_inset Formula $f$
+\end_inset
+
+ sea derivable.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{teo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{prueba}
+\end_layout
+
+\end_inset
+
+ Pongamos 
+\begin_inset Formula $b=f(a)$
+\end_inset
+
+.
+ Tenemos que probar que 
+\begin_inset Formula $\dis{\lim_{x\to a}\frac{h(x)-h(a)}{x-a}=g\tl(b)f\tl(a)}$
+\end_inset
+
+.
+ Por hipótesis se cumple que :
+\begin_inset Formula 
+\[
+\lim_{y\to b}\frac{g(y)-g(b)}{y-b}\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=g\tl(b)f\tl(a)
+\]
+
+\end_inset
+
+La idea de la demostración es hacer en esta igualdad la sustitución 
+\begin_inset Formula $y=f(x)$
+\end_inset
+
+.
+ Como no está garantizado por las hipótesis hechas que para 
+\begin_inset Formula $x\neq a$
+\end_inset
+
+ se tenga 
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 1
+width ""
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(x)\neq b$
+\end_inset
+
+,
+\end_layout
+
+\end_inset
+
+ no está justificado hacer directamente la sustitución indicada (dividir
+ por cero está prohibido).
+ Podemos evitar esta dificultad como sigue.
+ Definamos la función 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+func
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ff
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+J
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+por: 
+\begin_inset Formula 
+\[
+\ff(y)=\frac{g(y)-g(b)}{y-b}\ \ (y\neq b),\ \ff(b)=g\tl(b)
+\]
+
+\end_inset
+
+Con ello la función 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ff
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+es continua en 
+\begin_inset Formula $b$
+\end_inset
+
+.
+ Es inmediato ahora comprobar que para todo 
+\begin_inset Formula $x\en I$
+\end_inset
+
+ con 
+\begin_inset Formula $x\neq a$
+\end_inset
+
+ se verifica que: 
+\begin_inset Formula 
+\begin{equation}
+\frac{h(x)-h(a)}{x-a}=\ff(f(x))\frac{f(x)-f(a)}{x-a}.\label{equality}
+\end{equation}
+
+\end_inset
+
+Ahora, como 
+\begin_inset Formula $f$
+\end_inset
+
+ es continua en 
+\begin_inset Formula $a$
+\end_inset
+
+ (porque es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+) y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ff
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+es continua en 
+\begin_inset Formula $b=f(a)$
+\end_inset
+
+, se sigue que 
+\begin_inset Formula $\ff\circ f$
+\end_inset
+
+ es continua en 
+\begin_inset Formula $a$
+\end_inset
+
+, por lo que: 
+\begin_inset Formula 
+\[
+\lim_{x\to a}\ff(f(x))=\ff(f(a))=\ff(b)=g\tl(b).
+\]
+
+\end_inset
+
+La igualdad (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "equality"
+
+\end_inset
+
+) nos dice ahora que:
+\begin_inset Formula 
+\[
+\lim_{x\to a}\frac{h(x)-h(a)}{x-a}=g\tl(b)f\tl(a)
+\]
+
+\end_inset
+
+como queríamos probar.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{prueba}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Regla de la cadena al estilo Leibniz.
+
+\series default
+ Una demostración de la regla de la cadena al 
+\begin_inset Quotes eld
+\end_inset
+
+estilo Leibniz
+\begin_inset Quotes erd
+\end_inset
+
+ podría ser como sigue.
+ Por una parte, tenemos que 
+\begin_inset Formula $y$
+\end_inset
+
+ es función de 
+\begin_inset Formula $x$
+\end_inset
+
+ a través de 
+\begin_inset Formula $g$
+\end_inset
+
+, es decir, 
+\begin_inset Formula $y=g(x)$
+\end_inset
+
+.
+ También tenemos que 
+\begin_inset Formula $x$
+\end_inset
+
+ es función de 
+\begin_inset Formula $t$
+\end_inset
+
+ a través de 
+\begin_inset Formula $f$
+\end_inset
+
+, 
+\begin_inset Formula $x=f(t)$
+\end_inset
+
+.
+ Entonces la variación de 
+\begin_inset Formula $y$
+\end_inset
+
+ respecto a 
+\begin_inset Formula $t$
+\end_inset
+
+ se hace por intermedio de 
+\begin_inset Formula $x$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{equation}
+\frac{\df{y}}{\df{t}}=\frac{\df{y}}{\df{x}}\frac{\df{x}}{\df{t}}\label{cadenaleibniz}
+\end{equation}
+
+\end_inset
+
+Hemos acabado.
+ Todo lo que hemos hecho ha sido multiplicar y dividir por 
+\begin_inset Formula $\df{x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+No sé lo que pensará tú de esto, pero a mí me parecería una broma que alguien
+ pretendiera que lo que hemos hecho es una demostración.
+ Primero: ¿qué es 
+\begin_inset Formula $\df{x}$
+\end_inset
+
+? Porque si es un símbolo, no tiene sentido multiplicar y dividir por él
+ (salvo que a esta operación se le hubiera asignado previamente un significado
+ preciso) y si es un número ¿cómo está definido? ¿qué relación tiene ese
+ número con la derivada? Preguntas sin respuesta.
+ A esto me refería al decir que una notación, por sí sola, no sirve para
+ demostrar nada.
+\end_layout
+
+\begin_layout Standard
+Además, el simbolismo empleado en la igualdad 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "cadenaleibniz"
+
+\end_inset
+
+ no indica dónde se evalúa cada una de las derivadas, y eso es fundamental
+ para entender la regla de la cadena.
+ Fíjate que la regla de la cadena nos dice que la derivada de una función
+ compuesta de dos funciones derivables, 
+\begin_inset Formula $h(x)=(g\circ f)(x)$
+\end_inset
+
+, viene dada por 
+\begin_inset Formula 
+\begin{equation}
+h\tl(x)=g\tl(f(x))f\tl(x)=(g\tl\circ f)(x)f\tl(x)\label{cadenalagrange}
+\end{equation}
+
+\end_inset
+
+que es un producto de dos funciones, 
+\begin_inset Formula $g\tl(f(x))$
+\end_inset
+
+ y 
+\begin_inset Formula $f\tl(x)$
+\end_inset
+
+, pero la primera de ellas 
+\begin_inset Formula $g\tl(f(x))=(g\tl\circ f)(x)$
+\end_inset
+
+ es una 
+\emph on
+función compuesta
+\emph default
+.
+ Por eso si queremos volver a derivar en la igualdad 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "cadenalagrange"
+
+\end_inset
+
+, debemos aplicar la regla para derivar un producto y, para derivar el primer
+ factor, debemos aplicar la regla de la cadena.
+ Es por eso que, en la regla de la cadena, es fundamental indicar los puntos
+ donde se evalúan las derivadas.
+\end_layout
+
+\begin_layout Standard
+La notación en la igualdad 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "cadenaleibniz"
+
+\end_inset
+
+ es mala porque no indica dónde se evalúa cada una de las derivadas.
+ Pero también es mala por las razones siguientes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\bullet\quad$
+\end_inset
+
+Una misma letra representa dos funciones distintas.
+ En 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "cadenaleibniz"
+
+\end_inset
+
+ la letra 
+\begin_inset Formula $y$
+\end_inset
+
+ aparece a la izquierda y a la derecha.
+ A la izquierda representa la función compuesta 
+\begin_inset Formula $y=g(f(t))$
+\end_inset
+
+, a la derecha representa la función 
+\begin_inset Formula $y=g(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\bullet\quad$
+\end_inset
+
+Una misma letra representa una función y una variable.
+ La letra 
+\begin_inset Formula $x$
+\end_inset
+
+ en la parte derecha representa la variable en 
+\begin_inset Formula $y=g(x)$
+\end_inset
+
+, y también representa la función 
+\begin_inset Formula $x=f(t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Demasiado confuso ¿verdad? A pesar de lo dicho, la igualdad 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "cadenaleibniz"
+
+\end_inset
+
+ aparece en muchos textos de matemáticas para ingenieros y en textos de
+ física, sin ningún comentario, sin explicar lo que significa y pretendiendo
+ que constituye por sí misma una demostración.
+ Lo peor de todo, es que si te la enseñan así puedes creer que la entiendes,
+ y entonces una de dos: o la entiendes de verdad, como acabo de explicarlo,
+ o te engañas y realmente no sabes lo que crees saber.
+ Lamentablemente, de estas dos posibilidades la más frecuente es la segunda.
+\end_layout
+
+\begin_layout Standard
+Y…sin embargo, la igualdad 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "cadenaleibniz"
+
+\end_inset
+
+ es muy simple y fácil de recordar, y permite conjeturar la regla de la
+ cadena sin necesidad de demostrarla (por eso decimos que la notación de
+ Leibniz tiene un gran valor heurístico).
+ Mi consejo es el siguiente: puedes usar la notación de Leibniz siempre
+ que te ayude en lo cálculos, pero no debes dejarte llevar por la notación
+ sino que debes entender lo que estás haciendo en cada momento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+ Sabiendo que 
+\begin_inset Formula $y=\sen x$
+\end_inset
+
+ y 
+\begin_inset Formula $x=\cos t$
+\end_inset
+
+, se pide calcular la derivada de 
+\begin_inset Formula $y$
+\end_inset
+
+ con respecto a 
+\begin_inset Formula $t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Lo que nos piden es calcular la derivada de la función compuesta 
+\begin_inset Formula $h(t)=\sen(\cos t)$
+\end_inset
+
+.
+ Aquí 
+\begin_inset Formula $g(x)=\sen x$
+\end_inset
+
+, 
+\begin_inset Formula $f(t)=\cos t$
+\end_inset
+
+.
+ Tenemos que 
+\begin_inset Formula 
+\[
+h\tl(t)=g\tl(f(t))f\tl(t)=-\cos(\cos t)\sen t
+\]
+
+\end_inset
+
+Al estilo Leibniz: 
+\begin_inset Formula 
+\[
+\frac{\df{y}}{\df{t}}=\frac{\df{y}}{\df{x}}\frac{\df{x}}{\df{t}}=\cos x(-\sen t)=-\cos x\sen t
+\]
+
+\end_inset
+
+Pero esta igualdad debe ser función de 
+\begin_inset Formula $t$
+\end_inset
+
+ por lo que hay que sustituir 
+\begin_inset Formula $x=\cos t$
+\end_inset
+
+ y se vuelve a obtener el resultado anterior.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Derivación implícita
+\end_layout
+
+\begin_layout Subsection
+Derivada de la la función inversa
+\end_layout
+
+\begin_layout Subsection
+Derivabilidad de las funciones Transcendentales
+\end_layout
+
+\begin_layout Subsubsection
+Derivabilidad de la exponencial y del logaritmo.
+ Criterio de equivalencia logarítmica
+\end_layout
+
+\begin_layout Standard
+Aceptaremos que las funciones logaritmo, exponencial, trigonométricas y
+ sus inversas, son derivables, pues ahora no sería fácil probarlo.
+ Más adelante dispondremos de herramientas para hacerlo con comodidad.
+\end_layout
+
+\begin_layout Standard
+La función exponencial 
+\begin_inset Formula $x\mapsto\exp(x)=\e^{x}$
+\end_inset
+
+, 
+\begin_inset Formula $(x\in\R)$
+\end_inset
+
+, y la función logaritmo natural 
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 1
+width ""
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $x\mapsto\log x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Formula $(x\in\R^{+})$
+\end_inset
+
+, son derivables en todo punto de sus respectivos intervalos de definición,
+ siendo: 
+\begin_inset Formula 
+\[
+(\exp)^{\prime}(x)=\exp x\ \ensuremath{\forall x\in\R),\ \ \ \ (\log)^{\prime}(x)=\frac{1}{x}\ \ensuremath{\forall x\in\R^{+})}}
+\]
+
+\end_inset
+
+En particular, se verifica que: 
+\begin_inset Formula 
+\[
+\dis{\lim_{x\to1}\frac{\log x}{x-1}=1;\quad\lim_{x\to0}\frac{\e^{x}-1}{x}=1;\quad\lim_{x\to0}\frac{\log(1+x)}{x}=1;\quad\lim_{x\to0}(1+x)^{1/x}=\e}
+\]
+
+\end_inset
+
+Pues los primeros tres límites son derivadas y el cuarto se reduce fácilmente
+ al tercero.
+ Deducimos también un importante resultado que permite resolver en muchos
+ casos las indeterminaciones 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $1^{\infty}$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ y 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $0\infty$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{teo}{Criterio de equivalencia logarítmica}{}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "zapato"
+
+\end_inset
+
+ Sea 
+\begin_inset Formula $a\en I$
+\end_inset
+
+, 
+\begin_inset Formula $f$
+\end_inset
+
+ y 
+\begin_inset Formula $g$
+\end_inset
+
+ funciones definidas en 
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 1
+width ""
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $I\setminus\{a\}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ Supongamos que 
+\begin_inset Formula $f(x)>0$
+\end_inset
+
+ para 
+\begin_inset Formula $x\en I\setminus\{a\}$
+\end_inset
+
+, y que 
+\begin_inset Formula $\dis\lim_{x\to a}f(x)=1$
+\end_inset
+
+.
+ Entonces se tiene que: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+i)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\dis\lim_{x\to a}f(x)^{g(x)}=\e^{L}\ $
+\end_inset
+
+ si, y sólo si, 
+\begin_inset Formula $\dis\lim_{x\to a}g(x)(f(x)-1)=L$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+ii)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\dis\lim_{x\to a}f(x)^{g(x)}=+\infinity\ $
+\end_inset
+
+ si, y sólo si, 
+\begin_inset Formula $\dis\lim_{x\to a}g(x)(f(x)-1)=+\infinity$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+iii)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\dis\lim_{x\to a}f(x)^{g(x)}=0\ $
+\end_inset
+
+ si, y sólo si, 
+\begin_inset Formula $\dis\lim_{x\to a}g(x)(f(x)-1)=-\infinity$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{teo}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dem
+\end_layout
+
+\end_inset
+
+ Sea 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+func
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ff
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Rp
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+la función dada por:
+\begin_inset Formula 
+\[
+\ff(x)=\frac{\log x}{x-1},\ (x\neq1),\ \ff(1)=1.
+\]
+
+\end_inset
+
+Nótese que 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ff
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+es una función continua.
+ Pongamos: 
+\begin_inset Formula 
+\[
+f(x)^{g(x)}=\exp\big(g(x)\log(f(x))\big)=\exp\big(g(x)(f(x)-1)\ff(f(x))\big)
+\]
+
+\end_inset
+
+Puesto que 
+\begin_inset Formula $\dis\lim_{x\to a}\ff(f(x))=1$
+\end_inset
+
+ se sigue que: 
+\begin_inset Formula 
+\[
+\lim_{x\to a}g(x)(f(x)-1)\ff(f(x))=L\en\R\cup\{+\infinity\}\cup\{-\infinity\}
+\]
+
+\end_inset
+
+si, y sólo si 
+\begin_inset Formula 
+\[
+\lim_{x\to a}g(x)(f(x)-1))=L\en\R\cup\{+\infinity\}\cup\{-\infinity\}
+\]
+
+\end_inset
+
+lo que prueba las afirmaciones hechas.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fin
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las afirmaciones que se hacen en la siguiente proposición son consecuencia
+ fácil de la regla de la cadena.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{proposicion}{}{}
+\end_layout
+
+\end_inset
+
+ Sean 
+\begin_inset Formula $f,g:I\rightarrow\R$
+\end_inset
+
+, 
+\begin_inset Formula $a\en I$
+\end_inset
+
+ y 
+\begin_inset Formula $g(x)>0$
+\end_inset
+
+ para todo 
+\begin_inset Formula $x\in I$
+\end_inset
+
+.
+ Se verifica entonces que:
+\begin_inset Newline newline
+\end_inset
+
+i) 
+\begin_inset Formula $f$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+ si, y sólo si, la función 
+\begin_inset Formula $h(x)=\exp(f(x))$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+ en cuyo caso 
+\begin_inset Formula $\ h^{\prime}(a)=f\tl(a)\exp(f(a))$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+ii) 
+\begin_inset Formula $g$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+ si, y sólo si, la función 
+\begin_inset Formula $\varphi(x)=\log(g(x))$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+ en cuyo caso 
+\begin_inset Formula ${\ {\displaystyle \varphi\tl(a)=\frac{g\tl(a)}{g(a)}.}}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+iii) Si 
+\begin_inset Formula $f$
+\end_inset
+
+ y 
+\begin_inset Formula $g$
+\end_inset
+
+ son derivables en 
+\begin_inset Formula $a$
+\end_inset
+
+ la función 
+\begin_inset Formula $\psi(x)=g(x)^{f(x)}$
+\end_inset
+
+ también es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+ y 
+\begin_inset Formula 
+\[
+\psi\tl(a)=\psi(a)\left(\log(g(a))f\tl(a)+f(a)\frac{g\tl(a)}{g(a)}\right)
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{proposicion}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Te recuerdo que una forma cómoda para trabajar con funciones de la forma
+ 
+\begin_inset Formula $\psi(x)=g(x)^{f(x)}$
+\end_inset
+
+ es escribirlas como exponenciales 
+\begin_inset Formula $\psi(x)=\exp\big(f(x)\log(g(x))\big)$
+\end_inset
+
+.
+\begin_inset VSpace -3mm*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Derivación logarítmica
+\end_layout
+
+\begin_layout Subsubsection
+Derivabilidad de las funciones trigonométricas
+\end_layout
+
+\begin_layout Standard
+Las funciones seno y coseno son derivables en todo punto verificándose que:
+ 
+\begin_inset Formula 
+\[
+\sen\tlo(x)=\cos x\quad\cos\tlo(x)=-\sen x.
+\]
+
+\end_inset
+
+En particular, se verifica que: 
+\begin_inset Formula 
+\[
+\lim_{x\to0}\dfrac{\sen x}{x}=1,\quad\lim_{x\to0}\dfrac{\cos x-1}{x}=0.
+\]
+
+\end_inset
+
+Las derivadas de las demás funciones trigonométricas se deducen con facilidad
+ a partir de las derivadas del seno y del coseno.
+ 
+\begin_inset VSpace -3mm*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Derivabilidad de las funciones hiperbólicas
+\end_layout
+
+\begin_layout Standard
+Las derivadas de las funciones hiperbólicas y de sus inversas se deducen
+ con facilidad de las derivadas del logaritmo y de la exponencial.
+ Se comprueba sin dificultad que 
+\begin_inset Formula 
+\[
+\senh\tlo(x)=\cosh x,\quad\cosh\tlo(x)=\senh x
+\]
+
+\end_inset
+
+Las derivadas de las funciones hiperbólicas inversas son muy útiles para
+ calcular primitivas de funciones en las que intervienen raíces cuadradas
+ de trinomios de segundo grado.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% after 
+\backslash
+
+\backslash
+: 
+\backslash
+hline or 
+\backslash
+cline{col1-col2} 
+\backslash
+cline{col3-col4} ...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+raisebox{1em}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\rule{0mm}{9mm}\dis\argsenh(x)=\log\left(x+\sqrt{x^{2}+1}\right)$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+raisebox{1em}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\rule{0mm}{9mm}\dis\argsenh\tlo(x)=\frac{1}{\sqrt{x^{2}+1}}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+raisebox{1em}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\rule{0mm}{9mm}\dis\argcosh(x)=\log\left(x+\sqrt{x^{2}-1}\right)\quad x>1$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+raisebox{1em}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\rule{0mm}{9mm}\dis\argcosh\tlo(x)=\frac{1}{\sqrt{x^{2}-1}}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+raisebox{1em}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\rule{0mm}{9mm}\dis\argcosech(x)=\argsenh\left(\dfrac{1}{x}\right)\quad x\neq0$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+raisebox{1em}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\rule{0mm}{9mm}\dis\argcosech\tlo(x)=\frac{-1}{\abs{x}\sqrt{x^{2}+1}}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+raisebox{1em}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\rule{0mm}{9mm}\dis\argsech(x)=\argcosh\left(\dfrac{1}{x}\right)\quad0<x<1$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+raisebox{1em}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\rule{0mm}{9mm}\dis\argsech\tlo(x)=\frac{-1}{x\sqrt{1-x^{2}}}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejercicios propuestos}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Empezaremos con algunas de las aplicaciones más sencillas y atractivas del
+ cálculo diferencial.
+ En esquema, se trata de lo siguiente: calcular la tasa de variación
+\emph default
+ de una magnitud cuando se conoce la tasa de variación de otra magnitud
+ relacionada con ella.
+ En este tipo de ejercicios la 
+\begin_inset Quotes eld
+\end_inset
+
+tasa de variación
+\begin_inset Quotes erd
+\end_inset
+
+ se interpreta como una derivada y, en la mayoría de los casos, basta usar
+ la regla de la cadena para obtener lo que se pide.
+ Hay que elegir las unidades de acuerdo con los datos del problema; por
+ ejemplo, si un volumen se mide en litros tendremos que medir longitudes
+ con decímetros.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+setcounter{propuesto}{172}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ ¿Con qué rapidez baja el nivel del agua contenida en un depósito cilíndrico
+ si estamos vaciándolo a razón de 3000 litros por minuto?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Se está llenando un globo de forma esférica con gas a razón de 50cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+/s.
+ Calcula la velocidad a la que está aumentando el radio, 
+\begin_inset Formula $r$
+\end_inset
+
+, del globo cuando su valor es 
+\begin_inset Formula $r=5$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Un punto 
+\begin_inset Formula $P$
+\end_inset
+
+ se mueve sobre la parte de la parábola 
+\begin_inset Formula $x=y^{2}$
+\end_inset
+
+ situada en el primer cuadrante de forma que su coordenada 
+\begin_inset Formula $x$
+\end_inset
+
+ está aumentando a razón de 5cm/sg.
+ Calcula la velocidad a la que el punto 
+\begin_inset Formula $P$
+\end_inset
+
+ se aleja del origen cuando 
+\begin_inset Formula $x=9$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Se está llenando un depósito cónico apoyado en su vértice a razón de 9
+ litros por segundo.
+ Sabiendo que la altura del depósito es de 10 metros y el radio de la tapadera
+ de 5 metros, ¿con qué rapidez se eleva el nivel del agua cuando ha alcanzado
+ una profundidad de 6 metros?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ El volumen de un cubo está aumentando a razón de 70cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+ por minuto.
+ ¿Con qué rapidez está aumentando el área cuando la longitud del lado es
+ de 12cm?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Un barco 
+\begin_inset Formula $A$
+\end_inset
+
+ se desplaza hacia el oeste con una velocidad de 20 millas por hora y otro
+ barco 
+\begin_inset Formula $B$
+\end_inset
+
+ avanza hacia el norte a 15 millas por hora.
+ Ambos se dirigen hacia un punto 
+\begin_inset Formula $O$
+\end_inset
+
+ del océano en el cual sus rutas se cruzan.
+ Sabiendo que las distancias iniciales de los barcos 
+\begin_inset Formula $A$
+\end_inset
+
+ y 
+\begin_inset Formula $B$
+\end_inset
+
+ al punto 
+\begin_inset Formula $O$
+\end_inset
+
+ son, respectivamente, de 15 y de 60 millas, se pregunta: ¿A qué velocidad
+ se acercan (o se alejan) los barcos entre sí cuando ha transcurrido una
+ hora? ¿Y cuando han transcurrido 2 horas? ¿En qué momento están más próximos
+ uno de otro?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Una bola esférica de hielo se está derritiendo de forma uniforme en toda
+ la superficie, a razón de 50cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+ por minuto.
+ ¿Con qué velocidad está disminuyendo el radio de la bola cuando este mide
+ 15cm?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Un hombre se aleja de una farola a razón de 1,5m/sg.
+ Sabiendo que la altura del hombre es de 1,8 metros y la de la farola de
+ 15 metros, calcula la velocidad a la que está aumentando la sombra del
+ hombre proyectada por la luz.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Un faro, cuya linterna gira a 8 revoluciones por minuto, se encuentra situado
+ a 3 kilómetros de una costa rectilínea.
+ Calcula la velocidad con que el rayo de luz recorre la orilla cuando el
+ ángulo de incidencia del rayo de luz con la línea de la costa es de 45
+ grados.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Los siguientes ejercicios son de cálculo de derivadas y de tangentes y normales
+ a distintas curvas.
+ Cuando en un ejercicio intervienen parámetros, debes expresar las soluciones
+ de la forma más sencilla posible.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Calcula 
+\begin_inset Formula $(f\circ g)^{\prime}(x)$
+\end_inset
+
+ en el valor indicado de 
+\begin_inset Formula $x$
+\end_inset
+
+ en los siguientes casos: 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\dis{f(x)=\frac{2x}{x^{2}+1},\quad g(x)=10x^{2}+x+1,\quad x=0}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\dis{f(x)=\left(\frac{x-1}{x+1}\right)^{2},\quad g(x)=\frac{1}{x^{2}}-1,\quad x=-1}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Calcula en cada caso el valor de 
+\begin_inset Formula $a$
+\end_inset
+
+ y 
+\begin_inset Formula $b$
+\end_inset
+
+ en función de 
+\begin_inset Formula $c$
+\end_inset
+
+, para que exista la derivada en el punto 
+\begin_inset Formula $c$
+\end_inset
+
+ de cada una de las siguientes funciones: 
+\begin_inset Formula 
+\[
+f(x)=\left\{ \begin{array}{ll}
+x^{2}, & x\le c\\
+ax+b, & x>c
+\end{array}\right.\ \ f(x)=\left\{ \begin{array}{ll}
+\dfrac{1}{\abs{x}}, & \abs{x}>c\\
+a+bx^{2}, & \abs{x}\le c
+\end{array}\right.\ \ f(x)=\left\{ \begin{array}{ll}
+\cos x, & x\le c\\
+ax+b, & x>c
+\end{array}\right.
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Supongamos que 
+\begin_inset Formula $f$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+, 
+\begin_inset Formula $g$
+\end_inset
+
+ es continua en 
+\begin_inset Formula $a$
+\end_inset
+
+ y 
+\begin_inset Formula $f(a)=0$
+\end_inset
+
+.
+ Prueba que 
+\begin_inset Formula $fg$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ ¿Es cierta la igualdad 
+\begin_inset Formula ${\displaystyle f\tl(a)=\lim_{t\to a}\dfrac{f(a+t)-f(a-t)}{2t}}$
+\end_inset
+
+? Justifica tu respuesta.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Supongamos que las funciones 
+\begin_inset Formula $f$
+\end_inset
+
+ y 
+\begin_inset Formula $g$
+\end_inset
+
+ y sus derivadas tienen los siguientes valores en 
+\begin_inset Formula $x=2$
+\end_inset
+
+ y 
+\begin_inset Formula $x=3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f\tl\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g\tl\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1}{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2\pi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Calcular las derivadas de las siguientes funciones en los valores dados
+ de 
+\begin_inset Formula $x$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a)
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $f(x)g(x),\quad x=3\qquad\quad$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b)
+\begin_inset Formula $\ f(x)/g(x),\quad x=3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+c)
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $f(g(x)),\quad x=2$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+d)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\sqrt{\rule{0mm}{3.5mm}(f(x))^{2}+(g(x))^{2}},\quad x=2$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Supongamos que las funciones 
+\begin_inset Formula $f$
+\end_inset
+
+ y 
+\begin_inset Formula $g$
+\end_inset
+
+ y sus derivadas tienen los valores que se indican en la tabla.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f\tl\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g\tl\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Calcula una tabla análoga para las funciones 
+\begin_inset Formula $f\circ g$
+\end_inset
+
+ y 
+\begin_inset Formula $g\circ f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Calcula directamente, aplicando la definición, la derivada de 
+\begin_inset Formula $f(x)=x^{3}$
+\end_inset
+
+ en un punto genérico 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Calcula directamente, aplicando la definición, la derivada de 
+\begin_inset Formula $f(x)=\sqrt{x+7}$
+\end_inset
+
+ en el punto 
+\begin_inset Formula $a=-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Supongamos que 
+\begin_inset Formula $f$
+\end_inset
+
+ es una función que verifica una desigualdad del tipo 
+\begin_inset Formula $\abs{f(x)}\le\abs{x}^{r}$
+\end_inset
+
+ en algún intervalo abierto que contiene a cero, donde 
+\begin_inset Formula $r>1$
+\end_inset
+
+.
+ Prueba que 
+\begin_inset Formula $f$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Sea 
+\begin_inset Formula $f$
+\end_inset
+
+ una función tal que 
+\begin_inset Formula $f(x+h)=f(x)+3xh+h^{2}-2h$
+\end_inset
+
+ para todos 
+\begin_inset Formula $x,h\en\R$
+\end_inset
+
+.
+ Calcula 
+\begin_inset Formula $f\tl(0)$
+\end_inset
+
+ y 
+\begin_inset Formula $f\tl(2)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Calcula la derivada en todo punto de la función definida por 
+\begin_inset Formula 
+\[
+f(x)=\left\{ \begin{array}{ll}
+x^{2}\sen\dfrac{1}{x}, & x\neq0\\
+0, & x=0
+\end{array}\right.
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Desarrolla 
+\begin_inset Formula $(1+x)^{n}$
+\end_inset
+
+ por el binomio de Newton y deriva la igualdad resultante para probar las
+ igualdades siguientes: 
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}k\binom{n}{k}=n2^{n-1},\qquad\sum_{k=2}^{n}k(k-1)\binom{n}{k}=n(n-1)2^{n-2}
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Calcula los puntos en que la cúbica de ecuación 
+\begin_inset Formula $y=ax^{3}+bx^{2}+cx+d$
+\end_inset
+
+, donde 
+\begin_inset Formula $a,b,c,d$
+\end_inset
+
+ son constantes reales, tiene tangente horizontal.
+ Debes estudiar los distintos casos posibles.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Calcula un punto 
+\begin_inset Formula $c$
+\end_inset
+
+ por la condición de que la tangente a la parábola 
+\begin_inset Formula $f(x)=x^{2}+\alpha x+\beta$
+\end_inset
+
+ en el punto 
+\begin_inset Formula $(c,f(c))$
+\end_inset
+
+, sea paralela a la cuerda que une dos puntos dados 
+\begin_inset Formula $A=(a,f(a))$
+\end_inset
+
+ y 
+\begin_inset Formula $B=(b,f(b))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Calcula las ecuaciones de las rectas tangente y normal a una parábola 
+\begin_inset Formula $f(x)=ax^{2}+bx+c$
+\end_inset
+
+ en un punto genérico 
+\begin_inset Formula $(u,v)$
+\end_inset
+
+ de la misma.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Calcula las ecuaciones de las rectas tangente y normal a una hipérbola
+ de ecuación cartesiana 
+\begin_inset Formula $x^{2}-y^{2}=1$
+\end_inset
+
+, en un punto genérico 
+\begin_inset Formula $(u,v)$
+\end_inset
+
+ de la misma.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+propuesto
+\end_layout
+
+\end_inset
+
+ Calcula las ecuaciones de las rectas tangente y normal a una elipse de
+ ecuación 
+\begin_inset Formula 
+\[
+\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1
+\]
+
+\end_inset
+
+en un punto 
+\begin_inset Formula $(u,v)$
+\end_inset
+
+ de la misma.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejercicios propuestos}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejercicios resueltos}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ ¿Con qué rapidez baja el nivel del agua contenida en un depósito cilíndrico
+ si estamos vaciándolo a razón de 3000 litros por minuto?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ Sea 
+\begin_inset Formula $r$
+\end_inset
+
+ el radio del cilindro y 
+\begin_inset Formula $h$
+\end_inset
+
+ la altura medidos en decímetros.
+ Sea 
+\begin_inset Formula $V(t)$
+\end_inset
+
+ el volumen de agua, medido en litros (dcm
+\begin_inset Formula $^{3}$
+\end_inset
+
+), que hay en el cilindro en el tiempo 
+\begin_inset Formula $t$
+\end_inset
+
+ medido en minutos.
+ La información que nos dan es una tasa de variación 
+\begin_inset Formula 
+\[
+V(t+1)-V(t)=-3000\quad\textrm{litros por minuto}
+\]
+
+\end_inset
+
+En este tipo de ejercicios la tasa de variación se interpreta como una derivada:
+ 
+\begin_inset Formula $V\tl(t)=-3000$
+\end_inset
+
+.
+ Fíjate que 
+\begin_inset Formula $V(t+t_{0})-V(t_{0})\approxeq V\tl(t_{0})t$
+\end_inset
+
+, por lo que la interpretación es razonable.
+ El signo negativo de la derivada es obligado ya que el volumen disminuye
+ con el tiempo.
+ Como el radio es constante pero la altura del agua depende del tiempo,
+ tenemos 
+\begin_inset Formula 
+\[
+V(t)=\pi r^{2}h(t)
+\]
+
+\end_inset
+
+y deducimos 
+\begin_inset Formula 
+\[
+V\tl(t)=-3000=\pi r^{2}h\tl(t)
+\]
+
+\end_inset
+
+Por tanto 
+\begin_inset Formula 
+\[
+h\tl(t)=-\dfrac{3000}{\pi\,r^{2}}\quad\textrm{decímetros por minuto}
+\]
+
+\end_inset
+
+Si expresamos las medidas en metros, entonces 
+\begin_inset Formula $\,h\tl(t)=-\dfrac{3}{\pi r^{2}}$
+\end_inset
+
+ metros por minuto.
+\end_layout
+
+\begin_layout Standard
+Observa que lo que realmente hemos calculado es: 
+\begin_inset Formula 
+\[
+V(t+1)-V(t)=\pi r^{2}(h(t+1)-h(t))\quad\longrightarrow\quad h(t+1)-h(t)=\frac{V(t+1)-V(t)}{\pi r^{2}}=-\dfrac{3000}{\pi\,r^{2}}
+\]
+
+\end_inset
+
+que es la tasa de variación de la altura en un intervalo de 1 minuto.
+ Pero, como ya te he dicho, en estos ejercicios se identifica la tasa de
+ variación con una derivada, lo cual es, claro está, una aproximación.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ Un punto 
+\begin_inset Formula $P$
+\end_inset
+
+ se mueve sobre la parte de la parábola 
+\begin_inset Formula $\,x=y^{2}$
+\end_inset
+
+ situada en el primer cuadrante de forma que su coordenada 
+\begin_inset Formula $x$
+\end_inset
+
+ está aumentando a razón de 5cm/sg.
+ Calcular la velocidad a la que el punto 
+\begin_inset Formula $P$
+\end_inset
+
+ se aleja del origen cuando 
+\begin_inset Formula $x=9$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ Sean 
+\begin_inset Formula $(x(t),y(t))$
+\end_inset
+
+ las coordenadas, medidas en centímetros, del punto 
+\begin_inset Formula $P$
+\end_inset
+
+ en el instante 
+\begin_inset Formula $t$
+\end_inset
+
+ medido en segundos.
+ Nos dicen que 
+\begin_inset Formula $y(t)\geqslant0$
+\end_inset
+
+ y que 
+\begin_inset Formula $x(t)=y(t)^{2}$
+\end_inset
+
+.
+ La distancia del punto 
+\begin_inset Formula $P$
+\end_inset
+
+ al origen viene dada por 
+\begin_inset Formula $f(t)=\sqrt{x(t)^{2}+y(t)^{2}}$
+\end_inset
+
+, por lo que 
+\begin_inset Formula 
+\[
+f\tl(t)=\frac{x(t)x\tl(t)+y(t)y\tl(t)}{\sqrt{x(t)^{2}+y(t)^{2}}}
+\]
+
+\end_inset
+
+Lo que nos piden es 
+\begin_inset Formula $f\tl(t_{0})$
+\end_inset
+
+ sabiendo que 
+\begin_inset Formula $x(t_{0})=9$
+\end_inset
+
+.
+ En tal caso ha de ser 
+\begin_inset Formula $y(t_{0})=3$
+\end_inset
+
+.
+ También conocemos 
+\begin_inset Formula $x\tl(t)=5$
+\end_inset
+
+ (cm/sg).
+ Con ello es fácil deducir el valor de 
+\begin_inset Formula $y\tl(t_{0})=\dfrac{x\tl(t_{0})}{2y(t_{0})}=\dfrac{5}{6}$
+\end_inset
+
+.
+ Finalmente, 
+\begin_inset Formula 
+\[
+f\tl(t_{0})=\frac{x(t_{0})x\tl(t_{0})+y(t_{0})y\tl(t_{0})}{\sqrt{x(t_{0})^{2}+y(t_{0})^{2}}}=\frac{45+3(5/6)}{81+9}=\frac{95}{6\sqrt{10}}\ textrm{cm/sg}
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ Se está llenando un depósito cónico apoyado en su vértice a razón de 9
+ litros por segundo.
+ Sabiendo que la altura del depósito es de 10 metros y el radio de la tapadera
+ de 5 metros, ¿con qué rapidez se eleva el nivel del agua cuando ha alcanzado
+ una profundidad de 6 metros?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ Expresaremos todas las medidas en metros.
+ Si 
+\begin_inset Formula $V(t)$
+\end_inset
+
+ es el volumen de agua que hay en el depósito en el tiempo 
+\begin_inset Formula $t$
+\end_inset
+
+ medido en segundos, nos dicen que 
+\begin_inset Formula $V\tl(t)=\dfrac{9}{10^{3}}$
+\end_inset
+
+ m
+\begin_inset Formula $^{3}$
+\end_inset
+
+/sg.
+\begin_inset Float figure
+placement ht
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Frameless
+position "c"
+hor_pos "l"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "45text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset VSpace 0pt
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pdf/resuelto1.pdf
+	scale 80
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+captionsetup
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+,singlelinecheck=off,margin=1cm
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Depósito cónico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "l"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "55text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+ 
+\begin_inset VSpace -4pt
+\end_inset
+
+ Sabemos que 
+\begin_inset Formula $V(t)=\dfrac{1}{3}\pi\,r(t)^{2}h(t)$
+\end_inset
+
+ donde 
+\begin_inset Formula $h(t)$
+\end_inset
+
+ es la altura, medida desde el vértice, alcanzada por el agua en el tiempo
+ 
+\begin_inset Formula $t$
+\end_inset
+
+ y 
+\begin_inset Formula $r(t)$
+\end_inset
+
+ es el radio de la sección transversal del cono a la distancia 
+\begin_inset Formula $h(t)$
+\end_inset
+
+ desde el vértice.
+ Por semejanza de triángulos deducimos que 
+\begin_inset Formula $\,\dfrac{r}{R}=\dfrac{h}{H}\,$
+\end_inset
+
+, de donde, 
+\begin_inset Formula $r=r(t)=\dfrac{R}{H}h(t)=\dfrac{1}{2}h(t)$
+\end_inset
+
+.
+ Luego 
+\begin_inset Formula $V(t)=\dfrac{1}{12}\pi\,h(t)^{3}$
+\end_inset
+
+, y 
+\begin_inset Formula 
+\[
+V\tl(t)=\dfrac{9}{10^{3}}=\dfrac{\pi}{4}h(t)^{2}h\tl(t).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Luego, cuando 
+\begin_inset Formula $h(t_{0})=6$
+\end_inset
+
+, deducimos que 
+\begin_inset Formula $\dfrac{9}{10^{3}}=\dfrac{\pi}{4}36h\tl(t_{0})$
+\end_inset
+
+, esto es, 
+\begin_inset Formula $h\tl(t_{0})=\dfrac{1}{10^{3}\pi}\ \textrm{m/sg}\ \approxeq1,146\ \textrm{m/h}$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ El volumen de un cubo está aumentando a razón de 70
+\begin_inset space \thinspace{}
+\end_inset
+
+cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+ por minuto.
+ ¿Con qué rapidez está aumentando el área cuando la longitud del lado es
+ de 12
+\begin_inset space \thinspace{}
+\end_inset
+
+cm?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ Sea 
+\begin_inset Formula $V(t)$
+\end_inset
+
+ el volumen del cubo, medido en centímetros cúbicos, en el tiempo 
+\begin_inset Formula $t$
+\end_inset
+
+, medido en minutos.
+ Si 
+\begin_inset Formula $L(t)$
+\end_inset
+
+ es la longitud en centímetros del lado en el tiempo 
+\begin_inset Formula $t$
+\end_inset
+
+, tenemos que 
+\begin_inset Formula $V(t)=L(t)^{3}$
+\end_inset
+
+, de donde, 
+\begin_inset Formula $L\tl(t)=\dfrac{V\tl(t)}{3L(t)^{2}}$
+\end_inset
+
+.
+ Como nos dicen que 
+\begin_inset Formula $V\tl(t)=70$
+\end_inset
+
+ cm/min, deducimos que cuando 
+\begin_inset Formula $L(t_{0})=12$
+\end_inset
+
+, 
+\begin_inset Formula $L\tl(t_{0})=\dfrac{70}{3(12)^{2}}$
+\end_inset
+
+.
+ El área del cubo viene dada por 
+\begin_inset Formula $S(t)=6L(t)^{2}$
+\end_inset
+
+, deducimos que 
+\begin_inset Formula $\,S\tl(t_{0})=12L(t_{0})L\tl(t_{0})=\dfrac{70}{3}$
+\end_inset
+
+ cm
+\begin_inset Formula $^{2}$
+\end_inset
+
+/min.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ Un barco 
+\begin_inset Formula $A$
+\end_inset
+
+ se desplaza hacia el oeste con una velocidad de 20 millas por hora y otro
+ barco 
+\begin_inset Formula $B$
+\end_inset
+
+ avanza hacia el norte a 15 millas por hora.
+ Ambos se dirigen hacia un punto 
+\begin_inset Formula $O$
+\end_inset
+
+ del océano en el cual sus rutas se cruzan.
+ Sabiendo que las distancias iniciales de los barcos 
+\begin_inset Formula $A$
+\end_inset
+
+ y 
+\begin_inset Formula $B$
+\end_inset
+
+ al punto 
+\begin_inset Formula $O$
+\end_inset
+
+ son, respectivamente, de 15 y de 60 millas, se pregunta: ¿A qué velocidad
+ se acercan (o se alejan) los barcos entre sí cuando ha transcurrido una
+ hora? Y cuando han transcurrido 2 horas? ?`En qué momento están más próximos
+ uno de otro?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ Tomamos el punto 
+\begin_inset Formula $O$
+\end_inset
+
+ como origen de coordenadas, tal como se indica en la figura.
+ Llamemos 
+\begin_inset Formula $x(t)$
+\end_inset
+
+ a la distancia, medida en millas, que separa el barco 
+\begin_inset Formula $A$
+\end_inset
+
+ de 
+\begin_inset Formula $O$
+\end_inset
+
+.
+ Nos dicen que 
+\begin_inset Formula $x(0)=15$
+\end_inset
+
+ y 
+\begin_inset Formula $x\tl(t)=-20$
+\end_inset
+
+ millas por hora.
+ Observa que como la función 
+\begin_inset Formula $x(t)$
+\end_inset
+
+ es decreciente su derivada debe ser negativa.
+ Análogamente, sea 
+\begin_inset Formula $y(t)$
+\end_inset
+
+ la distancia que separa al barco 
+\begin_inset Formula $B$
+\end_inset
+
+ de 
+\begin_inset Formula $O$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement ht
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Frameless
+position "c"
+hor_pos "l"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "40text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pdf/resuelto2.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+captionsetup
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+,singlelinecheck=off,margin=1cm
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cruce de barcos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "l"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "55text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+ 
+\begin_inset VSpace -4pt
+\end_inset
+
+ Nos dicen que 
+\begin_inset Formula $y(0)=60$
+\end_inset
+
+ y 
+\begin_inset Formula $y\tl(t)=-15$
+\end_inset
+
+ millas por hora.
+ La distancia entre los dos barcos viene dada por 
+\begin_inset Formula $\,f(t)=\sqrt{x(t)^{2}+y(t)^{2}}$
+\end_inset
+
+.
+ Tenemos 
+\begin_inset Formula 
+\[
+f\tl(t)=\frac{x(t)x\tl(t)+y(t)y\tl(t)}{\sqrt{x(t)^{2}+y(t)^{2}}}
+\]
+
+\end_inset
+
+Cuando ha pasado una hora 
+\begin_inset Formula $x(1)=15-20=-5$
+\end_inset
+
+, 
+\begin_inset Formula $y(1)=60-15=45$
+\end_inset
+
+.
+ Deducimos que 
+\begin_inset Formula 
+\[
+f\tl(1)=\frac{(-5)(-20)+45(-15)}{\sqrt{(-5)^{2}+(45)^{2}}}=-\frac{115}{\sqrt{82}}\ textrm{millas/h}
+\]
+
+\end_inset
+
+Donde el sigo negativo indica que se están acercando (la distancia entre
+ ellos está disminuyendo).
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 10mm*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando han pasado dos horas 
+\begin_inset Formula $x(2)=15-40=-25$
+\end_inset
+
+, 
+\begin_inset Formula $y(2)=60-30=30$
+\end_inset
+
+.
+ Deducimos que 
+\begin_inset Formula 
+\[
+f\tl(2)=\frac{(-25)(-20)+30(-15)}{\sqrt{(-25)^{2}+(30)^{2}}}=\frac{10}{\sqrt{61}}\ textrm{millas/h}
+\]
+
+\end_inset
+
+Donde el sigo positivo indica que se están alejando (la distancia entre
+ ellos está aumentando).
+\end_layout
+
+\begin_layout Standard
+La distancia entre los dos barcos es mínima cuando la derivada es nula (fíjate
+ que la derivada pasa de negativa a positiva).
+ La condición 
+\begin_inset Formula $\,f\tl(t_{0})=0$
+\end_inset
+
+ equivale a la igualdad 
+\begin_inset Formula $-20\,x(t_{0})-15y(t_{0})=0$
+\end_inset
+
+.
+ Sustituyendo en ella 
+\begin_inset Formula $x(t_{0})=15-20\,t_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\,y(t_{0})=60-15\,t_{0}$
+\end_inset
+
+, obtenemos 
+\begin_inset Formula $t_{0}=\frac{48}{25}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $x(\frac{48}{25})=-\frac{117}{5}$
+\end_inset
+
+, 
+\begin_inset Formula $y(\frac{48}{25})=\frac{156}{5}$
+\end_inset
+
+.
+ La distancia mínima a que se cruzan los barcos es 
+\begin_inset Formula $f(\frac{48}{25})=39$
+\end_inset
+
+ millas.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ Una bola esférica de hielo se está derritiendo de forma uniforme en toda
+ la superficie, a razón de 50
+\begin_inset space \thinspace{}
+\end_inset
+
+cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+ por minuto.
+ ?`Con qué velocidad está disminuyendo el radio de la bola cuando este mide
+ 15
+\begin_inset space \thinspace{}
+\end_inset
+
+cm?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ El volumen de la bola en el instante 
+\begin_inset Formula $t$
+\end_inset
+
+ minutos viene dado por 
+\begin_inset Formula $\,V(t)=\dfrac{4}{3}\pi\,r(t)^{3}$
+\end_inset
+
+ centímetros cúbicos.
+ Nos dicen que 
+\begin_inset Formula $\,V\tl(t)=-50$
+\end_inset
+
+.
+ Deducimos que 
+\begin_inset Formula $-50=4\,\pi\,r(t)^{2}r\tl(t)$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula $r(t_{0})=15$
+\end_inset
+
+, se sigue que 
+\begin_inset Formula 
+\[
+r\tl(t_{0})=\dfrac{-50}{4\,\pi(15)^{2}}=-\dfrac{1}{18\,\pi}\ \ textrm{cm/min}
+\]
+
+\end_inset
+
+La derivada es negativa, como debe ser, ya que el radio está disminuyendo.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ Calcula 
+\begin_inset Formula $(f\circ g)^{\prime}(x)$
+\end_inset
+
+ en el valor indicado de 
+\begin_inset Formula $x$
+\end_inset
+
+ en los siguientes casos: 
+\end_layout
+
+\begin_layout Standard
+[a)] 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\dis{f(x)=\frac{2x}{x^{2}+1},\quad g(x)=10x^{2}+x+1,\quad x=0}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\dis{f(x)=\left(\frac{x-1}{x+1}\right)^{2},\quad g(x)=\frac{1}{x^{2}}-1,\quad x=-1}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ Este ejercicio lo puedes hacer de dos formas: calculando en caso la función
+ compuesta 
+\begin_inset Formula $(f\circ g)(x)$
+\end_inset
+
+ y derivándola, o aplicando la regla de la cadena sin necesidad de calcular
+ previamente la función compuesta.
+ Esta segunda forma es mucho más rápida.
+ Las derivadas que nos piden son las siguientes.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+a)
+\emph default
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $f\tl(x)=\dfrac{2-x^{2}}{(x^{2}+1)^{2}},\ g\tl(x)=20x+1\;\longrightarrow\;(f\circ g)^{\prime}(0)=f\tl(g(0))g\tl(0)=f\tl(1)g\tl(0)=\dfrac{1}{4}.$
+\end_inset
+
+ El otro apartado se hace igual.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ Calcula en cada caso el valor de 
+\begin_inset Formula $a$
+\end_inset
+
+ y 
+\begin_inset Formula $b$
+\end_inset
+
+ en función de 
+\begin_inset Formula $c$
+\end_inset
+
+, para que exista la derivada en el punto 
+\begin_inset Formula $c$
+\end_inset
+
+ de cada una de las siguientes funciones: 
+\begin_inset Formula 
+\[
+f(x)=\left\{ \begin{array}{ll}
+x^{2}, & x\le c\\
+ax+b, & x>c
+\end{array}\right.\ \ f(x)=\left\{ \begin{array}{ll}
+\dfrac{1}{\abs{x}}, & \abs{x}>c\\
+a+bx^{2}, & \abs{x}\le c
+\end{array}\right.\ \ f(x)=\left\{ \begin{array}{ll}
+\cos x, & x\le c\\
+ax+b, & x>c
+\end{array}\right.
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ Consideremos la segunda de las funciones anteriores.
+ Tenemos que 
+\begin_inset Formula $f(x)=\frac{1}{\abs{x}}$
+\end_inset
+
+ para 
+\begin_inset Formula $x<-c$
+\end_inset
+
+ o 
+\begin_inset Formula $x>c$
+\end_inset
+
+, y 
+\begin_inset Formula $f(x)=a+bx^{2}$
+\end_inset
+
+ para 
+\begin_inset Formula $-c\le x\le c$
+\end_inset
+
+.
+ Imponemos primero la condición de que 
+\begin_inset Formula $f$
+\end_inset
+
+ sea continua en 
+\begin_inset Formula $c$
+\end_inset
+
+.
+ Tenemos que 
+\begin_inset Formula $f(c)=a+bc^{2}=\limlft{f(x)}{x}{c}$
+\end_inset
+
+, y 
+\begin_inset Formula $\limrgt{f(x)}{x}{c}=\frac{1}{\abs{c}}=\frac{1}{c}$
+\end_inset
+
+.
+ Debemos imponer la condición 
+\begin_inset Formula $a+bc^{2}=\frac{1}{c}$
+\end_inset
+
+.
+ Impondremos también la condición de que los límites laterales en 
+\begin_inset Formula $c$
+\end_inset
+
+ de la derivada de 
+\begin_inset Formula $f$
+\end_inset
+
+ coincidan.
+ Para 
+\begin_inset Formula $x>c$
+\end_inset
+
+ es 
+\begin_inset Formula $f(x)=\frac{1}{x}$
+\end_inset
+
+, por lo que 
+\begin_inset Formula 
+\[
+\limrgt{f\tl(x)}{x}{c}=\limrgt{-\frac{1}{x^{2}}}{x}{c}=-\frac{1}{c^{2}}.
+\]
+
+\end_inset
+
+Análogamente 
+\begin_inset Formula 
+\[
+\limlft{f\tl(x)}{x}{c}=\limlft{2bx}{x}{c}=2bc.
+\]
+
+\end_inset
+
+Debemos imponer la condición 
+\begin_inset Formula $2bc=-\frac{1}{c^{2}}$
+\end_inset
+
+.
+ Deducimos que 
+\begin_inset Formula $b=-\frac{1}{2c^{3}}$
+\end_inset
+
+ y 
+\begin_inset Formula $a=-bc^{2}+\frac{1}{c}=\frac{3}{2c}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Observa que las condiciones que hemos obtenido son necesarias para que 
+\begin_inset Formula $f$
+\end_inset
+
+ sea derivable en 
+\begin_inset Formula $c$
+\end_inset
+
+.
+ Pero dichas condiciones también son suficientes como consecuencia de la
+ proposición 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:dernodisc"
+
+\end_inset
+
+.
+ No es necesario, por ello, que comprobemos que, con los valores de 
+\begin_inset Formula $a$
+\end_inset
+
+ y de 
+\begin_inset Formula $b$
+\end_inset
+
+ obtenidos antes, efectivamente 
+\begin_inset Formula $f$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Las otras dos funciones se estudian de la misma forma.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ ¿Es cierta la igualdad 
+\begin_inset Formula ${\displaystyle f\tl(a)=\lim_{t\to a}\dfrac{f(a+t)-f(a-t)}{2t}}$
+\end_inset
+
+? Justifica tu respuesta.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ Tenemos que 
+\begin_inset Formula 
+\begin{align*}
+\dfrac{f(a+t)-f(a-t)}{2t} & =\dfrac{f(a+t)-f(a)}{2t}+\dfrac{f(a)-f(a-t)}{2t}=\\
+ & =\dfrac{1}{2}\dfrac{f(a+t)-f(a)}{t}+\dfrac{1}{2}\dfrac{f(a-t)-f(a)}{-t}
+\end{align*}
+
+\end_inset
+
+Y basta tener en cuenta que: 
+\begin_inset Formula 
+\[
+\lim_{t\to a}\dfrac{f(a+t)-f(a)}{t}=\lim_{t\to a}\dfrac{f(a-t)-f(a)}{-t}=f\tl(a)
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ Supongamos que las funciones 
+\begin_inset Formula $f$
+\end_inset
+
+ y 
+\begin_inset Formula $g$
+\end_inset
+
+ y sus derivadas tienen los siguientes valores en 
+\begin_inset Formula $x=2$
+\end_inset
+
+ y 
+\begin_inset Formula $x=3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f\tl\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g\tl\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1}{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2\pi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Calcular las derivadas de las siguientes funciones en los valores dados
+ de 
+\begin_inset Formula $x$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a)
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $f(x)g(x),\quad x=3\qquad\quad$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b)
+\begin_inset Formula $\ f(x)/g(x),\quad x=3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+c)
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $f(g(x)),\quad x=2$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+d)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\sqrt{(f(x))^{2}+(g(x))^{2}},\quad x=2$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ a)
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $(fg)\tl(3)=f\tl(3)g(3)+f(3)g\tl(3)=-8\pi+15$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+b)
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $\left(\dfrac{f}{g}\right)^{\!\prime}(3)=\dfrac{f\tl(3)g(3)-f(3)g\tl(3)}{g(3)^{2}}=\dfrac{-8\pi-15}{16}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+c)
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $(f\circ g)\tl(2)=f\tl(g(2))g\tl(2)=f\tl(2)g\tl(2)=-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+d)
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $h(x)=\dis\sqrt{(f(x))^{2}+(g(x))^{2}}$
+\end_inset
+
+, 
+\begin_inset Formula $h\tl(2)=\dfrac{f\tl(2)f(2)+g\tl(2)g(2)}{\sqrt{(f(x))^{2}+(g(x))^{2}}}=-\dfrac{5}{3\sqrt{17}}$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ Supongamos que 
+\begin_inset Formula $f$
+\end_inset
+
+ es una función que verifica una desigualdad del tipo 
+\begin_inset Formula $\abs{f(x)}\le\abs{x}^{r}$
+\end_inset
+
+ en algún intervalo abierto que contiene a cero, donde 
+\begin_inset Formula $r>1$
+\end_inset
+
+.
+ Prueba que 
+\begin_inset Formula $f$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ La desigualdad 
+\begin_inset Formula $\abs{f(x)}\le\abs{x}^{r}$
+\end_inset
+
+, con 
+\begin_inset Formula $r>0$
+\end_inset
+
+, implica que 
+\begin_inset Formula $f(0)=0$
+\end_inset
+
+.
+ Tenemos que 
+\begin_inset Formula 
+\[
+\modulo{\dfrac{f(x)-f(0)}{x-0}}=\modulo{\dfrac{f(x)}{x}}\le\abs{x}^{r-1}
+\]
+
+\end_inset
+
+Como 
+\begin_inset Formula $r-1>0$
+\end_inset
+
+, se tiene que 
+\begin_inset Formula $\Lim{\abs{x}^{r-1}}{x}{0}=0$
+\end_inset
+
+, lo que, por la desigualdad anterior, implica que 
+\begin_inset Formula 
+\[
+\lim_{x\to0}\modulo{\dfrac{f(x)-f(0)}{x-0}}=0\quad\Longleftrightarrow\quad\lim_{x\to0}\dfrac{f(x)-f(0)}{x-0}=0.
+\]
+
+\end_inset
+
+Luego 
+\begin_inset Formula $f$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $0$
+\end_inset
+
+ y 
+\begin_inset Formula $f\tl(0)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ Calcula la derivada en todo punto de la función definida por 
+\begin_inset Formula 
+\[
+f(x)=\left\{ \begin{array}{ll}
+x^{2}\sen\dfrac{1}{x}, & x\neq0\\
+0, & x=0
+\end{array}\right.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ Para 
+\begin_inset Formula $x\neq0$
+\end_inset
+
+ se verifica que 
+\begin_inset Formula $\abs{f(x)}=\modulo{x^{2}\sen\dfrac{1}{x}}\le x^{2}$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $f(0)=0$
+\end_inset
+
+, resulta que 
+\begin_inset Formula $\abs{f(x)}\le x^{2}$
+\end_inset
+
+ para todo 
+\begin_inset Formula $x\in\R$
+\end_inset
+
+.
+ El ejercicio anterior implica que 
+\begin_inset Formula $f$
+\end_inset
+
+ es derivable en 
+\begin_inset Formula $0$
+\end_inset
+
+ con 
+\begin_inset Formula $f\tl(0)=0$
+\end_inset
+
+.
+ En los intervalos 
+\begin_inset Formula $]-\infty,0[$
+\end_inset
+
+ y 
+\begin_inset Formula $]0,+\infty[$
+\end_inset
+
+ la función dada es derivable por ser producto y composición de funciones
+ derivables en dichos intervalos, y podemos calcular su derivada con las
+ reglas de derivación usuales: 
+\begin_inset Formula 
+\[
+f\tl(x)=2x\sen\dfrac{1}{x}-\cos\dfrac{1}{x}
+\]
+
+\end_inset
+
+Observa que esta derivada tiene una discontinuidad esencial en 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ Calcula los puntos en que la cúbica 
+\begin_inset Formula $y=ax^{3}+bx^{2}+cx+d$
+\end_inset
+
+, donde 
+\begin_inset Formula $a,b,c,d$
+\end_inset
+
+ son constantes reales, tiene tangente horizontal.
+ Debes estudiar los distintos casos posibles.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ La tangente es horizontal en los puntos donde se anula la derivada, esto
+ es, en las soluciones reales de la ecuación 
+\begin_inset Formula $\,3ax^{2}+2bx+c=0$
+\end_inset
+
+, las cuales viene dadas por 
+\begin_inset Formula 
+\[
+\dfrac{-2b\pm\sqrt{4b^{2}-12ac}}{6a}
+\]
+
+\end_inset
+
+Si el discriminante 
+\begin_inset Formula $4b^{2}-12ac<0$
+\end_inset
+
+ no hay ninguna solución real.
+ Si 
+\begin_inset Formula $4b^{2}-12ac=0$
+\end_inset
+
+ hay una solución real doble (en la que también se anula la derivada segunda
+ pero no se anula la derivada tercera, es un punto de inflexión).
+ Si 
+\begin_inset Formula $4b^{2}-12ac>0$
+\end_inset
+
+ hay dos puntos de tangencia horizontal.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ Calcula un punto 
+\begin_inset Formula $c$
+\end_inset
+
+ por la condición de que la tangente a la parábola 
+\begin_inset Formula $f(x)=x^{2}+\alpha x+\beta$
+\end_inset
+
+ en el punto 
+\begin_inset Formula $(c,f(c))$
+\end_inset
+
+, sea paralela a la cuerda que une dos puntos dados 
+\begin_inset Formula $A=(a,f(a))$
+\end_inset
+
+ y 
+\begin_inset Formula $B=(b,f(b))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ Dos rectas en el plano son paralelas cuando tienen igual pendiente.
+ Debemos calcular 
+\begin_inset Formula $c$
+\end_inset
+
+ por la condición 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scalefont
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+.9
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{f(b)-f(a)}{b-a}=f\tl(c)\ \Longleftrightarrow frac{b^{2}-a^{2}+\alpha(b-a)}{b-a}=2c+\alpha\ \Longleftrightarrow\ b+a+\alpha=2c+\alpha\ \Longleftrightarrow\ c=\frac{a+b}{2}
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ Calcula las ecuaciones de las rectas tangente y normal a una hipérbola
+ de ecuación cartesiana 
+\begin_inset Formula $y^{2}-x^{2}=1$
+\end_inset
+
+, en un punto genérico 
+\begin_inset Formula $(u,v)$
+\end_inset
+
+ de la misma.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ Podemos expresar 
+\begin_inset Formula $y$
+\end_inset
+
+ como función de 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Tenemos que 
+\begin_inset Formula $y^{2}=1+x^{2}$
+\end_inset
+
+, lo que da lugar a dos curvas 
+\begin_inset Formula $f(x)=\sqrt{1+x^{2}}$
+\end_inset
+
+ (la parte de la hipérbola en el semiplano superior 
+\begin_inset Formula $y>0$
+\end_inset
+
+) y 
+\begin_inset Formula $g(x)=-\sqrt{1+x^{2}}$
+\end_inset
+
+ (la parte de la hipérbola en el semiplano inferior 
+\begin_inset Formula $y<0$
+\end_inset
+
+).
+ La tangente en un punto 
+\begin_inset Formula $(u,v)$
+\end_inset
+
+ con 
+\begin_inset Formula $v=f(u)>0$
+\end_inset
+
+ es la recta de ecuación: 
+\begin_inset Formula 
+\[
+y=f(u)+f\tl(u)(x-u)=v+\dfrac{u}{\sqrt{1+u^{2}}}(x-u)=v+\dfrac{ux-u^{2}}{v}\ \Longleftrightarrow\ vy-ux=1
+\]
+
+\end_inset
+
+La tangente en un punto 
+\begin_inset Formula $(u,v)$
+\end_inset
+
+ con 
+\begin_inset Formula $v=g(u)<0$
+\end_inset
+
+ es la recta de ecuación: 
+\begin_inset Formula 
+\[
+y=g(u)+g\tl(u)(x-u)=v-\dfrac{u}{\sqrt{1+u^{2}}}(x-u)=v+\dfrac{ux-u^{2}}{v}\ \Longleftrightarrow\ vy-ux=1
+\]
+
+\end_inset
+
+En cualquier caso se obtiene la recta de ecuación 
+\begin_inset Formula $vy-ux=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Podemos proceder también sin necesidad de calcular 
+\begin_inset Formula $y$
+\end_inset
+
+ en función de 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Para ello, basta observar que si expresamos 
+\begin_inset Formula $y$
+\end_inset
+
+ en función de 
+\begin_inset Formula $x$
+\end_inset
+
+ y obtenemos 
+\begin_inset Formula $y=\ff(x)$
+\end_inset
+
+ entonces se tiene que 
+\begin_inset Formula $\ff(x)^{2}-x^{2}=1$
+\end_inset
+
+.
+ Podemos derivar ahora la función 
+\begin_inset Formula $x\mapsto\ff(x)^{2}-x^{2}$
+\end_inset
+
+ con respecto a 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ La derivada es 
+\begin_inset Formula $2\ff(x)\ff\tl(x)-2x$
+\end_inset
+
+ y, como dicha función es constante igual a 1, su derivada debe ser nula.
+ Luego 
+\begin_inset Formula 
+\[
+2\ff(x)\ff\tl(x)-2x=0\quad\Longleftrightarrow\quad\ff\tl(x)=\frac{x}{\ff(x)}
+\]
+
+\end_inset
+
+Por tanto la derivada en un punto 
+\begin_inset Formula $u$
+\end_inset
+
+ viene dada por 
+\begin_inset Formula $\ff\tl(u)=\frac{u}{v}$
+\end_inset
+
+ donde 
+\begin_inset Formula $v=\ff(u)$
+\end_inset
+
+.
+ En consecuencia, la tangente en el punto 
+\begin_inset Formula $(u,v)$
+\end_inset
+
+ es la recta de ecuación: 
+\begin_inset Formula 
+\[
+y=v+\ff\tl(u)(x-u)=v+\frac{u}{v}(x-u)=v+\frac{ux-u^{2}}{v}\ \Longleftrightarrow\ vy-ux=1
+\]
+
+\end_inset
+
+Es decir, de esta forma, sin necesidad de calcular de forma explícita 
+\begin_inset Formula $\ff(x)$
+\end_inset
+
+ (que da lugar a las dos funciones anteriores 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ y 
+\begin_inset Formula $g(x)$
+\end_inset
+
+), podemos calcular la recta tangente sin necesidad de considerar cada caso
+ por separado.
+\end_layout
+
+\begin_layout Standard
+Para que te convenzas de que esta forma de proceder es útil, considera la
+ hipérbola
+\begin_inset Newline linebreak
+\end_inset
+
+
+\begin_inset Formula $x^{2}-y^{2}=1$
+\end_inset
+
+.
+ Si ahora expresas 
+\begin_inset Formula $y$
+\end_inset
+
+ como función de 
+\begin_inset Formula $x$
+\end_inset
+
+ obtendrás cuatro curvas: 
+\begin_inset Newline linebreak
+\end_inset
+
+
+\begin_inset Formula $y_{1}=\sqrt{x^{2}-1}$
+\end_inset
+
+ e 
+\begin_inset Formula $y_{2}=-\sqrt{x^{2}-1}$
+\end_inset
+
+ para (
+\begin_inset Formula $x>1$
+\end_inset
+
+), y 
+\begin_inset Formula $y_{3}=\sqrt{x^{2}-1}$
+\end_inset
+
+ e 
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 1
+width ""
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $y_{4}=-\sqrt{x^{2}-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ para (
+\begin_inset Formula $x<-1$
+\end_inset
+
+).
+ Para calcular la tangente en un punto 
+\begin_inset Formula $(u,v)$
+\end_inset
+
+ de dicha hipérbola no merece la pena considerar cada una de ellas por separado.
+ Razonando como antes, se tiene que de cualquier forma que expresemos 
+\begin_inset Formula $y=\ff(x)$
+\end_inset
+
+ por la condición de que 
+\begin_inset Formula $x^{2}-\ff(x)^{2}=1$
+\end_inset
+
+, la derivada viene dada por 
+\begin_inset Formula $\ff\tl(x)=x/\ff(x)$
+\end_inset
+
+.
+ Por tanto la ecuación de la recta tangente en 
+\begin_inset Formula $(u,v)$
+\end_inset
+
+ viene dada por: 
+\begin_inset Formula 
+\[
+y=v+\ff\tl(u)(x-u)=v+\frac{u}{v}(x-u)=v+\frac{ux-u^{2}}{v}\ \Longleftrightarrow\ ux-vy=1
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resuelto
+\end_layout
+
+\end_inset
+
+ Calcula las ecuaciones de las rectas tangente y normal a una elipse de
+ ecuación 
+\begin_inset Formula $\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}=1$
+\end_inset
+
+ en un punto 
+\begin_inset Formula $(u,v)$
+\end_inset
+
+ de la misma.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\end_layout
+
+\end_inset
+
+ Procediendo como en el ejercicio anterior debes obtener la recta de ecuación
+ 
+\begin_inset Formula 
+\[
+\frac{ux}{a^{2}}+\frac{vy}{b^{2}}=1
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hecho
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejercicios resueltos}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_body
+\end_document
