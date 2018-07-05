@@ -1,0 +1,3786 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/antalcides/Calculo/
+\textclass libro-matua
+\begin_preamble
+%\usepackage[utf8x]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+%\usepackage{makeidx}
+\usepackage{imakeidx}
+\makeindex[program=truexindy,options=-M texindy -L spanish -C utf8]
+%\usepackage[totoc]{idxlayout}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\graphicspath{{ps/}{logo/}{image/}{sections/Figures/}}
+%\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{fancyvrb}
+\usepackage{cancel}
+\raggedbottom %para que no distibuya los espacios verticales en una hoja
+\usepackage{pgf}
+\usepackage{mathrsfs}
+\usetikzlibrary{fit,shapes}
+\usepackage{mivenndiagram}
+\usepackage{tikz-cd}% diagramas commutativos
+\usetikzlibrary{matrix}
+\usetikzlibrary{intersections}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usepackage{zahlen}
+\usepackage{fixltx2e}
+\usepackage{mathtools}
+\usepackage{theoremref}
+\usepackage{scalefnt} % para escalar las fuentes
+\usepackage{psfrag}
+\usepackage{floatflt}
+\usepackage{marvosym}
+\MakeRobust{\eqref}
+\mathtoolsset{showonlyrefs=true,showmanualtags=true}
+\def\myref#1{\textcolor{ptctitle}{\thesection .\ref{#1}}}
+\usepackage[hmargin=2cm,bmargin=3cm,tmargin=4.5cm,centering]{geometry}
+\def\yy{\rowcolor{ptcbackground}}
+\def\yyy{\rowcolor{gray!50}}
+\def\xxx{\rowcolor{ptctitle!50}}
+\def\ccc{\cellcolor{ptctitle!50}}
+\usepackage{multirow}
+\def\maxwidth{8cm}
+% Length to control the \fancyheadoffset and the calculation of \headline
+% simultaneously
+\RequirePackage{hyperref}
+\hypersetup{
+             linktoc=all,
+             hidelinks,
+             pdfborder={0 0 0},
+            colorlinks=true,
+            linkcolor = ptctitle,
+            backref=true,
+            pagebackref=true,
+            hyperindex=true,
+            breaklinks=true,
+            urlcolor=ocre,
+            citecolor = ocre,
+            bookmarks=true,
+            bookmarksopen=false,
+            pdftitle={Title},
+            pdfauthor={Author}
+                              }
+\newlength\FHoffset
+\setlength\FHoffset{0.5cm}
+
+\addtolength\headwidth{2\FHoffset}
+
+\fancyheadoffset{\FHoffset}
+
+% these lengths will control the headrule trimming to the left and right 
+\newlength\FHleft
+\newlength\FHright
+
+% here the trimmings are controlled by the user
+\setlength\FHleft{1cm}
+\setlength\FHright{0cm}
+
+% The new definition of headrule that will take into acount the trimming(s)
+\newbox\FHline
+\setbox\FHline=\hbox{\hsize=\paperwidth%
+  \hspace*{\FHleft}%
+  \rule{\dimexpr\headwidth-\FHleft-\FHright\relax}{\headrulewidth}\hspace*{\FHright}%
+}
+\renewcommand\headrule{\vskip-.7\baselineskip\copy\FHline}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\providecommand\phantomsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\fullwidthcolor#1{\color{#1}\leaders\vrule\hskip\textwidth\hskip-\textwidth\kern0pt}
+\def\resetLTcolor{\global\let\zz\zzb}
+\def\yy{\rowcolor{ptcbackground}}
+\def\yyy{\rowcolor{gray!50}}
+\def\xxx{\rowcolor{ptctitle!50}}
+\def\ccc{\cellcolor{ptctitle!50}}
+\def\yya{\cellcolor{gray!50}}
+\def\yyb{\cellcolor{ptcbackground}}
+\def\maxwidth{8cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\firstcircle{(0,0) circle (1.5cm)} 
+\def\secondcircle{(45:2cm) circle (1.5cm)}
+\def\thirdcircle{(0:2cm) circle (1.5cm)} 
+\def\rectangulo{(-2,-2) rectangle (4,3.6)}
+\def\fourcircle{(1.1,1) circle (1.5cm)}
+\def\fivecircle{(-2,1) circle (1.5cm)}
+\def\rect{(-4,-2) rectangle (4,3.6)} 
+\def\sixcircle{(1.5,1) circle (1.5cm)} 
+\def\sevencircle{(1.1,1) circle (0.8cm)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% pies de p\'agina %%%%%%%%%%%%%%%%
+ \fancyfoot[LE]{\hspace*{-0.2\headwidth}\colorbox{ptctitle!20}{\makebox[\dimexpr 0.6\headwidth-2\fboxsep][r]{\strut\bf\color{ptctitle}C\'alculo diferencial}}%
+               \colorbox{zanahoria!60}{\makebox[\dimexpr 0.6\headwidth-2\fboxsep][l]{\strut\bf\color{white}\sffamily\itshape\small\protect\nouppercase{Antalcides Olivo\hfill Autor2 \hfill Autor3}}}}               
+               %%%%%%%%%%%%%%%%%%%%%%
+                \fancyfoot[LO]{\hspace*{-0.2\headwidth}\colorbox{ptctitle!20}{\makebox[\dimexpr0.6\headwidth-2\fboxsep][c]{\strut\bf\color{ptctitle}C\'alculo diferencial}}%
+               \colorbox{zanahoria!60}{\makebox[\dimexpr0.6\headwidth-2\fboxsep][r]{\strut\bf\color{white}\sffamily\itshape\small\protect\nouppercase{Antalcides Olivo\hfill Autor2 \hfill Autor3}}}}               
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% conjuntos n\'umericos
+\newcommand{\CC}{\mathbb{C}}
+%\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\pp}{\mathbb{\overline{P}}}
+\newcommand{\DD}{\mathbb{D}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\XX}{\mathbb{X}}
+\newcommand{\der}{\mathcal{D}}
+\newcommand{\kk}{\mathcal{K}}
+\newcommand{\mm}[1]{{\mathcal{M}\/}(#1)}
+\newcommand{\nequiv}{{\equiv \hspace*{-3.7mm}/}}
+\newcommand{\capa}[1]{\mbox{{\em Cap\/}}(#1)}
+\newcommand{\gra}[1]{\mbox{{\em grad\/}}(#1)}
+\newcommand{\sop}[1]{\mbox{{\em supp\/}}(#1)}
+\newcommand{\esup}[1]{{\mbox{\rm ess\,sup\/}}#1}
+\newcommand{\lqqd}{\hfill $\blacksquare$}
+\newcommand{\II}{\mathbb{I}}
+\newcommand{\vac}{$\emptyset$}
+%\newcommand{\na}{I\! N}
+%\newcommand{\re}{I\! R}
+{\makeatletter   % dies ist lokal, damit man die Datei wahlweise
+                 % mit \input oder mit \documentstyle[...] einlesen kann.
+ 
+\gdef\re{\relax\ifmmode I\hskip -3\p@ R\else
+    \hbox{$I\hskip -3\p@ R$}\fi} %Reales
+\gdef\na{\relax\ifmmode I\hskip -2.7\p@ N\else
+    \hbox{$I\hskip -2.7\p@ N$}\fi} % Naturales
+\gdef\en{\relax\ifmmode Z\hskip -4.8\p@ Z\else
+    \hbox{$Z\hskip -4.8\p@ Z$}\fi} %Enteros
+\gdef\co{\relax\ifmmode C\hskip-4.8\p@\vrule \@height 5.8\p@ \@depth\z@
+    \hskip 6.3\p@\else
+    \hbox{$C\hskip-4.8\p@\vrule \@height 5.8\p@ \@depth\z@ \hskip 6.3\p@$}\fi}% Complejos
+\gdef\ra{\relax\ifmmode Q\hskip-5.0\p@\vrule
+          \@height 6.0\p@ \@depth \z@ \hskip 6\p@\else
+    \hbox{$Q\hskip-5.0\p@\vrule \@height 6.0\p@ \@depth \z@ \hskip 6\p@$}\fi}% Racionales
+\gdef\hz{\relax\ifmmode I\hskip -3\p@ H\else
+    \hbox{$I\hskip -3\p@ H$}\fi} % Espacio de Hilbert
+\gdef\kz{\relax\ifmmode I\hskip -3\p@ K\else
+    \hbox{$I\hskip -3\p@ K$}\fi} % campo K
+    \gdef\ir{\relax\ifmmode I\hskip -3\p@ I\else
+    \hbox{$I\hskip -3\p@ K$}\fi} % Irracionales}
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+   % \renewcommand\p@axioma{\thesection.\theaxioma}
+   \makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%Missing character: There is no . in font nullfont!
+\makeatletter
+\tikzset{nomorepostaction/.code = \let\tikz@postactions\pgfutil@empty}
+\def\pgf@arrowset#1#2{%
+  \pgfutil@ifundefined{pgf@arrow@code@#2}
+  {\PackageError{pgf}{Arrow #1 type ``#2'' unknown}{}}
+  {%
+    \edef\pgf@arrow@temp{#2}%
+    \ifx\pgf@arrow@temp\pgfutil@empty% ah. clear!
+      \expandafter\let\csname pgf@#1arrow\endcsname=\pgfutil@empty%
+      \expandafter\let\csname pgf@shorten@#1\endcsname=\pgfutil@empty%
+    \else%
+      %\pgf@arrow@prepare{#2}%
+      \expandafter\def\csname pgf@#1arrow\endcsname{\multiply\pgflinewidth by \pgflinewidth@arrow\relax\pgf@arrow@call{#2}}%
+      \expandafter\edef\csname pgf@shorten@#1\endcsname{\multiply\pgflinewidth by \noexpand\pgflinewidth@arrow\relax\expandafter\noexpand\csname pgf@arrow@right@#2\endcsname}%
+    \fi%
+  }%
+}
+\tikzset{
+    bigdiagramarrow/.style = {
+        -latex,
+        arrow thick
+    },
+    arrow line width/.code={
+        \pgfmathsetmacro\pgflinewidth@arrow{#1}
+    },
+    arrow line width=1,
+    arrow ultra thin/.style={arrow line width=0.25},
+    arrow very thin/.style={arrow line width=0.5},
+    arrow thin/.style={arrow line width=1},
+    arrow semithick/.style={arrow line width=1.5},
+    arrow thick/.style={arrow line width=2},
+    arrow very thick/.style={arrow line width=3},
+    arrow ultra thick/.style={arrow line width=4},
+}
+\makeatother
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{macros.tex}
+%\font\nullfont=cmr10
+\end_preamble
+\options 2m,twoside,svgnames,x11names,HTML,twoside,12pt
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding utf8x
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Funciones reales de variable real
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+PartialToc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypersetup{linkcolor=ptctitle}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm*
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\shape italic
+\size footnotesize
+El matemático P.G Lejeune Dirichlet 
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\shape italic
+\size footnotesize
+no era muy amigo de escribir cartas.
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\shape italic
+\size footnotesize
+Hizo una excepción cuando nació 
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\shape italic
+\size footnotesize
+su primer hijo.
+ Dirichlet mando un 
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\shape italic
+\size footnotesize
+telegrama a su suegro con siguiente 
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\shape italic
+\size footnotesize
+mensaje 
+\begin_inset Quotes fld
+\end_inset
+
+ 2+1=3
+\begin_inset Quotes frd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size small
+ 
+\series bold
+\shape italic
+\size default
+Dirichlet
+\series default
+\shape default
+: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -1mm*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Funciones reales de variable real.
+\end_layout
+
+\begin_layout Standard
+Las funciones son las herramientas principales para la descripción matemática
+ de una situación real.
+ Todas las 
+\emph on
+fórmulas
+\emph default
+ de la Física no son más que funciones: expresan cómo ciertas magnitudes
+ (por ejemplo el volumen de un gas) dependen de otras (la temperatura y
+ la presión).
+ El concepto de función es tan importante que muchas ramas de la matemática
+ moderna se caracterizan por el tipo de funciones que estudian.
+ No es de extrañar, por ello, que el concepto de función sea de una gran
+ generalidad.
+ Además, se trata de uno de esos conceptos cuyo contenido esencial es fácil
+ de comprender pero difícil de formalizar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{Función}{}
+\end_layout
+
+\end_inset
+
+ Sean 
+\begin_inset Formula $A$
+\end_inset
+
+ y 
+\begin_inset Formula $B$
+\end_inset
+
+ dos conjuntos.
+ Una función de 
+\begin_inset Formula $A$
+\end_inset
+
+ en 
+\begin_inset Formula $B$
+\end_inset
+
+ es una 
+\emph on
+regla
+\emph default
+ que 
+\emph on
+a cada elemento de 
+\begin_inset Formula $A$
+\end_inset
+
+ asocia un único elemento de 
+\begin_inset Formula $B$
+\end_inset
+
+.
+
+\emph default
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En esta definición la dificultad radica en precisar matemáticamente lo que
+ se entiende por 
+\emph on
+regla
+\emph default
+.
+ Como solamente vamos a trabajar con funciones elementales considero que
+ no es necesario dar más precisiones.
+\end_layout
+
+\begin_layout Standard
+Observa que una función son 
+\emph on
+tres
+\emph default
+ cosas: el conjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ donde está definida, el conjunto 
+\begin_inset Formula $B$
+\end_inset
+
+ donde toma valores y la regla que la define.
+ En este curso estamos interesados principalmente en funciones entre conjuntos
+ de números reales, es decir, 
+\begin_inset Formula $A$
+\end_inset
+
+ y 
+\begin_inset Formula $B$
+\end_inset
+
+ son subconjuntos de 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+R
+\end_layout
+
+\end_inset
+
+; con frecuencia 
+\begin_inset Formula $B=\R$
+\end_inset
+
+.
+ Estas funciones se llaman 
+\emph on
+funciones reales de una variable real
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\series bold
+Convenio.
+\series default
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+En lo que sigue solamente consideraremos funciones reales y, si no se especifica
+ otra cosa, se entiende que 
+\begin_inset Formula $B=\R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por tanto, para darnos una función nos deben decir, en principio, el subconjunto
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ de 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+R
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+ donde suponemos que la función está definida y la regla que asigna a cada
+ número de 
+\begin_inset Formula $A$
+\end_inset
+
+ un único número real.
+ El conjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ recibe el nombre de 
+\emph on
+dominio
+\emph default
+ de la función.
+\end_layout
+
+\begin_layout Standard
+Las funciones se representan por letras.
+ En la práctica las letras más usadas son 
+\begin_inset Formula $f$
+\end_inset
+
+, 
+\begin_inset Formula $g$
+\end_inset
+
+ y 
+\begin_inset Formula $h$
+\end_inset
+
+, pero cualquiera otra es también buena.
+ Si 
+\begin_inset Formula $f$
+\end_inset
+
+ es una función y 
+\begin_inset Formula $x$
+\end_inset
+
+ es un número que está en su dominio, se representa por 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ (léase 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $f$
+\end_inset
+
+ de 
+\begin_inset Formula $x$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ o, mucho mejor, 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $f$
+\end_inset
+
+ evaluada en 
+\begin_inset Formula $x$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ o 
+\begin_inset Quotes eld
+\end_inset
+
+el valor de 
+\begin_inset Formula $f$
+\end_inset
+
+ en 
+\begin_inset Formula $x$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+) el número que 
+\begin_inset Formula $f$
+\end_inset
+
+ asigna a 
+\begin_inset Formula $x$
+\end_inset
+
+, que se llama 
+\emph on
+imagen de 
+\begin_inset Formula $x$
+\end_inset
+
+ por 
+\begin_inset Formula $f$
+\end_inset
+
+ 
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Es muy importante distinguir entre 
+\begin_inset Formula $f$
+\end_inset
+
+ (una función) y 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ (un número real)
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+El símbolo 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+A
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+se utiliza para indicar que 
+\begin_inset Formula $f$
+\end_inset
+
+ es una función 
+\emph on
+cuyo dominio es
+\emph default
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ (se supone, como hemos dicho antes, que 
+\begin_inset Formula $A$
+\end_inset
+
+ es un subconjunto de 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+R
+\end_layout
+
+\end_inset
+
+).
+ También es frecuente usar el simbolismo 
+\begin_inset Formula $\,x\mapsto f(x)$
+\end_inset
+
+, 
+\begin_inset Formula $(x\in A)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es importante advertir
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+flushright
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+curvasr
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ que las propiedades de una función dependen de la regla que la define 
+\emph on
+y también de su dominio
+\emph default
+, por ello 
+\emph on
+dos funciones que tienen distintos dominios se consideran distintas funciones
+ aunque la regla que las defina sea la misma.
+
+\emph default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{Igualdad de funciones}{}
+\end_layout
+
+\end_inset
+
+ Dos funciones 
+\begin_inset Formula $f$
+\end_inset
+
+ y 
+\begin_inset Formula $g$
+\end_inset
+
+ son iguales cuando tienen igual dominio y 
+\begin_inset Formula $f(x)=g(x)$
+\end_inset
+
+ para todo 
+\begin_inset Formula $x$
+\end_inset
+
+ en el dominio común.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notemos también que aunque estamos acostumbrados a representar a las funciones
+ mediante 
+\emph on
+fórmulas
+\emph default
+, no siempre es posible hacerlo.
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+ Consideremos las funciones siguientes.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{enumerate}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+R
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+la función dada por 
+\begin_inset Formula $f(x)=x^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+g
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Rp
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+la función dada por 
+\begin_inset Formula $g(x)=x^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+h
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+R
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+la función dada por
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $h(x)=\begin{cases}
+1,\  & \text{si \ensuremath{x\in\Q}}\\
+-1,\  & \text{si \ensuremath{x\in\R\setminus\Q}}
+\end{cases}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Sea 
+\begin_inset Formula $\,f(x)=\dis\frac{x^{3}+5x+6}{x^{2}-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{enumerate}
+\end_layout
+
+\end_inset
+
+ Según lo antes dicho, las funciones en a) y b) son distintas.
+ De hecho tienen propiedades distintas.
+ Observa que la función definida en b) es creciente y la definida en a)
+ no lo es.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+par 
+\end_layout
+
+\end_inset
+
+La función definida en c) es llamada 
+\emph on
+función de Dirichlet
+\emph default
+.
+ Nótese que no es fácil calcular los valores de dicha función porque no
+ siempre se sabe si un número real dado es racional o irracional.
+ ¿Es 
+\begin_inset Formula $\e+\pi$
+\end_inset
+
+ racional? Pese a ello la función está correctamente definida.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+par 
+\end_layout
+
+\end_inset
+
+En d) no nos dan explícitamente el dominio de 
+\begin_inset Formula $f$
+\end_inset
+
+ por lo que se entiende que 
+\begin_inset Formula $f$
+\end_inset
+
+ está definida siempre que 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ tenga sentido, es decir, siempre que, 
+\begin_inset Formula $x^{2}-1\neq0$
+\end_inset
+
+, esto es, para 
+\begin_inset Formula $x\neq\pm1$
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+El convenio del dominio.
+\series default
+
+\begin_inset space \space{}
+\end_inset
+
+Cuando una función se define por una fórmula 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $f(x)\,$
+\end_inset
+
+=
+\family roman
+
+\begin_inset space \thinspace{}
+\end_inset
+
+fórmula
+\family default
+
+\begin_inset Quotes erd
+\end_inset
+
+ y el dominio no es explícito, se entiende que el dominio es el mayor conjunto
+ de valores de 
+\begin_inset Formula $x$
+\end_inset
+
+ para los cuales la expresión 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ tiene sentido como número real.
+ Éste es el llamado 
+\emph on
+dominio natural
+\emph default
+ de la función.
+\end_layout
+
+\begin_layout Standard
+Dada una función 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+A
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, y un conjunto no vacía 
+\begin_inset Formula $C\subset A$
+\end_inset
+
+, el conjunto de las imágenes por 
+\begin_inset Formula $f$
+\end_inset
+
+ de todos los elementos de 
+\begin_inset Formula $C$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+f(C)=\set{f(x):x\in C}
+\]
+
+\end_inset
+
+se llama 
+\emph on
+imagen de 
+\begin_inset Formula $C$
+\end_inset
+
+ por 
+\begin_inset Formula $f$
+\end_inset
+
+
+\emph default
+.
+ Cuando 
+\begin_inset Formula $C=A$
+\end_inset
+
+, el conjunto 
+\begin_inset Formula $f(A)$
+\end_inset
+
+ se llama 
+\emph on
+conjunto imagen
+\emph default
+ de 
+\begin_inset Formula $f$
+\end_inset
+
+ y también 
+\emph on
+rango
+\emph default
+ o 
+\emph on
+recorrido
+\emph default
+ de 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Operaciones con funciones
+\end_layout
+
+\begin_layout Standard
+La mayoría de las funciones que vamos a usar en este curso pertenecen a
+ la clase de las 
+\emph on
+funciones elementales
+\emph default
+.
+ Se llaman así porque pueden obtenerse a partir de ciertos tipos de funciones
+ bien conocidas realizando las operaciones de suma, producto, cociente y
+ composición de funciones.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\series bold
+Suma, producto y cociente de funciones.
+\series default
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+ Dadas dos funciones 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f,g
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+A
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, se define su 
+\emph on
+función suma
+\emph default
+ (resp.
+ 
+\emph on
+producto
+\emph default
+) como la función que a cada número 
+\begin_inset Formula $x\in A$
+\end_inset
+
+ asigna el número real 
+\begin_inset Formula $f(x)+g(x)$
+\end_inset
+
+ (resp.
+ 
+\begin_inset Formula $f(x)g(x)$
+\end_inset
+
+).
+ Dicha función se representa con el símbolo 
+\begin_inset Formula $f+g$
+\end_inset
+
+ (resp.
+ 
+\begin_inset Formula $fg$
+\end_inset
+
+).
+ Se define la función cociente de 
+\begin_inset Formula $f$
+\end_inset
+
+ por 
+\begin_inset Formula $g$
+\end_inset
+
+ como la función que a cada número 
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 1
+width ""
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $x\in A$
+\end_inset
+
+ con 
+\begin_inset Formula $g(x)\neq0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ asigna el número real 
+\begin_inset Formula $\dis\frac{f(x)}{g(x)}$
+\end_inset
+
+.
+ Dicha función se representa por 
+\begin_inset Formula $\dis\frac{f}{g}$
+\end_inset
+
+.
+ También podemos multiplicar una función 
+\begin_inset Formula $f$
+\end_inset
+
+ por un número 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ para obtener la función 
+\begin_inset Formula $\alpha f$
+\end_inset
+
+ que asigna a cada 
+\begin_inset Formula $x\in A$
+\end_inset
+
+ el número 
+\begin_inset Formula $\alpha f(x)$
+\end_inset
+
+.
+ De todas formas, el producto de un número por una función puede considerarse
+ como un caso particular del producto de funciones, pues se identifica el
+ número 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ con la 
+\emph on
+función constante
+\emph default
+ que toma como único valor 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Las propiedades de la suma y el producto de funciones son las que cabe esperar
+ y su demostración es inmediata pues se reducen a las correspondientes propiedad
+es de los números.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{proposicion}{}{}
+\end_layout
+
+\end_inset
+
+ Cualesquiera sean las funciones 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f,g,h
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+A
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+se verifican las siguientes propiedades:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+par 
+\end_layout
+
+\end_inset
+
+Asociativas.
+ 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $(f+g)+h=f+(g+h)$
+\end_inset
+
+;
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Formula $(fg)h=f(gh)$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+par 
+\end_layout
+
+\end_inset
+
+Conmutativas.
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $f+g=g+f$
+\end_inset
+
+;
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Formula $fg=gf$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+par 
+\end_layout
+
+\end_inset
+
+Distributiva.
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $(f+g)h=fh+gh$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{proposicion}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}
+\end_layout
+
+\end_inset
+
+
+\series bold
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{Composición de funciones}{}
+\end_layout
+
+\end_inset
+
+
+\series default
+
+\begin_inset space \space{}
+\end_inset
+
+Sean 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+A
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+y 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+g
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+B
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+ funciones con 
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 1
+width ""
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(A)\subset B$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ En tal caso, la función 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+h
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+A
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+dada por 
+\begin_inset Formula $h(x)=g(f(x))$
+\end_inset
+
+ para todo 
+\begin_inset Formula $x\in A$
+\end_inset
+
+ se llama 
+\emph on
+composición de 
+\begin_inset Formula $g$
+\end_inset
+
+ con 
+\begin_inset Formula $f$
+\end_inset
+
+
+\emph default
+ y se representa por 
+\begin_inset Formula $h=g\circ f$
+\end_inset
+
+.
+ Observa que la función 
+\begin_inset Formula $g\circ f$
+\end_inset
+
+, solamente está definida cuando la imagen de 
+\begin_inset Formula $f$
+\end_inset
+
+ está contenida en el dominio de 
+\begin_inset Formula $g$
+\end_inset
+
+.
+ La composición de funciones es asociativa.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}
+\end_layout
+
+\end_inset
+
+
+\shape italic
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{Funciones inyectivas}{}
+\end_layout
+
+\end_inset
+
+
+\shape default
+
+\begin_inset space \space{}
+\end_inset
+
+Se dice que una función 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+A
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+ es inyectiva en un conjunto 
+\begin_inset Formula $C\subset A$
+\end_inset
+
+, si en puntos distintos de 
+\begin_inset Formula $C$
+\end_inset
+
+ toma valores distintos; es decir, 
+\begin_inset Formula $x,y\in C\,$
+\end_inset
+
+ y 
+\begin_inset Formula $\,x\neq y$
+\end_inset
+
+, entonces 
+\begin_inset Formula $f(x)\neq f(y)$
+\end_inset
+
+.
+ Se dice que 
+\begin_inset Formula $f$
+\end_inset
+
+ es inyectiva cuando es inyectiva en 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}
+\end_layout
+
+\end_inset
+
+
+\shape italic
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{La función inversa de una función inyectiva}{}
+\end_layout
+
+\end_inset
+
+
+\shape default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "funcioninversa"
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Si 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+A
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+es una función inyectiva, puede definirse una nueva función en el conjunto
+ 
+\begin_inset Formula $B=f(A)$
+\end_inset
+
+, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+-1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+B
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, que llamaremos 
+\emph on
+función inversa de 
+\begin_inset Formula $f$
+\end_inset
+
+
+\emph default
+, que a cada número 
+\begin_inset Formula $y\in B$
+\end_inset
+
+ asigna el único número 
+\begin_inset Formula $x\in A$
+\end_inset
+
+ tal que 
+\begin_inset Formula $f(x)=y$
+\end_inset
+
+.
+ Equivalentemente 
+\begin_inset Formula $\,f^{-1}(f(x))=x\,$
+\end_inset
+
+ para todo 
+\begin_inset Formula $x\in A$
+\end_inset
+
+, y también 
+\begin_inset Formula $\,f(f^{-1}(y))=y\,$
+\end_inset
+
+ para todo 
+\begin_inset Formula $y\in B$
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}
+\end_layout
+
+\end_inset
+
+
+\shape italic
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{Funciones monótonas}{}
+\end_layout
+
+\end_inset
+
+
+\shape default
+
+\begin_inset space \space{}
+\end_inset
+
+Se dice que una función 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+A
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+es creciente (resp.
+ decreciente) en un conjunto 
+\begin_inset Formula $C\subseteq A$
+\end_inset
+
+, si 
+\begin_inset Formula $f$
+\end_inset
+
+ conserva (resp.
+ invierte) el orden entre puntos de 
+\begin_inset Formula $C$
+\end_inset
+
+, es decir, si 
+\begin_inset Formula $x,y\in C\,$
+\end_inset
+
+ y 
+\begin_inset Formula $\,x\leqslant y$
+\end_inset
+
+, entonces 
+\begin_inset Formula $f(x)\leqslant f(y)$
+\end_inset
+
+ (resp.
+ 
+\begin_inset Formula $f(x)\geqslant f(y)$
+\end_inset
+
+).
+ Se dice que 
+\begin_inset Formula $f$
+\end_inset
+
+ es creciente (resp.
+ decreciente) cuando lo es en todo su dominio de definición.
+ Se dice que una función es 
+\emph on
+monótona
+\emph default
+ para indicar que es creciente o decreciente.
+ Una función monótona e inyectiva se dice que es 
+\emph on
+estrictamente monótona
+\emph default
+, pudiendo ser estrictamente creciente o estrictamente decreciente.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}
+\end_layout
+
+\end_inset
+
+
+\shape italic
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{Gráfica de una función}{}
+\end_layout
+
+\end_inset
+
+
+\shape default
+
+\begin_inset space \space{}
+\end_inset
+
+La gráfica de una función 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+A
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+es el conjunto de pares de números 
+\begin_inset Formula $\{(x,f(x)):x\in A\}$
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+ La gráfica de una función pone de manifiesto, a simple vista, muchas de
+ sus propiedades.
+ Para dibujar gráficas de funciones se precisan herramientas de cálculo
+ que estudiaremos más adelante.
+\end_layout
+
+\begin_layout Standard
+Un error 
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+flushright
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+curvasr
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ frecuente, que debes evitar, consiste en confundir una función con su gráfica.
+ Este error procede de una manera inapropiada de representar las funciones
+ que consiste en escribir 
+\begin_inset Formula $y=f(x)$
+\end_inset
+
+.
+ De esta forma se introduce una nueva letra 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $y$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ para representar el valor que la función 
+\begin_inset Formula $f$
+\end_inset
+
+ toma en 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Ahora la cosa empieza a estar confusa ¿la función es 
+\begin_inset Formula $y$
+\end_inset
+
+?, ¿la función es 
+\begin_inset Formula $f$
+\end_inset
+
+?, ¿la función es 
+\begin_inset Formula $f(x)$
+\end_inset
+
+? Esto procede de la Física en donde se interpreta que 
+\begin_inset Formula $x$
+\end_inset
+
+ es la magnitud o variable 
+\begin_inset Quotes eld
+\end_inset
+
+independiente
+\begin_inset Quotes erd
+\end_inset
+
+ e 
+\begin_inset Formula $y$
+\end_inset
+
+ es la magnitud o variable 
+\begin_inset Quotes eld
+\end_inset
+
+dependiente
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Peor todavía, ¿es 
+\begin_inset Formula $y$
+\end_inset
+
+ una variable o una función? Si has usado con frecuencia esta forma de represent
+ar las funciones no me extraña que puedas tener dudas sobre su significado.
+ Aclaremos esto.
+ La única forma razonable de interpretar una igualdad como 
+\begin_inset Formula $y=f(x)$
+\end_inset
+
+, es entender que dicha igualdad representa al conjunto de puntos del plano
+ que la satisfacen, es decir, representa a la gráfica de 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ Pero todavía hay otra posible confusión inducida por la notación 
+\begin_inset Formula $y=f(x)$
+\end_inset
+
+.
+ Consiste en que podemos considerar la función 
+\begin_inset Formula $G(x,y)=y-f(x)$
+\end_inset
+
+.
+ Se trata de una función de dos variables 
+\begin_inset Formula $x$
+\end_inset
+
+ e 
+\begin_inset Formula $y$
+\end_inset
+
+ que tiene muy poco que ver con la igualdad 
+\begin_inset Formula $y=f(x)$
+\end_inset
+
+.
+ Pues bien, hay quien confunde la función 
+\begin_inset Formula $G$
+\end_inset
+
+ con la gráfica de 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Intervalos
+\end_layout
+
+\begin_layout Standard
+Ocurre que el dominio natural de muchas funciones es un 
+\emph on
+intervalo
+\emph default
+ o la unión de varios intervalos.
+ Recordemos el concepto de intervalo y cuántos tipos diferentes hay.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{Intervalos}{}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "definicionintervalo"
+
+\end_inset
+
+ Un conjunto 
+\begin_inset Formula $I\subset\R$
+\end_inset
+
+ se llama un 
+\emph on
+intervalo
+\emph default
+ si siempre que dos números están en 
+\begin_inset Formula $I$
+\end_inset
+
+ todos los números comprendidos entre ellos dos también están en 
+\begin_inset Formula $I$
+\end_inset
+
+.
+ El conjunto vacío, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vac
+\end_layout
+
+\end_inset
+
+, se considera también como un intervalo.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Además de 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+R
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+y del 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vac
+\end_layout
+
+\end_inset
+
+, hay los siguientes tipos de intervalos
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Este resultado, en apariencia 
+\emph on
+evidente
+\emph default
+, no podríamos 
+\emph on
+demostrarlo
+\emph default
+ con las herramientas de que disponemos hasta ahora.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Intervalos que tienen dos puntos extremos 
+\begin_inset Formula $a$
+\end_inset
+
+ y 
+\begin_inset Formula $b$
+\end_inset
+
+ (donde 
+\begin_inset Formula $a\leq b$
+\end_inset
+
+ son números reales): 
+\begin_inset Formula 
+\[
+\begin{array}{rcll}
+\mbox{\ensuremath{[a,b]}} & = & \{x\in\R:a\leqslant x\leqslant b\} & \textrm{(intervalo cerrado y acotado)}\\
+\mbox{\ensuremath{]a,b[}} & = & \{x\in\R:a<x<b\} & \textrm{(intervalo abierto)}\\
+\mbox{\ensuremath{[a,b[}} & = & \{x\in\R:a\leqslant x<b\} & \textrm{(intervalo abierto a derecha y cerrado a izquierda)}\\
+\mbox{\ensuremath{]a,b]}} & = & \{x\in\R:a<x\leqslant b\} & \textrm{(intervalo abierto a izquierda y cerrado a derecha)}
+\end{array}
+\]
+
+\end_inset
+
+Intervalos que tienen un único punto extremo 
+\begin_inset Formula $c\in\R$
+\end_inset
+
+ llamado 
+\emph on
+origen
+\emph default
+ del intervalo: 
+\begin_inset Formula 
+\[
+\begin{array}{rcll}
+\mbox{\ensuremath{]-\infinity,c[}} & = & \{x\in\R:x<c\} & \textrm{(semirrecta abierta a la izquierda)}\\
+\mbox{\ensuremath{]-\infinity,c]}} & = & \{x\in\R:x\leqslant c\} & \textrm{(semirrecta cerrada a la izquierda)}\\
+\mbox{\ensuremath{]c,+\infinity[}} & = & \{x\in\R:x>c\} & \textrm{(semirrecta abierta a la derecha)}\\
+\mbox{\ensuremath{[c,+\infinity[}} & = & \{x\in\R:x\geqslant c\} & \textrm{(semirrecta cerrada a la derecha)}
+\end{array}
+\]
+
+\end_inset
+
+Como es la primera vez que aparecen, hay que decir que los símbolos 
+\begin_inset Formula $+\infinity$
+\end_inset
+
+ (léase: 
+\begin_inset Quotes eld
+\end_inset
+
+más infinito
+\begin_inset Quotes erd
+\end_inset
+
+) y 
+\begin_inset Formula $-\infinity$
+\end_inset
+
+ (léase: 
+\begin_inset Quotes eld
+\end_inset
+
+menos infinito
+\begin_inset Quotes erd
+\end_inset
+
+); son eso: símbolos.
+ No son números.
+ Cada vez que aparece uno de ellos en una situación determinada hay que
+ recordar cómo se ha definido su significado para dicha situación.
+ A veces, se escribe 
+\begin_inset Formula $\R=]-\infinity,+\infinity[$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\series bold
+Observación sobre la notación empleada.
+\series default
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Lo he pensado un rato antes de decirme a usar la notación anterior para
+ las semirrectas.
+ Otra posible notación es la siguiente.
+ 
+\begin_inset Formula 
+\[
+\begin{array}{rcll}
+\mbox{\ensuremath{]\leftarrow,c[=\left(-\infty,\,c\right)}} & = & \{x\in\R:x<c\} & \textrm{(semirrecta abierta a la izquierda)}\\
+\mbox{\ensuremath{]\leftarrow,c]}} & = & \{x\in\R:x\leqslant c\} & \textrm{(semirrecta cerrada a la izquierda)}\\
+\mbox{\ensuremath{]c,\rightarrow[}} & = & \{x\in\R:x>c\} & \textrm{(semirrecta abierta a la derecha)}\\
+\mbox{\ensuremath{[c,\rightarrow[}} & = & \{x\in\R:x\geqslant c\} & \textrm{(semirrecta cerrada a la derecha)}
+\end{array}
+\]
+
+\end_inset
+
+Esta notación me parece más clara porque no usa el símbolo 
+\begin_inset Formula $\infinity$
+\end_inset
+
+.
+ Si lees correctamente, es decir, no lees los símbolos sino las ideas que
+ representan (¿te he dicho esto antes?) entonces no hay lugar a interpretaciones
+ extrañas.
+ El símbolo 
+\begin_inset Formula $[c,+\infinity[$
+\end_inset
+
+ se lee 
+\begin_inset Quotes eld
+\end_inset
+
+todos los números reales mayores o iguales que 
+\begin_inset Formula $c$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Si tú lees el intervalo de 
+\begin_inset Formula $c$
+\end_inset
+
+ a 
+\begin_inset Formula $+\infinity$
+\end_inset
+
+ no lo estás leyendo bien.
+\end_layout
+
+\begin_layout Subsection*
+Observaciones sobre el concepto general de función y el formalismo que usamos
+ para definir funciones
+\end_layout
+
+\begin_layout Standard
+Hemos definido una función como tres cosas: un conjunto 
+\begin_inset Formula $A$
+\end_inset
+
+, un conjunto 
+\begin_inset Formula $B$
+\end_inset
+
+ y una regla que a cada elemento 
+\begin_inset Formula $x$
+\end_inset
+
+ de 
+\begin_inset Formula $A$
+\end_inset
+
+ hace corresponder un elemento de 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Lo único que interesa de esa regla es que esté correctamente definida.
+ Por ejemplo, la regla que a cada número 
+\begin_inset Formula $x\en[0,1]$
+\end_inset
+
+ hace corresponder el dígito de su desarrollo decimal que ocupa el lugar
+ cien mil millones, está correctamente definida aunque no sea muy útil,
+ pues no es posible calcular el dígito que le corresponde a ningún número
+ irracional.
+ Te pongo este ejemplo para que aprecies lo general que es el concepto de
+ función que hemos definido.
+ En particular, debes notar que una función no tiene por qué estar dada
+ por una 
+\begin_inset Quotes eld
+\end_inset
+
+fórmula
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Pero, seguidamente, te digo que no debes preocuparte por esta generalidad
+ porque en este curso solamente vamos a trabajar con funciones definidas
+ mediante 
+\begin_inset Quotes eld
+\end_inset
+
+fórmulas
+\begin_inset Quotes erd
+\end_inset
+
+; además, 
+\begin_inset Quotes eld
+\end_inset
+
+fórmulas
+\begin_inset Quotes erd
+\end_inset
+
+ que, salvo excepciones, definirán 
+\begin_inset Quotes eld
+\end_inset
+
+funciones elementales
+\begin_inset Quotes erd
+\end_inset
+
+, esto es, funciones obtenidas al realizar sumas, productos, cocientes y
+ composiciones de logaritmos, exponenciales, potencias y funciones trigonométric
+a.
+\end_layout
+
+\begin_layout Standard
+Ya hemos usado antes el formalismo que se emplea en matemáticas para definir
+ una función, pero quiero detenerme en él porque debes entenderlo perfectamente.
+ Para definir una función solemos empezar diciendo 
+\begin_inset Quotes eld
+\end_inset
+
+sea 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+funcreal
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+f
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+A
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+la función dada por…
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Con esto estamos diciendo tres cosas: que la función está definida en 
+\begin_inset Formula $A$
+\end_inset
+
+, que toma valores en 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+R
+\end_layout
+
+\end_inset
+
+, y que representamos con la letra 
+\begin_inset Formula $f$
+\end_inset
+
+ la regla.
+ El error más frecuente que se produce aquí se debe al hecho de que, con
+ frecuencia, el conjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ no es el dominio natural de definición de la función sino un subconjunto
+ del mismo, y esto puede tener muy importantes consecuencias que hay que
+ tener muy presentes en todo momento.
+ Seguidamente, para acabar de definir la función, se especifica la regla
+ que a cada elemento de 
+\begin_inset Formula $A$
+\end_inset
+
+ asocia un número real, lo que suele expresarse por 
+\begin_inset Quotes eld
+\end_inset
+
+la función dada por 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $f(x)=$
+\end_inset
+
+fórmula
+\begin_inset space \space{}
+\end_inset
+
+o
+\begin_inset space \space{}
+\end_inset
+
+función
+\begin_inset space \space{}
+\end_inset
+
+elemental
+\begin_inset Quotes erd
+\end_inset
+
+ para todo 
+\begin_inset Formula $x\in A$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Se suele volver a insistir en que la variable 
+\begin_inset Formula $x$
+\end_inset
+
+ toma solamente valores en 
+\begin_inset Formula $A$
+\end_inset
+
+ para indicar que no nos interesa lo que pueda pasar fuera de 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ten en cuenta que la letra con la que representamos una función, suele usarse
+ 
+\begin_inset Formula $f$
+\end_inset
+
+, podemos elegirla a gusto y no tiene mayor importancia siempre que no se
+ preste a confusiones.
+ Lo importante son los datos que definen la función: los conjuntos 
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+ (nosotros suponemos que 
+\begin_inset Formula $B=\R$
+\end_inset
+
+) y la regla.
+ Veamos un ejemplo más de esta forma de proceder para que no te queden dudas.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Sea 
+\begin_inset Formula 
+\begin{equation}
+\funcreal{f}{\R}\ \textrm{\ la función dada por\ }f(x)=x^{3}-4x^{2}+x+6\ \textrm{\ para todo\ }x\in\R\label{func1}
+\end{equation}
+
+\end_inset
+
+En la siguiente figura se representa parte de la gráfica de esta función.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement ht
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+La función 
+\begin_inset Formula $f(x)=x^{3}-4x^{2}+x+6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La imagen de esta función es 
+\begin_inset Formula $f(\R)=\R$
+\end_inset
+
+.
+ Esta función no tiene máximo ni mínimo, no es creciente y tampoco es decrecient
+e.
+ No es inyectiva y su función inversa no está definida.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Sea 
+\begin_inset Formula 
+\begin{equation}
+\funcreal{f}{[0,2]}\ \textrm{\ la función dada por\ }f(x)=x^{3}-4x^{2}+x+6\ \textrm{\ para todo\ }x\in[0,2]\label{func2}
+\end{equation}
+
+\end_inset
+
+Observa que, aunque de forma deliberada uso la misma letra, 
+\begin_inset Formula $f$
+\end_inset
+
+, para representar la regla, la función definida en (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "func2"
+
+\end_inset
+
+) es muy diferente que la definida en (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "func1"
+
+\end_inset
+
+).
+ Aunque la regla es la misma, en (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "func2"
+
+\end_inset
+
+) solamente nos interesa lo que pasa en el intervalo 
+\begin_inset Formula $[0,2]$
+\end_inset
+
+.
+ La imagen de esta función es 
+\begin_inset Formula $f([0,2])=[0,6]$
+\end_inset
+
+.
+ Claramente, la función (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "func2"
+
+\end_inset
+
+) es estrictamente decreciente, tiene máximo y mínimo y es inyectiva.
+ Su función inversa está definida (aunque no sea fácil de calcular).
+ 
+\end_layout
+
+\end_body
+\end_document

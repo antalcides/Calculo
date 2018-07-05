@@ -3,16 +3,14 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /home/antalcides/Calculo/
 \textclass libro-matua
 \begin_preamble
-%\usepackage[utf8x]{inputenc}
 \usepackage[spanish, es-tabla]{babel}
 %\usepackage{makeidx}
 \usepackage{imakeidx}
 \makeindex[program=truexindy,options=-M texindy -L spanish -C utf8]
 %\usepackage[totoc]{idxlayout}
-\usepackage{graphicx}
 \usepackage{subfigure}
 \graphicspath{{ps/}{logo/}{image/}{sections/Figures/}}
 %\usepackage{lmodern}
@@ -33,6 +31,10 @@
 \usepackage{fixltx2e}
 \usepackage{mathtools}
 \usepackage{theoremref}
+\usepackage{scalefnt} % para escalar las fuentes
+\usepackage{psfrag}
+\usepackage{floatflt}
+\usepackage{marvosym}
 \MakeRobust{\eqref}
 \mathtoolsset{showonlyrefs=true,showmanualtags=true}
 \def\myref#1{\textcolor{ptctitle}{\thesection .\ref{#1}}}
@@ -45,24 +47,7 @@
 \def\maxwidth{8cm}
 % Length to control the \fancyheadoffset and the calculation of \headline
 % simultaneously
-\RequirePackage{hyperref}
-\hypersetup{
-             linktoc=all,
-             hidelinks,
-             pdfborder={0 0 0},
-            colorlinks=true,
-            linkcolor = ptctitle,
-            backref=true,
-            pagebackref=true,
-            hyperindex=true,
-            breaklinks=true,
-            urlcolor=ocre,
-            citecolor = ocre,
-            bookmarks=true,
-            bookmarksopen=false,
-            pdftitle={Title},
-            pdfauthor={Author}
-                              }
+
 \newlength\FHoffset
 \setlength\FHoffset{0.5cm}
 
@@ -109,10 +94,10 @@
 \def\sevencircle{(1.1,1) circle (0.8cm)}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% pies de p\'agina %%%%%%%%%%%%%%%%
  \fancyfoot[LE]{\hspace*{-0.2\headwidth}\colorbox{ptctitle!20}{\makebox[\dimexpr 0.6\headwidth-2\fboxsep][r]{\strut\bf\color{ptctitle}C\'alculo diferencial}}%
-               \colorbox{zanahoria!60}{\makebox[\dimexpr 0.6\headwidth-2\fboxsep][l]{\strut\bf\color{white}\sffamily\itshape\small\protect\nouppercase{Autor1\hfill Autor2 \hfill Autor3}}}}               
+               \colorbox{zanahoria!60}{\makebox[\dimexpr 0.6\headwidth-2\fboxsep][l]{\strut\bf\color{white}\sffamily\itshape\small\protect\nouppercase{Antalcides Olivo\hfill Autor2 \hfill Autor3}}}}               
                %%%%%%%%%%%%%%%%%%%%%%
                 \fancyfoot[LO]{\hspace*{-0.2\headwidth}\colorbox{ptctitle!20}{\makebox[\dimexpr0.6\headwidth-2\fboxsep][c]{\strut\bf\color{ptctitle}C\'alculo diferencial}}%
-               \colorbox{zanahoria!60}{\makebox[\dimexpr0.6\headwidth-2\fboxsep][r]{\strut\bf\color{white}\sffamily\itshape\small\protect\nouppercase{Autor1\hfill Autor2 \hfill Autor3}}}}               
+               \colorbox{zanahoria!60}{\makebox[\dimexpr0.6\headwidth-2\fboxsep][r]{\strut\bf\color{white}\sffamily\itshape\small\protect\nouppercase{Antalcides Olivo\hfill Autor2 \hfill Autor3}}}}               
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% conjuntos n\'umericos
 \newcommand{\CC}{\mathbb{C}}
@@ -163,12 +148,11 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%
    % \renewcommand\p@axioma{\thesection.\theaxioma}
    \makeatother
+\input{macros.tex}
+\font\nullfont=cmr10
 \end_preamble
 \options 2m,twoside,svgnames,x11names,HTML,twoside,12pt
 \use_default_options false
-\begin_modules
-knitr
-\end_modules
 \maintain_unincluded_children false
 \language spanish
 \language_package default
@@ -189,9 +173,20 @@ knitr
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "unicode=true, linktoc=all, hidelinks, pdfborder={0 0 0}, colorlinks=true,linkcolor = ptctitle,backref=true, pagebackref=true,hyperindex=true,breaklinks=true,urlcolor=ocre,citecolor = ocre,bookmarks=true, bookmarksopen=false,pdftitle={Title}, pdfauthor={Author}"
 \papersize default
 \use_geometry false
 \use_package amsmath 0
@@ -228,7 +223,7 @@ knitr
 \tracking_changes false
 \output_changes false
 \html_math_output 0
-\html_css_as_file 0
+\html_css_as_file 1
 \html_be_strict false
 \end_header
 
@@ -595,7 +590,7 @@ stopcontents[chapters]
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "estructuras"
+filename "estructuras.lyx"
 
 \end_inset
 

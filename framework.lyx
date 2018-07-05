@@ -1,0 +1,478 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/antalcides/Calculo/
+\textclass article
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 0
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Exactamente que es un Framework para WordPress y porque demonios debería
+ usarlo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Con perdón de la expresión, los frameworks para WordPress están de moda
+ y quiero que sepas porque deberías, o no, usar uno y cual.
+ 
+\end_layout
+
+\begin_layout Standard
+Por todos lados escuchas hablar de Genesis, Thesis, GavernWP y similares
+ que te prometen muchas bondades.
+ 
+\end_layout
+
+\begin_layout Standard
+Y para poder elegir, lo primero sería 
+\series bold
+entender que es un framework
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Un framework o marco de trabajo son un conjunto de herramientas o utilidades
+ (
+\series bold
+biblioteca de código
+\series default
+) que facilita el trabajo a un desarrollador, ya que no se necesita programar
+ muchas funciones si usa las que ya tiene en el framework, ahorrándose picar
+ código.
+ 
+\series bold
+El desarrollador en vez de programar toda la función, solo tiene que llamar
+ la que trae el framework
+\end_layout
+
+\begin_layout Standard
+Explicado de esta forma, 
+\series bold
+incluso el propio WordPress es un FrameWork.
+\end_layout
+
+\begin_layout Standard
+Al usar un marco de trabajo común (WordPress) nos ahorra diseñar desde cero
+ un sitio Web y simplemente lo desarrollamos llamando a las funciones que
+ nos interesan.
+\end_layout
+
+\begin_layout Standard
+Pero cuando hablamos de un FrameWork para WordPress, 
+\series bold
+nos referimos a la parte que empezamos a ver de un sitio Web.
+\end_layout
+
+\begin_layout Standard
+WordPress es el núcleo, el motor que hace funcionar el sitio Web, pero obligator
+iamente debemos usar un tema.
+\end_layout
+
+\begin_layout Standard
+Y un framework para WordPress es realmente un tema que modificará su apariencia.
+\end_layout
+
+\begin_layout Section
+¿Y entonces que diferencia un tema de un framework para WordPress?
+\end_layout
+
+\begin_layout Standard
+La diferencia fundamental 
+\series bold
+son los temas hijos
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Cuando se quería quitar una función o agregar una nueva a un tema, 
+\series bold
+el problema era que perdías la personalización
+\series default
+.
+ La comunidad de WordPress empezó a hablar para eso de los 
+\series bold
+Parent Themes
+\series default
+ (temas padre) y 
+\series bold
+Child Themes
+\series default
+(temas hijo).
+\end_layout
+
+\begin_layout Standard
+Los temas estándar agrupan la parte de diseño y la programación en un solo
+ paquete.
+ Cualquier cambio afecta al conjunto.
+\end_layout
+
+\begin_layout Standard
+Los frameworks separan la programación del diseño.
+ De esta forma, las funciones básicas (programación: ficheros PHP, js, …)
+ las lleva el tema padre, y la personalización (diseño: CSS y áreas de widgets
+ por ejemplo) las lleva el tema hijo.
+\end_layout
+
+\begin_layout Standard
+Al actualizar el tema padre, que es donde pueden estar las vulnerabilidades
+ o se puede querer agregar una función nueva, 
+\series bold
+la personalización no se pierde
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Y esto además supuso una gran ventaja para los diseñadores de temas, porque
+ con un solo tema padre, que agrupa las funciones y el código necesario,
+ y fuera potente, se podían dedicar a crear fácilmente temas personalizados
+ (child themes).
+ Y así nacieron los frameworks para WordPress.
+\end_layout
+
+\begin_layout Standard
+Fue el caso del famoso 
+\series bold
+Genesis
+\series default
+.
+ StudioPress pasó de desarrollar temas por separado, a mejorar su base,
+ su framework genesis, centrándose en este, y desarrollando y vendiendo
+ temas hijos.
+\end_layout
+
+\begin_layout Section
+Un framework para WordPress es bueno para los diseñadores.
+\end_layout
+
+\begin_layout Standard
+Los diseñadores de temas lo tienen más fácil.
+\end_layout
+
+\begin_layout Standard
+n Child Theme basta que tenga un fichero style.css y un functions.php.
+\end_layout
+
+\begin_layout Standard
+A través de estos ficheros se crea toda la apariencia de tu sitio Web.
+ Se olvidan de crear el código de las páginas de post, de las páginas page,
+ del header, del footer,… y de mantener todo esto actualizado.
+\end_layout
+
+\begin_layout Standard
+En todo caso en algunos Child Themes podrás encontrar algún fichero extra
+ de algo que traiga exclusivo ese tema, por ejemplo una landing page, o
+ si es un tema para venta de coches, una página específica para mostrarlos.
+\end_layout
+
+\begin_layout Standard
+Como ves, les permite especializarse más y centrarse más en la parte gráfica,
+ mejorando así y mucho el aspecto de los temas.
+\end_layout
+
+\begin_layout Standard
+Yo como desarrollador también lo tengo más fácil, porque me especializo
+ en un framework, pudiendo sacarle todo el jugo a tu web, y aún así cada
+ web que creo es distinta.
+\end_layout
+
+\begin_layout Section
+Los frameworks para WordPress son buenos para tu negocio.
+\end_layout
+
+\begin_layout Standard
+Si te decides a usar un framework:
+\end_layout
+
+\begin_layout Itemize
+Ganarás en rapidez a la hora de personalizar tu sitio.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Mejora la seguridad de WordPress"
+target "https://hormigasenlanube.com/wordfence-security/"
+
+\end_inset
+
+al poder actualizar sin perder personalizaciones.
+\end_layout
+
+\begin_layout Itemize
+Si en el futuro quieres cambiar de aspecto, instalar otro Child Theme del
+ mismo framework será fácil y poco doloroso.
+\end_layout
+
+\begin_layout Standard
+Incluso si te programas algo a medida, si lo metes en el tema hijo, no lo
+ perderás.
+\end_layout
+
+\begin_layout Standard
+Y si eres mañoso modificando tan solo tu hoja de estilos CSS y tu functions.php
+ podrías tener tu propio tema a medida.
+\end_layout
+
+\begin_layout Standard
+Además incluyen funciones muy interesantes de layouts (vistas de la página:
+ a página completa, el sidebar a derecha o izquierda, etc…), formatos de
+ página, etc… ahorrándote algunos plugins.
+\end_layout
+
+\begin_layout Standard
+Todo eso se traduce en 
+\series bold
+ahorro de dinero y de tiempo
+\series default
+, que al fin y al cabo es dinero.
+ Y sobretodo de dolores de cabeza.
+ ¡Súper importante!
+\end_layout
+
+\begin_layout Section
+Las ventajas aumentan según el framework que elijas.
+\end_layout
+
+\begin_layout Standard
+Existen muchos framewoks para WordPress disponibles, y muchos muy buenos.
+ Te hablo de algunos de ellos y te dejo al final mi recomendación:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Headway Theme"
+target "http://headwaythemes.com/"
+
+\end_inset
+
+.
+ Es un framework tipo Drag
+\begin_inset Formula $\&$
+\end_inset
+
+Drop, donde de una forma muy sencilla te creas un sitio Web a medida arrastrando
+ y soltando los elementos donde quieras que estén.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Pagelines"
+target "http://www.pagelines.com/"
+
+\end_inset
+
+.
+ De forma similar al anterior es tipo semi drag&amp;drop, con elementos
+ predefinidos tipo Widgets que podemos ir colocando.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Thesis"
+target "http://diythemes.com/"
+
+\end_inset
+
+.
+ Un framework muy completo para personalizar al 100% tu sitio mediante boxes,
+ skins (con Drag&Drop) y utilidades que te ahorran más de un plugin.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "GavernWP"
+target "https://hormigasenlanube.com/ir/gavick"
+
+\end_inset
+
+.
+ De la empresa Gavick, 
+\begin_inset CommandInset href
+LatexCommand href
+name "se habla de él en est post"
+target "https://hormigasenlanube.com/gavernwp-framework-para-wordpress/"
+
+\end_inset
+
+.
+ Una opción sencilla pero muy potente, con un alto grado de personalización
+ sin complicaciones.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Genesis"
+target "https://hormigasenlanube.com/ir/genesi"
+
+\end_inset
+
+.
+ De StudioPress, uno de los más veteranos y de los más usados por bloggers
+ y sitios web de éxito.
+ ¿Por algo será?
+\end_layout
+
+\begin_layout Standard
+Algunos de ellos tienen comunidades muy grandes, por lo que es fácil solucionar
+ un problema, y no te atas a un desarrollador.
+\end_layout
+
+\begin_layout Section
+¿Cuál te aconsejo usar? 
+\end_layout
+
+\begin_layout Standard
+Pues lógicamente 
+\series bold
+quiero para ti, lo mismo que para mí.
+\end_layout
+
+\begin_layout Standard
+Y no, sinceramente no se cual es el mejor.
+\end_layout
+
+\begin_layout Standard
+Pero después de probar varios, 
+\series bold
+me quedo con el que mejor resultado me da.
+\end_layout
+
+\begin_layout Standard
+Para mi el mejor es Genesis, puedes verificar fácilmente si buscas la web
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "What WordPress Theme is That?"
+target "http://whatwpthemeisthat.com/"
+
+\end_inset
+
+ de donde he tomado este artículo.
+\end_layout
+
+\begin_layout Standard
+Con una simple búsqueda en Google leerás:
+\end_layout
+
+\begin_layout Itemize
+Que es amigable para el SEO.
+ El problema de los frameworks drag&drop o con muchos extras es que dejan
+ un código “sucio” y recargado, y esto es lo que ve el motor de Google.
+ Genesis usa un código “limpio” y bien estructurado que hace que sea muy
+ bien indexado.
+\end_layout
+
+\begin_layout Itemize
+Múltiples Child Themes donde elegir.
+ Muy atractivos y claros.
+\end_layout
+
+\begin_layout Itemize
+Seguro.
+ Con un código tan limpio y estructurado es fácil detectar los bugs y mantenerlo
+ bien cerrado.
+\end_layout
+
+\begin_layout Itemize
+Además es doblemente seguro porque se actualiza automáticamente, nada de
+ tener que usar FTP para subir ficheros.
+\end_layout
+
+\begin_layout Standard
+Ahora mismo lo que quería era explicarte sobre Genesis que es un framework
+ para WordPress y porque es bueno que lo uses.
+\end_layout
+
+\begin_layout Section
+¿Pero entonces cuál es el mejor framework para WordPress? 
+\end_layout
+
+\end_body
+\end_document

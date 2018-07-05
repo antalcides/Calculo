@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /home/antalcides/Calculo/
 \textclass libro-matua
 \begin_preamble
  \usepackage[utf8x]{inputenc}
@@ -231,6 +231,10 @@
 \end_header
 
 \begin_body
+
+\begin_layout Standard
+
+\end_layout
 
 \begin_layout Chapter
 Conjuntos numéricos

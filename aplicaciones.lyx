@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /home/antalcides/Calculo/
 \textclass libro-matua
 \begin_preamble
 %\usepackage[utf8x]{inputenc}
@@ -240,39 +240,7 @@ Aplicaciones de la derivada
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-PartialToc
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-hypersetup{linkcolor=ptctitle}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 0.5cm*
+\begin_inset VSpace -2cm*
 \end_inset
 
  
@@ -322,6 +290,38 @@ Leibniz:
 
 \begin_layout Standard
 \begin_inset VSpace -1mm*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+PartialToc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypersetup{linkcolor=ptctitle}
+\end_layout
+
 \end_inset
 
 
@@ -3847,7 +3847,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /media/antalcides/Antalcides-EXT/maletin/apuntes/calculo/pdf/Tikzfile54.pdf
+	filename pdf/Tikzfile54.pdf
 	scale 50
 
 \end_inset
@@ -16551,7 +16551,7 @@ centering
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /media/antalcides/Antalcides-EXT/maletin/ua12016/asignaturas/talleres/lyx_mathway/figuras/6_media_ANTALCIDES____talleresmat_optimizacion.png
+	filename image/6_media_ANTALCIDES____talleresmat_optimizacion.png
 	scale 50
 
 \end_inset
@@ -16946,7 +16946,7 @@ centering
 
 
 \begin_inset Graphics
-	filename /media/antalcides/Antalcides-EXT/maletin/ua12016/asignaturas/talleres/lyx_mathway/figuras/7_media_ANTALCIDES____talleresmat_ej6.png
+	filename image/7_media_ANTALCIDES____talleresmat_ej6.png
 	scale 60
 
 \end_inset
@@ -18085,7 +18085,7 @@ centering
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /media/antalcides/Antalcides-EXT/maletin/ua12016/asignaturas/talleres/lyx_mathway/figuras/8_media_ANTALCIDES____talleresmat_pegado17.png
+	filename image/8_media_ANTALCIDES____talleresmat_pegado17.png
 	scale 80
 
 \end_inset

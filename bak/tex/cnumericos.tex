@@ -1,0 +1,509 @@
+
+\chapter{Conjuntos numéricos}
+
+\PartialToc
+
+\hypersetup{linkcolor=ptctitle}
+
+\vspace*{0.5cm}
+ 
+\begin{flushright}
+\textit{\footnotesize{}El principio de razón suficiente, que afirma
+que nada}
+\par\end{flushright}{\footnotesize \par}
+
+\begin{flushright}
+\textit{\footnotesize{}sucede gratuitamente, es decir, que a todo
+fenómeno }
+\par\end{flushright}{\footnotesize \par}
+
+\begin{flushright}
+\textit{\footnotesize{}le corresponde una explicación, una razón de
+ser }
+\par\end{flushright}{\footnotesize \par}
+
+\begin{flushright}
+\textit{\footnotesize{}que se presente admisible a la razón. }
+\par\end{flushright}{\footnotesize \par}
+
+\begin{flushright}
+{\small{} }Leibniz: 
+\par\end{flushright}
+
+\vspace*{-1mm}
+
+
+\section{Introducción }
+
+En la antigüedad, el concepto de número surgió como consecuencia de
+la necesidad práctica de contar objetos. Para ello, al principio el
+hombre se valió de los elementos de que disponía a su alrededor: dedos,
+piedras... Basta recordar, por ejemplo, que la palabra cálculo deriva
+de la palabra latina \texttt{calculus}, que significa <<\texttt{contar
+con piedras}>>. La serie de números naturales era, obviamente, limitada;
+pero la conciencia sobre la necesidad de ampliar el conjunto de los
+números naturales, representaba ya una importante etapa en el camino
+hacia la matemática moderna. Paralelamente a la ampliación de los
+conjuntos numéricos, se desarrollaron su simbología y los sistemas
+de numeración diferentes para cada civilización.
+
+La operación de contar exige la adición sucesiva del número 1 consigo
+mismo, una y otra vez. Los números obtenidos de esta manera son llamados
+números naturales o números enteros positivos. Con el progreso de
+la técnica aparecen problemas de medición más complicados que requieren
+la división de números naturales por que se construyen así los números
+racionales positivos, después es necesario introducir un número $0$
+llamado cero, con la propiedad de que todo número $a$, $a+0=a.$
+Más tarde, cuando aparece el problema de distinguir entre lo que se
+tiene y lo que no, se hace necesario introducir que para todo número
+$a$ existe un número $-a$ llamado opuesto o negativo que cumple
+que: $a+\left(-a\right)=0.$ Esto nos lleva a construir un nuevo conjunto,
+el conjunto de los números negativos, o enteros negativos, de esta
+manera se llega al concepto de número que conocemos, con los cuales
+se pueden realizarlas operaciones de adición, multiplicación, substracción
+y división. Este concepto comprende a los números racionales y a otros
+números llamados irracionales.
+
+Otras operaciones pueden ser definidas a partir de las anteriores,
+como son, la potenciación, la radicación y otras más, además que la
+substracción y la división pueden definirse a partir de la adición
+y la multiplicación y que la mayoría de las leyes que rigen a los
+números pueden ser demostradas a partir de un pequeño número de leyes
+básicas o fundamentales. Por lo tanto vamos a establecer un conjunto
+de leyes a partir de las cuales demostraremos el resto.
+
+\section{Números naturales}
+
+\subsection{Introducción}
+
+\textbf{El cero ¿es o no un número natural? }
+
+Este es uno de los temas de más frecuente discusión entre quienes
+se dedican a las matemáticas. 
+
+Cuando \texttt{Peano} introdujo los axiomas para definir el conjunto
+de los números naturales, inició este conjunto por el número uno.
+Pero cuando Cantor estudió la teoría de conjuntos, encontró que debía
+empezar por el cero, dada la necesidad de asignarle un cardinal al
+conjunto vacío. Quizá fue esto lo que hizo que, diez años más tarde,
+\texttt{Peano} empezara los números naturales con el cero.
+
+En las últimas décadas ha sido muy popular la teoría de conjuntos,
+lo cual justifica que muchos profesores prefieran comenzar el conjunto
+de los números naturales por el cero. En este capítulo se elige iniciar
+el conjunto de los números naturales por el uno, aunque el cero es
+necesario para el cardinal del conjunto vacío, para el neutro de la
+suma y para tantas otras aplicaciones. Pero en algunos temas, como
+el de las sucesiones, es mejor iniciar los números naturales sin el
+cero, pues es normal que se relacione el primer término con el número
+uno, el segundo término con el número dos y así sucesivamente, recordando
+que no hay un ordinal para el cardinal cero. 
+
+\textbf{Axiomas de Peano}
+
+La más conocida axiomatización de los números naturales, contenida
+en el escrito \textbf{\textsl{Arithmetices Principia Nova Methodo
+Exposita}} del italiano \textbf{\textsl{Giuseppe Peano}}, se presenta
+en esta sección en forma detallada, al igual que la forma mas moderna
+de la axiomatización, la definición de las operaciones y sus propiedades
+debidamente demostradas. 
+
+Durante el siglo XlX, sin duda con el impulso de la aparición de las
+geometrías no euclidianas, se multiplicaron los esfuerzos por axiomatizar
+la geometría empeño culminado finalmente en 1899 con la publicación
+de Fundamentos de la Geometría, de \texttt{David Hilbert}, también
+se presentaron varias axiomatizaciones de la aritmética o, con más
+precisión, de los números naturales. 
+
+Sin lugar a dudas, la más conocida es la que presentó el matemático
+italiano Giuseppe Peano (1858-1932) por primera vez en 1889 en un
+pequeño libro publicado en Turín titulado \textbf{\textsl{Arithmetices
+Principia Nova Methodo Exposita}}. Este texto incluye sus famosos
+axiomas, pero más que un texto de aritmética, este documento contiene
+una introducción a la lógica en la cual se presentan por primera vez
+los símbolos actuales para representar la pertenencia, la existencia,
+la contenencia (en la actualidad es invertido, acorde con el de los
+números) y para la unión y la intersección. 
+
+\texttt{Peano} reconoce hacer uso de estudios de otros autores: en
+1888 después de estudiar a \texttt{G. Boole}, \texttt{E. Schröder},
+\texttt{C. S. Peirce} y otros, estableció una analogía entre operaciones
+geométricas y algebraicas con las operaciones de la lógica; en aritmética
+menciona el trabajo de \texttt{Dedekind} publicado el año anterior
+reconocido de manera generalizada como la primera axiomatización de
+la aritmética, aunque salió a la luz 7 años después del artículo de
+\texttt{Peirce} y un texto de \texttt{Grassmann} de 1861. Este ultimo
+libro posiblemente fue fuente de inspiración tanto para \texttt{Peano}
+y \texttt{Dedekind} como para \texttt{Peirce}. 
+
+\texttt{Arithmetices Principia}, escrito en latín es el primer intento
+de \texttt{Peano}, para lograr una axiomatización de las matemáticas
+en un lenguaje simbólico. 
+
+Consiste en un prefacio y 10 secciones:
+
+1. Números y Adición.
+
+2. Sustracción.
+
+3. Máximos y Mínimos. 
+
+4. Multiplicación.
+
+5. Potenciación. 
+
+6. División.
+
+7. Teoremas varios.
+
+8. Razones de Números.
+
+9. Sistemas de Racionales e Irracionales.
+
+10. Sistemas de Cantidades.
+
+En libro establece los siguientes axiomas:
+\begin{enumerate}
+\item $1\in\na$.
+\item Si $a\in\na$entonces $a=a.$
+\item Si $a\in\na$ entonces $a=b$ si y sólo si $b=a.$
+\item Si $a,b,c\in\na$ entonces $a=b,$ $b=c$ implica $a=c.$
+\item Si $a=b$ y $b\in\na$ entonces $a\in\na.$
+\item Si $a\in\na$ entonces $a+1\in\na.$
+\item Si $a\in\na$ entonces $a=b$ si y sólo si $a+1=b+1$.
+\item Si $a\in\na$ entonces $a+1\neq1.$
+\item Si $k$ es una clase, $1\in k,$ y si para $x\in\na:$ $x\in k$ implica
+$\left(x+1\right)\in k$.
+\end{enumerate}
+
+\subsection{Axiomas de los números naturales}
+
+Empezaremos ahora la construcción de los números naturales siguiendo
+la idea de Peano.\medskip{}
+\medskip{}
+
+\begin{axioma}{Existencia de los números naturales\label{ap1}}  
+Existe un conjunto $\na\neq\emptyset$ llamado conjunto de los números
+Naturales.
+
+\end{axioma}
+
+A los elementos de $\na$ se les llama números naturales, este axioma
+no establece sus características ni sus propiedades, por lo que hay
+que establecer otros axiomas para entender el concepto de número.
+
+\vspace*{20pt}
+
+\begin{axioma}{Existencia del número mínimo\label{ap4}}
+
+Existe un número llamado $1\in\na.$
+
+\end{axioma}
+
+Del axioma \myref{ap1} tenemos que como $\na\neq\emptyset$ entonces
+debe tener por lo menos un elemento, el axioma \myref{ap4} lo define
+como el número $1.$
+
+\medskip{}
+\medskip{}
+
+\begin{axioma}{Relación de igualdad\label{ap3}}
+
+Existe una relación $"="$ tal que $a=b$ significa que $a$ y $b$
+representan el mismo número natural, que cumpla las siguientes propiedades
+
+$\forall a,b,c\in\na$ se tiene que:
+\begin{description}
+\item [{i)}] Si $a\in\na$entonces $a=a.$
+\item [{ii)}] Si $a\in\na$ entonces $a=b$ si y sólo si $b=a.$
+\item [{iii)}] Si $a,b,c\in\na$ entonces $a=b,$ $b=c$ implica $a=c.$
+\item [{iv)}] Si $a=b$ y $b\in\na$ entonces $a\in\na.$
+\end{description}
+\end{axioma}
+
+El concepto de igualdad \texttt{Peano} lo presentó como un axioma
+y además establece que es una relación.
+
+Observamos también que generalmente cuando se define la igualdad solo
+se establecen las tres primeras propiedades, y la propiedad iv) es
+nueva, la cual nos asegura que un número natural sólo puede ser representado
+por un número natural. Es decir que si existen otros números estos
+no pueden representar a un número natural.\medskip{}
+\medskip{}
+
+\begin{axioma}{Sucesor\label{ap2}}
+
+Existe una aplicación %
+\begin{tabular}{cccc}
+$\varphi$ : &
+$\na$ &
+$\rightarrow$ &
+$\na$\tabularnewline
+\end{tabular} que cumple las siguientes propiedades
+\begin{description}
+\item [{i)}] $\forall n\in\na,\;\varphi\left(n\right)\neq1$
+\item [{ii)}] $\forall n,m\in\na\quad\varphi\left(n\right)=\varphi\left(m\right)\Rightarrow n=m.$
+\end{description}
+\end{axioma}
+
+La propiedad i) que establece el axioma \myref{ap2} nos dice que
+el número uno no tiene preimagen, es decir no es sucesor de ningún
+natural, es el primero.
+
+La segunda propiedad del axioma \myref{ap2} establece la relación
+de igualdad, en función de la función sucesor, pero también nos aclara
+que el sucesor de un número natural es único. \medskip{}
+\medskip{}
+
+\begin{axioma}{Adición entre naturales\label{ap5}}
+
+Existe una operación %
+\begin{tabular}{cccc}
+$+$ : &
+$\na\times\na$ &
+$\rightarrow$ &
+$\na$\tabularnewline
+ &
+$\left(a,b\right)$ &
+$\mapsto$ &
+$c=+\left(a,b\right)=a+b$\tabularnewline
+\end{tabular} que cumple las siguientes condiciones .
+
+$\forall n,n\in\na$ se tiene que 
+\begin{description}
+\item [{i)}] $n+1=\varphi\left(n\right)$
+\item [{ii)}] $\varphi\left(n\right)+m=n+\varphi\left(m\right)=\varphi\left(n+m\right)$
+\end{description}
+\end{axioma}
+
+Hubiéramos podido establecer los axiomas \myref{ap1} y \myref{ap5}
+como definiciones, pero decidimos establecerlos como axiomas, porque
+no conocemos todavía la estructura de $\na$.
+
+\begin{defi}{Sucesor}{sucesor}
+
+La aplicación que garantiza el axioma \myref{ap2} la definiremos
+\begin{tabular}{cccc}
+$\varphi$ : &
+$\na$ &
+$\rightarrow$ &
+$\na$\tabularnewline
+ &
+$n$ &
+$\mapsto$ &
+$\varphi\left(n\right)=n+1$\tabularnewline
+\end{tabular} de acuerdo con la propiedad i) del axioma \myref{ap5}
+
+\end{defi}
+
+Esta definición la podemos expresar de la siguiente manera:
+\[
+\mbox{Si \ensuremath{n\in\na\Rightarrow n+1\in\na.}}
+\]
+
+Y con el podemos construir los números naturales de la siguiente forma
+\begin{description}
+\item [{i)}] $1\in\na$ entonces existe $\varphi\left(1\right)=1+1\in\na$.
+Al número $1+1$ lo llamaremos dos, es decir $1+1:=2.$
+\item [{ii)}] $2\in\na$ entonces existe $\varphi\left(2\right)=2+1\in\na.$
+Al números $2+1$ lo llamaremos tres, es decir $2+1:=3.$
+\item [{iii)}] $3\in\na$ entonces existe $\varphi\left(3\right)=3+1\in\na.$
+Al números $3+1$ lo llamaremos cuatro, es decir $3+1:=4.$
+\end{description}
+Podemos seguir construyendo los números naturales de manera indefinida,
+es decir el conjunto de los números naturales es infinito. 
+
+En estos momentos como ya conocemos la estructura del conjunto de
+los números naturales podemos definir la adición entre naturales de
+acuerdo con la definición \ref{df:sucesor}.
+
+Sean $m$ y $n$ números naturales entonces $m+n=\underset{m\mbox{ veces}}{(1+1+1+\cdots+1)}+\underset{n\mbox{ veces}}{\left(1+1+1+\cdots+1\right)}$
+es decir:
+
+\begin{table}[H]
+\centering
+
+\caption{Tabla de la adición entre números naturales.}
+\resizebox{0.3\hsize}{!}{
+
+\setlength\arrayrulewidth{1pt}\arrayrulecolor{ptctitle} 
+
+\begin{tabular}{c|ccccc}
+\arrayrulecolor{ptctitle}\hline\cellcolor{ptctitle!50}$+$ &
+\cellcolor{ptctitle!50}$1$ &
+\cellcolor{ptctitle!50}$2$ &
+\cellcolor{ptctitle!50}$3$ &
+\cellcolor{ptctitle!50}$4$ &
+\cellcolor{ptctitle!50}$\cdots$\tabularnewline
+\hline 
+\hline\cellcolor{ptctitle!50}$1$ &
+\cellcolor{ptcbackground} $2$ &
+\cellcolor{ptcbackground} $3$ &
+\cellcolor{ptcbackground}$4$ &
+\cellcolor{ptcbackground}$5$ &
+\cellcolor{ptcbackground}$\cdots$\tabularnewline
+\hline\cellcolor{ptctitle!50}$2$ &
+\cellcolor{gray!50} $3$ &
+\cellcolor{gray!50} $4$ &
+\cellcolor{gray!50}$5$ &
+\cellcolor{gray!50}$6$ &
+\cellcolor{gray!50}$\cdots$\tabularnewline
+\hline\cellcolor{ptctitle!50}$3$ &
+\cellcolor{ptcbackground} $4$ &
+\cellcolor{ptcbackground} $5$ &
+\cellcolor{ptcbackground} $6$ &
+\cellcolor{ptcbackground} $7$ &
+\cellcolor{ptcbackground} $\cdots$\tabularnewline
+\hline\cellcolor{ptctitle!50}$4$ &
+\cellcolor{gray!50} $5$ &
+\cellcolor{gray!50} $6$ &
+\cellcolor{gray!50} $7$ &
+\cellcolor{gray!50} $8$ &
+\cellcolor{gray!50} $\cdots$\tabularnewline
+\hline\cellcolor{ptctitle!50}$\vdots$ &
+\cellcolor{ptcbackground} $\vdots$ &
+\cellcolor{ptcbackground} $\vdots$ &
+\cellcolor{ptcbackground} $\vdots$ &
+\cellcolor{ptcbackground} $\vdots$ &
+\cellcolor{ptcbackground} $\vdots$\tabularnewline
+\end{tabular}
+
+}\label{tun}
+\end{table}
+Observemos en ta tabla que $1+1=2$ o que $3+1=4$ , que es lo que
+conocemos desde la básica primaria.\medskip{}
+\medskip{}
+
+\begin{axioma}{ Inducción \label{induccion}}
+
+Si $A\subseteq\na,$ $A\neq\emptyset,$ tal que 
+\begin{description}
+\item [{i)}] $1\in A.$
+\item [{ii)}] Si $\left(n\in A\Rightarrow n+1\in A\right)\Rightarrow A=\na.$
+\end{description}
+\end{axioma}
+
+El axioma de inducción se puede presentar también de la siguiente
+forma :
+
+Sea $P$ una propiedad cualesquiera. entonces todo número satisface
+la propiedad $P$ si se tiene que:
+\begin{description}
+\item [{i)}] $1$ satisface la propiedad $P$, es decir $P\left(1\right)$es
+cierto.
+\item [{ii)}] Si $n$ satisface la propiedad $P$, entonces $n+1$ también
+satisface la propiedad $P$, es decir 
+\[
+\mbox{Si \ensuremath{P\left(n\right)\Rightarrow P\left(n+1\right).}}
+\]
+\item [{iii)}] Se concluye $P$ se satisface para cualquier natural, es
+decir $P\left(m\right)$ es cierta $\forall m\in\na.$ 
+\end{description}
+\selectlanguage{english}%
+\begin{apunte}
+
+\selectlanguage{spanish}%
+Cuando el axioma se presenta de esta forma se le llama Principio de
+Inducción. 
+
+\end{apunte}
+
+Resumiendo lo que afirman estos axiomas, podemos entender que se trata
+de un conjunto que tiene un elemento mínimo, el uno (Axioma \myref{ap4}),
+es decir no es siguiente de ningún otro (Axioma \myref{ap2}.i), es
+decir, se trata del primer elemento del conjunto, y todos los demás
+elementos tienen cada uno un elemento siguiente (Axioma \myref{induccion}.ii),
+de modo que dos elementos distintos tienen siguientes distintos. El
+axioma \myref{induccion} es de suma importancia por dotarnos de un
+método de demostración de propiedades, ya que nos indica que todo
+conjunto $A$ al que pertenezca el uno, y tal que todo elemento de
+$A$ tiene siguiente en $A$, necesariamente ha de coincidir con el
+conjunto $\na$ de los números naturales. Es lo que se acostumbra
+a denominar método simple de inducción completa. 
+
+A partir de estos cinco axiomas, y usando sistemáticamente el axioma
+\myref{induccion}, o de la inducción completa, podemos probar todas
+las propiedades del conjunto $\na$. 
+
+\begin{teo}{}{teo1}
+
+Ningún número natural coincide con su sucesor, es decir $\forall n\in\na,\:n\neq\varphi\left(n\right).$
+
+\end{teo}
+
+Este teorema nos da la herramienta para establecer que el conjunto
+de los números naturales no tiene elemento máximo, ya que todo número
+natural tiene sucesor de acuerdo con el axioma \myref{ap5} y de acuerdo
+con el teorema \ref{th:teo1} ningún natural coincide con su sucesor.
+
+\begin{defi}{Cero}{cero} 
+
+Existe un número llamado neutro aditivo o cero que representa con
+el símbolo $"0$'', tal que si $a\in\na\Rightarrow a+0=0+a=a$, además
+definiremos la aplicación 
+\[
+\varphi^{*}\left(n\right)=\begin{cases}
+\varphi\left(n\right) & \mbox{si \ensuremath{n\in\na,}}\\
+1 & \mbox{si \ensuremath{n=0.}}
+\end{cases}
+\]
+
+\end{defi}
+
+Observe que esta definición no contradice el axioma \myref{ap2}i
+ya que $0\notin\na$ y también nos muestra que el conjunto de los
+números naturales lo podemos definir estableciendo un elemento como
+mínimo y construyendo el resto con la función sucesor por lo tanto
+podemos establecer ya sea el $0$ o el $1$ como el mínimo del conjunto
+y a partir de este construir el resto.
+
+Hasta aquí podemos ver que la idea intuitiva de numero está de acuerdo
+con la construcción que hicimos, ya que el conjunto se construyó contando
+de uno en uno a partir del $1$, como lo habíamos comentado en la
+introducción.
+
+\begin{apunte} 
+
+Podemos ahora construir un nuevo conjunto $\na_{0}:=\na\cup\left\{ 0\right\} $
+y podemos redefinir la adición 
+
+\begin{center}
+\begin{tabular}{cccc}
+$+$ : &
+$\na_{0}\times\na_{0}$ &
+$\rightarrow$ &
+$\na_{0}$\tabularnewline
+ &
+$\left(a,b\right)$ &
+$\mapsto$ &
+$c=a+b$\tabularnewline
+\end{tabular}
+\par\end{center}
+
+Si definimos la siguiente proposición $0:=0+0$. Con esta definición
+acabamos con la discusión si el cero es o no un número natural, para
+nosotros no, pero cuando lo necesitemos trabajamos con el conjunto
+$\na_{0}$ 
+
+El axioma de inducción matemática lo podemos extender a $\na_{0}$
+cambiando la primera condición a $0\in A.$ 
+
+En general el axioma es válido para cualquier subconjunto de $\text{\na\ }$que
+le falten un numero finito de los primeros números, es decir si $B_{0}\subset\na$
+tal que $B_{0}=\{a_{0},a_{1},\cdots,\},\:a_{i}\in\na,\;\forall i=0,1,2,\cdots$,
+entonces el axioma de inducción se cumple cambiando la primara condición
+por $a_{0}\in A.$
+
+\end{apunte}
+
+\subsection{Propiedades de la adición entre números naturales}
+
+\begin{teo}{Propiedades de la adición}{ps}
+
+$\forall a,b,c\in\na_{0}$ se cumplen las siguientes propiedades:
+\begin{description}
+\item [{i)}] Propiedad asociativa: $\left(a+b\right)+c=a+\left(b+c\right).$
+\item [{ii)}] Propiedad conmutativa: $a+b=b+a$. 
+\item [{iii)}] Propiedad cancelativa: Si $a+c=b+c\Rightarrow a=b.$
+\end{description}
+\end{teo}

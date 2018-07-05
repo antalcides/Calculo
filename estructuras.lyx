@@ -3,11 +3,20 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /home/antalcides/Calculo/
 \textclass libro-matua
 \begin_preamble
 %\usepackage[utf8x]{inputenc}
 \usepackage[spanish, es-tabla]{babel}
+\RequirePackage{etoolbox}
+\RequirePackage{xparse}
+\RequirePackage{ifmtarg}% http://ctan.org/pkg/ifmtarg
+\RequirePackage{xifthen}% http://ctan.org/pkg/xifthen
+\RequirePackage{environ}% http://ctan.org/pkg/environ
+\RequirePackage{multido}% http://ctan.org/pkg/multido
+\RequirePackage{xkeyval}
+\RequirePackage{ifthen}
+\usepackage{pifont} 
 %\usepackage{makeidx}
 \usepackage{imakeidx}
 \makeindex[program=truexindy,options=-M texindy -L spanish -C utf8]
@@ -23,7 +32,7 @@
 \usepackage{pgf}
 \usepackage{mathrsfs}
 \usetikzlibrary{fit,shapes}
-\usepackage{mivenndiagram}
+\usepackage{mivenndiagram,boiboites}
 \usepackage{tikz-cd}% diagramas commutativos
 \usetikzlibrary{matrix}
 \usetikzlibrary{intersections}
@@ -31,11 +40,15 @@
 \usetikzlibrary{calc}
 \usepackage{zahlen}
 \usepackage{fixltx2e}
-\usepackage{mathtools}
-\usepackage{marvosym}% iconos 
+%\usepackage{mathtools}
 \usepackage{theoremref}
+\usepackage{scalefnt} % para escalar las fuentes
+\usepackage{psfrag}
+\usepackage{floatflt}
+\usepackage{marvosym}
+\usepackage{mivenndiagram}
 \MakeRobust{\eqref}
-\mathtoolsset{showonlyrefs=true,showmanualtags=true}
+%\mathtoolsset{showonlyrefs=true,showmanualtags=true}
 \def\myref#1{\textcolor{ptctitle}{\thesection .\ref{#1}}}
 \usepackage[hmargin=2cm,bmargin=3cm,tmargin=4.5cm,centering]{geometry}
 \def\yy{\rowcolor{ptcbackground}}
@@ -164,8 +177,121 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%
    % \renewcommand\p@axioma{\thesection.\theaxioma}
    \makeatother
- 
 \input{macros.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% % % % % % % % % % % % % % % % % %
+\definecolor{wood}{rgb}{0.61,0.51,0.43}
+\definecolor{mybrown}{RGB}{128,64,0}
+\definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\definecolor{Tan}{cmyk}{0.14,0.42,0.56,0}
+\newenvironment{lista}{
+\begin{itemize}
+ \renewcommand{\labelitemi}{{
+ \colorbox{wood!70!black}{\color{white}{\ding{42}}}
+ }}
+}{\end{itemize}}
+\newenvironment{figura}[3]{\begin{figure}[H]
+\centering
+                               #1
+                              \caption{#2}
+                              \label{#3}
+                              \end{figure}
+}{ \vskip 5pt }
+\tikzstyle{mybox} = [draw=red!40!black, fill=mybrown!10, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{fancytitle} =[fill=red!40!black, text=white]
+\NewEnviron{competencias}{\vskip 5pt
+\begin{tikzpicture}
+
+% First box
+\node [mybox] (box1){%
+    \begin{minipage}{0.92\textwidth}
+      \BODY
+    \end{minipage}
+    };
+    \node[fancytitle, rounded corners] at (box1.north) {\Large Objetivos};
+\end{tikzpicture}
+ }
+%%%%%%%%%%%%%%%%%%%%%%
+\NewEnviron{logros}{ \vskip 5pt
+\begin{tikzpicture}
+
+% First box
+\node [mybox] (box1){%
+    \begin{minipage}{0.92\textwidth}
+      \BODY
+    \end{minipage}
+    };
+    \node[fancytitle, rounded corners] at (box1.north) {\Large Indicadores de Logros
+};
+\end{tikzpicture}
+ }
+%%%%%%%%%%%%%%%%%5
+\definecolor{caper}{rgb}{0.36,0.46,0.23}
+\definecolor{rhodo}{rgb}{0.58,0.63,0.45}
+\definecolor{wood}{rgb}{0.61,0.51,0.43}
+\definecolor{mesh}{rgb}{0.97,0.93,0.81}
+\definecolor{wood}{rgb}{0.61,0.51,0.43}
+\definecolor{warningColor}{named}{Red3}
+\definecolor{doc}{RGB}{0,60,110}
+\definecolor{boxheadcol}{gray}{.6}
+\definecolor{boxcol}{gray}{.9}
+\newcommand{\resp}{\colorbox{teal!20!white}{\color{black}{Respuesta:}}\ }
+\newcommand{\obs}{\colorbox{teal!20!white}{\color{black}{Nota:}}\ }
+\newcommand{\propo}{\colorbox{teal!20!white}{\color{black}{Proposición:}}\ }
+\newcommand{\demos}{\colorbox{teal!20!white}{\color{black}{Demostraci\'on:}}\ }
+\newcommand{\notacion}{\colorbox{teal!20!white}{\color{black}{Notaci\'on:}}\ }
+\newcommand{\solu}{\colorbox{teal!20!white}{\color{black}{Soluci\'on:}}\ }
+\newcommand{\triangulo}{\tikz \filldraw[scale=0.5,fill=teal!20] (0,0) -- ++(60:1) -- ++(-60:1) -- cycle ;
+                 }
+\newcommand{\linea}[1]{\overleftrightarrow{#1}}
+\newcommand{\degre}{\ensuremath{^\circ}}
+\setlength{\tabcolsep}{8pt}
+%\setlength\columnseprule{2pt} %linea entrecolumnas por defecto 0pt
+\def\firstcircle{(0,0) circle (1.5cm)} 
+\def\secondcircle{(45:2cm) circle (1.5cm)}
+\def\thirdcircle{(0:2cm) circle (1.5cm)} 
+\def\rectangulo{(-2,-2) rectangle (4,3.6)}
+\def\fourcircle{(1.1,1) circle (1.5cm)}
+\def\fivecircle{(-2,1) circle (1.5cm)}
+\def\rect{(-4,-2) rectangle (4,3.6)} 
+\def\sixcircle{(-2.3,1) circle (0.8cm)} 
+\def\sevencircle{(1.1,1) circle (0.8cm)}
+\def\myref#1{\thesection .\ref{#1}}
+%%%%%%%%%%%%%%%%%%% ley 
+\newcounter{ley}[chapter]
+
+\newtcolorbox{ley}[2][]{
+    enhanced,
+    overlay={\axiomatitle{Ley~\refstepcounter{ley}\thesection.\theley~#2}},
+    borderline={2pt}{0mm}{zanahoria},
+    borderline={.7pt}{1mm}{ptctitle},
+    frame hidden,
+    arc=3mm,
+    %sidebyside,
+    %lefthand width=2.5cm,
+    %segmentation hidden,
+    top=15pt,
+    #1
+}
+\newcommand{\oper}[1]{\tikz\draw(0,0)  node[draw,circle,inner sep=0pt,minimum size=1pt]{#1} ;}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\newenvironment{Prueba}[2]{\renewcommand{\arraystretch}{1.06}
+\vskip 5pt  {
+ \colorbox{teal!30}{\color{white}{Prueba:}}
+ }\vskip 5pt
+$ %
+\begin{tabular}
+[t]{ll||l}\hline
+\multicolumn{2}{c||}{\mbox{Afirmaciones}} & \mbox{Razones}\\\hline\hline
+1. & 
+#1 
+& \multicolumn{1}{|l}{\mbox{Dado}}\\
+#2
+\end{tabular}
+\ \ \ $ 
+\vskip 5pt}{\hfill  \raggedright{ \rule{0.5em}{0.5em} }\vskip 5pt }
 \end_preamble
 \options 2m,twoside,svgnames,x11names,HTML,twoside,12pt
 \use_default_options false
@@ -272,7 +398,7 @@ hypersetup{linkcolor=ptctitle}
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 0.5cm*
+\begin_inset VSpace 0cm*
 \end_inset
 
  
@@ -282,48 +408,59 @@ hypersetup{linkcolor=ptctitle}
 \align right
 
 \shape italic
-\size footnotesize
-El principio de razón suficiente, que afirma que nada
-\end_layout
-
-\begin_layout Standard
-\align right
-
-\shape italic
-\size footnotesize
-sucede gratuitamente, es decir, que a todo fenómeno 
-\end_layout
-
-\begin_layout Standard
-\align right
-
-\shape italic
-\size footnotesize
-le corresponde una explicación, una razón de ser 
-\end_layout
-
-\begin_layout Standard
-\align right
-
-\shape italic
-\size footnotesize
-que se presente admisible a la razón.
+\size scriptsize
+Los símbolos algebraicos se usan cuando no sabes de qué estas hablando.
  
 \end_layout
 
 \begin_layout Standard
 \align right
 
+\series bold
+\shape smallcaps
 \size small
+Philippe Schnoebelen
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\shape italic
+\size footnotesize
+.
  
-\size default
-Leibniz: 
 \end_layout
 
 \begin_layout Standard
 \begin_inset VSpace -1mm*
 \end_inset
 
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Las estructuras algebraicas constituyen una de las herramientas básicas
+ para tratar la mayor parte de los problemas asociados a la matemática discreta.
+ En este capítulo, pretendemos dar las primeras nociones algebraicas para
+ poder tratar, a título de ejemplo, algunos de los problemas más conocidos
+ dentro de este ámbito.
+ El primer capítulo se dieron los conceptos de relaciones, aplicaciones,
+ operaciones y ahora se presentan las estructuras algebraicas más importantes.
+ Algunas de las nociones que se consideran corresponden a una formación
+ básica, pero por razones de coherencia formal se ha considerado conveniente
+ reconsiderarlas y agruparlas ordenadamente en su contexto original.
+ El capítulo siguiente está dedicado al estudio de los conjuntos numéricos
+ y los veremos como con ellos se pueden construir estructuras algebraicas
+ como modelos más completo de estructuras definidas a partir de una operación
+ o dos operaciones.
+ 
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 

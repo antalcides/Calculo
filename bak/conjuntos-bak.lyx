@@ -1,0 +1,11512 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/antalcides/Calculo/
+\textclass libro-matua
+\begin_preamble
+%\usepackage[utf8x]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+\RequirePackage{etoolbox}
+\RequirePackage{xparse}
+\RequirePackage{ifmtarg}% http://ctan.org/pkg/ifmtarg
+\RequirePackage{xifthen}% http://ctan.org/pkg/xifthen
+\RequirePackage{environ}% http://ctan.org/pkg/environ
+\RequirePackage{multido}% http://ctan.org/pkg/multido
+\RequirePackage{xkeyval}
+\RequirePackage{ifthen}
+\usepackage{pifont} 
+%\usepackage{makeidx}
+\usepackage{imakeidx}
+\makeindex[program=truexindy,options=-M texindy -L spanish -C utf8]
+%\usepackage[totoc]{idxlayout}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\graphicspath{{ps/}{logo/}{image/}{sections/Figures/}}
+%\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{fancyvrb}
+\usepackage{cancel}
+\raggedbottom %para que no distibuya los espacios verticales en una hoja
+\usepackage{pgf}
+\usepackage{mathrsfs}
+\usetikzlibrary{fit,shapes}
+\usepackage{mivenndiagram}
+\usepackage{tikz-cd}% diagramas commutativos
+\usetikzlibrary{matrix}
+\usetikzlibrary{intersections}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usepackage{zahlen}
+\usepackage{fixltx2e}
+\usepackage{mathtools}
+\usepackage{theoremref}
+\usepackage{scalefnt} % para escalar las fuentes
+\usepackage{psfrag}
+\usepackage{floatflt}
+\usepackage{marvosym}
+\usepackage{mivenndiagram}
+\MakeRobust{\eqref}
+\mathtoolsset{showonlyrefs=true,showmanualtags=true}
+\def\myref#1{\textcolor{ptctitle}{\thesection .\ref{#1}}}
+\usepackage[hmargin=2cm,bmargin=3cm,tmargin=4.5cm,centering]{geometry}
+\def\yy{\rowcolor{ptcbackground}}
+\def\yyy{\rowcolor{gray!50}}
+\def\xxx{\rowcolor{ptctitle!50}}
+\def\ccc{\cellcolor{ptctitle!50}}
+\usepackage{multirow}
+\def\maxwidth{8cm}
+% Length to control the \fancyheadoffset and the calculation of \headline
+% simultaneously
+\RequirePackage{hyperref}
+\hypersetup{
+             linktoc=all,
+             hidelinks,
+             pdfborder={0 0 0},
+            colorlinks=true,
+            linkcolor = ptctitle,
+            backref=true,
+            pagebackref=true,
+            hyperindex=true,
+            breaklinks=true,
+            urlcolor=ocre,
+            citecolor = ocre,
+            bookmarks=true,
+            bookmarksopen=false,
+            pdftitle={Title},
+            pdfauthor={Author}
+                              }
+\newlength\FHoffset
+\setlength\FHoffset{0.5cm}
+
+\addtolength\headwidth{2\FHoffset}
+
+\fancyheadoffset{\FHoffset}
+
+% these lengths will control the headrule trimming to the left and right 
+\newlength\FHleft
+\newlength\FHright
+
+% here the trimmings are controlled by the user
+\setlength\FHleft{1cm}
+\setlength\FHright{0cm}
+
+% The new definition of headrule that will take into acount the trimming(s)
+\newbox\FHline
+\setbox\FHline=\hbox{\hsize=\paperwidth%
+  \hspace*{\FHleft}%
+  \rule{\dimexpr\headwidth-\FHleft-\FHright\relax}{\headrulewidth}\hspace*{\FHright}%
+}
+\renewcommand\headrule{\vskip-.7\baselineskip\copy\FHline}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\providecommand\phantomsection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\fullwidthcolor#1{\color{#1}\leaders\vrule\hskip\textwidth\hskip-\textwidth\kern0pt}
+\def\resetLTcolor{\global\let\zz\zzb}
+\def\yy{\rowcolor{ptcbackground}}
+\def\yyy{\rowcolor{gray!50}}
+\def\xxx{\rowcolor{ptctitle!50}}
+\def\ccc{\cellcolor{ptctitle!50}}
+\def\yya{\cellcolor{gray!50}}
+\def\yyb{\cellcolor{ptcbackground}}
+\def\maxwidth{8cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\firstcircle{(0,0) circle (1.5cm)} 
+\def\secondcircle{(45:2cm) circle (1.5cm)}
+\def\thirdcircle{(0:2cm) circle (1.5cm)} 
+\def\rectangulo{(-2,-2) rectangle (4,3.6)}
+\def\fourcircle{(1.1,1) circle (1.5cm)}
+\def\fivecircle{(-2,1) circle (1.5cm)}
+\def\rect{(-4,-2) rectangle (4,3.6)} 
+\def\sixcircle{(1.5,1) circle (1.5cm)} 
+\def\sevencircle{(1.1,1) circle (0.8cm)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% pies de p\'agina %%%%%%%%%%%%%%%%
+ \fancyfoot[LE]{\hspace*{-0.2\headwidth}\colorbox{ptctitle!20}{\makebox[\dimexpr 0.6\headwidth-2\fboxsep][r]{\strut\bf\color{ptctitle}C\'alculo diferencial}}%
+               \colorbox{zanahoria!60}{\makebox[\dimexpr 0.6\headwidth-2\fboxsep][l]{\strut\bf\color{white}\sffamily\itshape\small\protect\nouppercase{Antalcides Olivo\hfill Autor2 \hfill Autor3}}}}               
+               %%%%%%%%%%%%%%%%%%%%%%
+                \fancyfoot[LO]{\hspace*{-0.2\headwidth}\colorbox{ptctitle!20}{\makebox[\dimexpr0.6\headwidth-2\fboxsep][c]{\strut\bf\color{ptctitle}C\'alculo diferencial}}%
+               \colorbox{zanahoria!60}{\makebox[\dimexpr0.6\headwidth-2\fboxsep][r]{\strut\bf\color{white}\sffamily\itshape\small\protect\nouppercase{Antalcides Olivo\hfill Autor2 \hfill Autor3}}}}               
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% conjuntos n\'umericos
+\newcommand{\CC}{\mathbb{C}}
+%\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\pp}{\mathbb{\overline{P}}}
+\newcommand{\DD}{\mathbb{D}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\XX}{\mathbb{X}}
+\newcommand{\der}{\mathcal{D}}
+\newcommand{\kk}{\mathcal{K}}
+\newcommand{\mm}[1]{{\mathcal{M}\/}(#1)}
+\newcommand{\nequiv}{{\equiv \hspace*{-3.7mm}/}}
+\newcommand{\capa}[1]{\mbox{{\em Cap\/}}(#1)}
+\newcommand{\gra}[1]{\mbox{{\em grad\/}}(#1)}
+\newcommand{\sop}[1]{\mbox{{\em supp\/}}(#1)}
+\newcommand{\esup}[1]{{\mbox{\rm ess\,sup\/}}#1}
+\newcommand{\lqqd}{\hfill $\blacksquare$}
+\newcommand{\II}{\mathbb{I}}
+%\newcommand{\na}{I\! N}
+%\newcommand{\re}{I\! R}
+{\makeatletter   % dies ist lokal, damit man die Datei wahlweise
+                 % mit \input oder mit \documentstyle[...] einlesen kann.
+ 
+\gdef\re{\relax\ifmmode I\hskip -3\p@ R\else
+    \hbox{$I\hskip -3\p@ R$}\fi} %Reales
+\gdef\na{\relax\ifmmode I\hskip -2.7\p@ N\else
+    \hbox{$I\hskip -2.7\p@ N$}\fi} % Naturales
+\gdef\en{\relax\ifmmode Z\hskip -4.8\p@ Z\else
+    \hbox{$Z\hskip -4.8\p@ Z$}\fi} %Enteros
+\gdef\co{\relax\ifmmode C\hskip-4.8\p@\vrule \@height 5.8\p@ \@depth\z@
+    \hskip 6.3\p@\else
+    \hbox{$C\hskip-4.8\p@\vrule \@height 5.8\p@ \@depth\z@ \hskip 6.3\p@$}\fi}% Complejos
+\gdef\ra{\relax\ifmmode Q\hskip-5.0\p@\vrule
+          \@height 6.0\p@ \@depth \z@ \hskip 6\p@\else
+    \hbox{$Q\hskip-5.0\p@\vrule \@height 6.0\p@ \@depth \z@ \hskip 6\p@$}\fi}% Racionales
+\gdef\hz{\relax\ifmmode I\hskip -3\p@ H\else
+    \hbox{$I\hskip -3\p@ H$}\fi} % Espacio de Hilbert
+\gdef\kz{\relax\ifmmode I\hskip -3\p@ K\else
+    \hbox{$I\hskip -3\p@ K$}\fi} % campo K
+    \gdef\ir{\relax\ifmmode I\hskip -3\p@ I\else
+    \hbox{$I\hskip -3\p@ K$}\fi} % Irracionales}
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+   % \renewcommand\p@axioma{\thesection.\theaxioma}
+   \makeatother
+\input{macros.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% % % % % % % % % % % % % % % % % %
+\definecolor{wood}{rgb}{0.61,0.51,0.43}
+\definecolor{mybrown}{RGB}{128,64,0}
+\definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\definecolor{Tan}{cmyk}{0.14,0.42,0.56,0}
+\newenvironment{lista}{
+\begin{itemize}
+ \renewcommand{\labelitemi}{{
+ \colorbox{wood!70!black}{\color{white}{\ding{42}}}
+ }}
+}{\end{itemize}}
+\newenvironment{figura}[3]{\begin{figure}[H]
+\centering
+                               #1
+                              \caption{#2}
+                              \label{#3}
+                              \end{figure}
+}{ \vskip 5pt }
+\tikzstyle{mybox} = [draw=red!40!black, fill=mybrown!10, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{fancytitle} =[fill=red!40!black, text=white]
+\NewEnviron{competencias}{\vskip 5pt
+\begin{tikzpicture}
+
+% First box
+\node [mybox] (box1){%
+    \begin{minipage}{0.92\textwidth}
+      \BODY
+    \end{minipage}
+    };
+    \node[fancytitle, rounded corners] at (box1.north) {\Large Objetivos};
+\end{tikzpicture}
+ }
+%%%%%%%%%%%%%%%%%%%%%%
+\NewEnviron{logros}{ \vskip 5pt
+\begin{tikzpicture}
+
+% First box
+\node [mybox] (box1){%
+    \begin{minipage}{0.92\textwidth}
+      \BODY
+    \end{minipage}
+    };
+    \node[fancytitle, rounded corners] at (box1.north) {\Large Indicadores de Logros
+};
+\end{tikzpicture}
+ }
+%%%%%%%%%%%%%%%%%5
+\newcommand{\resp}{\colorbox{teal!20!white}{\color{black}{Respuesta:}}\ }
+\newcommand{\obs}{\colorbox{teal!20!white}{\color{black}{Nota:}}\ }
+\newcommand{\propo}{\colorbox{teal!20!white}{\color{black}{Proposición:}}\ }
+\newcommand{\demos}{\colorbox{teal!20!white}{\color{black}{Demostraci\'on:}}\ }
+\newcommand{\notacion}{\colorbox{teal!20!white}{\color{black}{Notaci\'on:}}\ }
+\newcommand{\solu}{\colorbox{teal!20!white}{\color{black}{Soluci\'on:}}\ }
+\newcommand{\triangulo}{\tikz \filldraw[scale=0.5,fill=teal!20] (0,0) -- ++(60:1) -- ++(-60:1) -- cycle ;
+                 }
+\newcommand{\linea}[1]{\overleftrightarrow{#1}}
+\newcommand{\degre}{\ensuremath{^\circ}}
+\setlength{\tabcolsep}{8pt}
+%\setlength\columnseprule{2pt} %linea entrecolumnas por defecto 0pt
+\def\firstcircle{(0,0) circle (1.5cm)} 
+\def\secondcircle{(45:2cm) circle (1.5cm)}
+\def\thirdcircle{(0:2cm) circle (1.5cm)} 
+\def\rectangulo{(-2,-2) rectangle (4,3.6)}
+\def\fourcircle{(1.1,1) circle (1.5cm)}
+\def\fivecircle{(-2,1) circle (1.5cm)}
+\def\rect{(-4,-2) rectangle (4,3.6)} 
+\def\sixcircle{(-2.3,1) circle (0.8cm)} 
+\def\sevencircle{(1.1,1) circle (0.8cm)}
+\def\myref#1{\thesection .\ref{#1}}
+\end_preamble
+\options 2m,twoside,svgnames,x11names,HTML,twoside,12pt
+\use_default_options true
+\master calculod.lyx
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding utf8x
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 1
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Teoría intuitiva de Conjuntos
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+PartialToc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hypersetup{linkcolor=ptctitle}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm*
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\shape italic
+\size footnotesize
+El principio de razón suficiente, que afirma que nada
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\shape italic
+\size footnotesize
+sucede gratuitamente, es decir, que a todo fenómeno 
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\shape italic
+\size footnotesize
+le corresponde una explicación, una razón de ser 
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\shape italic
+\size footnotesize
+que se presente admisible a la razón.
+ 
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size small
+ 
+\size default
+Leibniz: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -1mm*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{competencias}  
+\backslash
+begin{lista}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Interpreta correctamente los conceptos de conjunto y elemento.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Argumenta los procedimientos para realizar operaciones entre conjuntos
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Maneja con criterio las operaciones y sus propiedades en los diferentes
+ sistemas numéricos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista} 
+\backslash
+end{competencias}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{logros} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lista}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Identifica conjuntos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Clasifica conjuntos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Realiza operaciones entre conjuntos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Deduce las propiedades de los conjuntos a partir de los axiomas, definiciones
+ y otras propiedades.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Aplica bien las propiedades de los conjuntos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Utiliza los diagramas de Venn para representar operaciones y relaciones
+ entre conjuntos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista} 
+\backslash
+end{logros}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Este primer capítulo es una breve introducción a la lógica, que es la herramient
+a que usan las matemáticas para desarrollarse.
+\end_layout
+
+\begin_layout Standard
+El objetivo del mismo es describir en que consiste una teoría matemática.
+ Para lograrlo, primero hay que exponer sucintamente las reglas de la lógica
+ de proposiciones, definir con precisión que es un razonamiento lógico y,
+ por ultimo, explicar en que consiste una teoría matemática (brevemente,
+ una serie de axiomas, definiciones y teoremas relacionados entre sí mediante
+ argumentos lógicos, como veremos mas adelante).
+ 
+\end_layout
+
+\begin_layout Standard
+La lógica es un esquema de reglas que permite deducir verdades a partir
+ de o otras verdades.
+ El medio que lleva de las primeras verdades a las otras deducidas se llama
+ razonamiento lógico.
+ La lógica estudia, precisamente, los razonamientos lógicos, estableciendo
+ cuándo un razonamiento es valido, independientemente del contenido de las
+ verdades que se enuncien.
+ Sólo le interesan las manipulaciones que se hacen con los enunciados, no
+ su contenido.
+\end_layout
+
+\begin_layout Standard
+Todos los resultados mostrados en este capítulo se prueban rigurosamente.
+ Sin embargo, no se usa para ello el razonamiento lógico, que que se utiliza
+ en un curso de lógica matemática sino el simple y eficaz camino de las
+ tablas introducidas en la sección 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:Relaciones-entre-proposiciones}
+\end_layout
+
+\end_inset
+
+ .
+ Por supuesto, algunos resultados si se podrán demostrar a partir de otros
+ anteriores mediante las leyes del álgebra de proposiciones, que se exponen
+ en la a sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Operaciones-entre-proposiciones"
+
+\end_inset
+
+.
+ Pero hemos preferido dejar todo el capítulo en manos de las tablas.
+\end_layout
+
+\begin_layout Standard
+Por otra parte Uno de los aspectos fundamentales en cualquier interpretación
+ rigurosa de la realidad es la coherencia interna de la explicación.
+ Es conveniente atender a este aspecto con toda la claridad que sea posible.
+ y a aquí es donde echamos mano de la lógica que es la que se ocupa del
+ estudio de las formas correctas de pensar y sirve, por tanto, no sólo para
+ comprobar la validez formal de los argumentos, sino que permite también
+ la elaboración formalmente rigurosa de las explicaciones teóricas.
+\end_layout
+
+\begin_layout Standard
+En la medida en que las ciencias procuran interpretar la realidad física
+ sin depender excesivamente de implícitos no controlables, y en que la realidad
+ que estudian es compleja y difícil de comprender intelectualmente; necesitan
+ aumentar el control sobre las propias formulaciones teóricas.
+ Este dominio debe ejercerse en dos campos principales: 
+\end_layout
+
+\begin_layout Standard
+El significado estricto de las nociones que emplea.
+ 
+\end_layout
+
+\begin_layout Standard
+La validez formal de las teorías y leyes en que las ordena.
+ 
+\end_layout
+
+\begin_layout Standard
+El método que permite dar cumplimiento a estas necesidades es el de la axiomatiz
+ación.
+ 
+\end_layout
+
+\begin_layout Standard
+El cual es aplicable en toda su pureza en las llamadas ciencias formales
+ como, la lógica y las matemáticas, pero proporciona grandes ventajas en
+ la ciencias, y sigue siendo el ideal en otras ramas del saber.
+\end_layout
+
+\begin_layout Standard
+No es posible alcanzar un control objetivo absoluto acerca del saber, es
+ decir tenerlo todo explicitado sin presupuestos.
+ 
+\end_layout
+
+\begin_layout Standard
+No cabe alcanzar un dominio total de la objetividad.
+ Pero sí merece la pena que lo objetivable se exprese del modo más claro
+ y formalmente riguroso que pueda alcanzarse, conscientes de las limitaciones
+ inherentes al intento y de la necesidad de presupuestos no sistematizables
+ para que el conocimiento pueda cumplirse.
+ 
+\end_layout
+
+\begin_layout Standard
+El conocimiento humano puede dividirse en inmediato y mediato.
+\end_layout
+
+\begin_layout Standard
+Todo posible conocimiento debe alcanzarse desde aquel que ya se posee, y
+ el modo de poseer con claridad objetiva lo que se sabe se apoya en la posibilid
+ad de expresarlo mediante enunciados con sentido.
+\end_layout
+
+\begin_layout Standard
+Así pues, lo que se desconoce directamente habrá de poderse concluir desde
+ los enunciados conocidos, con la ayuda de una regla que nos permita comprender
+ su validez.
+\end_layout
+
+\begin_layout Standard
+El proceso avanza desde las premisas hacia la conclusión, según las reglas
+ válidas de la demostración y de la lógica .
+ 
+\end_layout
+
+\begin_layout Section
+Sistema axiomático 
+\end_layout
+
+\begin_layout Standard
+Toda teoría matemática tiene una estructura que la diferencia de las teorías
+ presentadas en las otras disciplinas.
+\end_layout
+
+\begin_layout Standard
+A ésta estructura se le llama 
+\family sans
+sistema axiomático.
+\end_layout
+
+\begin_layout Standard
+Un sistema axiomático formal consta de los siguientes elementos: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Un alfabeto 
+\begin_inset Formula $S$
+\end_inset
+
+ para construir expresiones formales que incluye:
+\end_layout
+
+\begin_layout Description
+* Un conjunto mínimo de elementos o términos propios de la teoría que no
+ se pueden construir a partir de otros.
+ ( 
+\begin_inset Quotes eld
+\end_inset
+
+
+\family sans
+Es decir no se pueden definir
+\family default
+
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Description
+* Un conjunto de términos construidos a partir de los elementos del conjunto
+ anterior.
+ (Definiciones)
+\end_layout
+
+\begin_layout Description
+* Un conjunto de símbolos para conectivas lógicas y cuantificadores.
+ (operaciones)
+\end_layout
+
+\begin_layout Description
+* Un conjunto de símbolos para designar variables.
+\end_layout
+
+\begin_layout Description
+* Un conjunto de símbolos para constantes (que tendrán en un modelo una
+ interpretación fija).
+ 
+\end_layout
+
+\begin_layout Description
+* Un conjunto de símbolos que serán interpretados como funciones.
+ 
+\end_layout
+
+\begin_layout Description
+* Un conjunto de símbolos que serán interpretados como relaciones.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Una gramática formal que incluirá:
+\end_layout
+
+\begin_layout Description
+* Reglas de buena formación, que reproducen la "morfología" del lenguaje
+ formal.
+\end_layout
+
+\begin_layout Description
+* Reglas de inferencia que permitirán deducir unas proposiciones de otras,
+ estas reglas reproducen la "sintaxis" del lengua formal.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Un conjunto de axiomas inicial, o expresiones bien formadas, que son el
+ punto de partida de cualquier deducción.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para el conjunto de expresiones bien formadas expresadas en el lenguaje
+ formal anterior puede definirse una 
+\begin_inset Formula $S-estructura$
+\end_inset
+
+ en la que a cada variable constante o cada ocurrencia libre de una variable
+ reciba un valor dentro del modelo (es decir, las constantes y variables
+ libres serán conjuntos preasignados de la 
+\begin_inset Formula $S-estructura$
+\end_inset
+
+).
+ Las funciones y relaciones serán definidas como funciones y relaciones
+ matemáticas dentro de la 
+\begin_inset Formula $S-estructura$
+\end_inset
+
+.
+ Una vez definidas las constantes, variables libres, funciones y relaciones
+ resulta trivial atribuir un significado concreto a las expresiones del
+ lenguaje formal en la 
+\begin_inset Formula $S-estructura$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Modelos para un sistema axiomático formal
+\end_layout
+
+\begin_layout Standard
+Si un conjunto de proposiciones (fórmulas bien formadas) de un sistema axiomátic
+o formal admiten una 
+\begin_inset Formula $S-estructura$
+\end_inset
+
+ donde se satisfacen, entonces se dice que dicha estructura es un modelo
+ para el conjunto de proposiciones.
+\end_layout
+
+\begin_layout Standard
+Un sistema de axiomas que admite un modelo es un sistema de axiomas consistente.
+ Un sistema formal bien construido satisface "teorema de validez" que viene
+ a afirmar que cualquier proposición deducible de los axiomas o teorema
+ del sistema axiomático, se satisface también, en todos los modelo que sean
+ un modelo en el que se satisfacen los axiomas.
+ La propiedad recíproca no siempre se cumple, una proposición que se satisface
+ en todos los modelos de una teoría no tiene porqué ser deducible del sistema
+ de axiomas.
+ Este último punto es ilustrado por los teoremas de incompletitud de Gödel,
+ que viene a afirmar que una sistema formal de ciertos sistemas matemáticos
+ con un conjunto de axiomas que satisface determinada propiedad formal (ser
+ un recursivamente enumerables ) admitirá un modelo en el que algunas proposicio
+nes serán ciertas pero no serán deducibles.
+ Es decir, la teoría asociada al sistema axiomático formal será esencialmente
+ incompleta.
+ 
+\end_layout
+
+\begin_layout Subsection
+Concepto de lógica matemática
+\end_layout
+
+\begin_layout Standard
+La lógica matemática estudia los sistemas formales en relación con el modo
+ en el que codifican conceptos intuitivos de objetos matemáticos como conjuntos,
+ números, demostraciones y computación.
+ 
+\end_layout
+
+\begin_layout Standard
+La lógica estudia las reglas de deducción formales, las capacidades expresivas
+ de los diferentes lenguajes formales y las propiedades metalógicas de los
+ mismos.
+ 
+\end_layout
+
+\begin_layout Standard
+En un nivel elemental, la lógica proporciona reglas y técnicas para determinar
+ si es o no válido un argumento dado dentro de un determinado sistema formal.
+ 
+\end_layout
+
+\begin_layout Standard
+En un nivel avanzado, la lógica matemática se ocupa de la posibilidad de
+ axiomatizar las teorías matemáticas, de clasificar su capacidad expresiva,
+ y desarrollar métodos computacionales útiles en sistemas formales.
+\end_layout
+
+\begin_layout Standard
+La teoría de la demostración y la matemática inversa son dos de los razonamiento
+s más recientes de la lógica matemática abstracta.
+ 
+\end_layout
+
+\begin_layout Standard
+Debe señalarse que la lógica matemática se ocupa de sistemas formales que
+ pueden no ser equivalentes en todos sus aspectos, por lo que la lógica
+ matemática no es método de descubrir verdades del mundo físico real, sino
+ sólo una fuente posible de modelos lógicos aplicables a teorías científicas,
+ muy especialmente a la matemática convencional.
+ 
+\end_layout
+
+\begin_layout Standard
+La lógica matemática no se encarga por otra parte del concepto de razonamiento
+ humano general o del proceso creativo de construcción de demostraciones
+ matemáticas mediante argumentos rigurosos pero hechas usando lenguaje informal
+ con algunos signos o diagramas, sino sólo de demostraciones y razonamientos
+ que pueden ser completamente formalizados en todos sus aspectos.
+ 
+\end_layout
+
+\begin_layout Subsection
+Un poco de historia
+\end_layout
+
+\begin_layout Standard
+En el último cuarto del siglo XIX se vivió un episodio apasionante de la
+ historia de las matemáticas que las ligaría desde entonces a la historia
+ de la lógica.
+\end_layout
+
+\begin_layout Standard
+Primero, Georg Boole (1815-1864) en su Mathematical Analysis of Logic trató
+ de presentar la lógica como parte de las matemáticas.
+ 
+\end_layout
+
+\begin_layout Standard
+Poco después Gottlob Frege (1848-1925) intentó mostrar que la aritmética
+ era parte de la lógica en su Die Grundlagen der Arithmetik.
+ Pero, dando un gran paso tanto en la historia de las matemáticas como en
+ la historia de la lógica, G.
+ Cantor se había adelantado a Frege con una fundamentación lógica de la
+ aritmética.
+\end_layout
+
+\begin_layout Standard
+Cantor había demostrado que la totalidad de los números naturales comprendidos
+ en el intervalo de extremos 0 y 1 no es numerable, en el sentido de que
+ su infinitud no es la de los números naturales.
+ Como una consecuencia de esa situación, Cantor creó una nueva disciplina
+ matemática entre 1874 y 1897: la teoría de conjuntos.
+ 
+\end_layout
+
+\begin_layout Standard
+Su obra fue admirada y condenada simultáneamente por sus contemporáneos.
+\end_layout
+
+\begin_layout Standard
+Desde entonces los debates en el seno de la teoría de conjuntos han sido
+ siempre apasionados, sin duda por hallarse estrechamente conectados con
+ importantes cuestiones lógicas.
+ 
+\end_layout
+
+\begin_layout Standard
+Según la definición de conjunto de Cantor, éste es “una colección en un
+ todo de determinados y distintos objetos de nuestra percepción o nuestro
+ pensamiento, llamados los elementos del conjunto”.
+\end_layout
+
+\begin_layout Standard
+Frege fue uno de los admiradores de la nueva teoría de Cantor, y dio una
+ definición de conjunto similar.
+ 
+\end_layout
+
+\begin_layout Standard
+En 1903 B.
+ Russell demostraría que la teoría de conjuntos de Cantor era inconsistente
+ y cuestionaría la definición de conjunto en la teoría de Cantor.
+\end_layout
+
+\begin_layout Standard
+Pero pronto la teoría axiomática de Zermelo (1908) y refinamientos de ésta
+ debidos a Fraenkel (1922), Skolem (1923), von Newman (1925) y otros sentaron
+ las bases para la teoría de conjuntos actual.
+\end_layout
+
+\begin_layout Standard
+Es indiscutible el hecho de que la teoría de conjuntos es una parte de las
+ matemáticas, es además, la teoría matemática dónde fundamentar la aritmética
+ y el resto de teorías matemáticas.
+\end_layout
+
+\begin_layout Standard
+Es también indiscutible que es una parte de la lógica y en particular una
+ parte de la lógica de predicados.
+ 
+\end_layout
+
+\begin_layout Standard
+En esta historia cruzada de las matemáticas, la lógica y los fundamentos
+ de ambas, la teoría de conjuntos permitiría por un lado una fundación logicista
+ de las matemáticas; pero por otro lado la teoría de conjuntos mirada como
+ parte de las matemáticas proporciona el metalenguaje, el contexto o sustrato
+ de las teorías lógicas.
+ Finalmente, puede ser completamente expresada en un lenguaje de primer
+ orden y sus axiomas y teoremas constituyen una teoría de primer orden a
+ la que pueden aplicarse los resultados generales que se aplican a cualquier
+ teoría de primer orden.
+\end_layout
+
+\begin_layout Subsection
+Proposición lógica
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Aquí empieza la construcción axiomática de la lógica.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ideabox}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Enunciado lógico
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\family sans
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+Un enunciado lógico
+\family default
+ es una oración o conjunto de oraciones con sentido completo.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+En este concepto usaremos el concepto de oración en toda su dimensión, pero
+ no así el de enunciado.
+\end_layout
+
+\begin_layout Standard
+Presentaremos dos ejemplos de Enunciados lógicos
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Escuché la conferencia de Raiza en Pedasí, 
+\family sans
+cuyas playas son formidables
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Estos son los poemas 
+\family sans
+cuyos autores no los hubieran escrito sin sentirse realmente desolados en
+ el universo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora presentaremos un nuevo concepto como un término que se construye a
+ partir de uno ya conocido.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Proposición lógica
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+
+\series bold
+ Una proposición lógica
+\series default
+ es un enunciado lógico al cual se le puede asignar un valor de verdad,
+ es decir puede ser falso o verdadero, pero no ambas.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+obs
+\backslash
+
+\end_layout
+
+\end_inset
+
+ De aquí en adelante a las proposiciones lógicas y a los enunciodos lógicos
+ los llamaremos simplemente proposiciones y enunciados, a no ser que no
+ estemos en el contexto de la lógica matemática, por que en ese caso debemos
+ hacer la aclaración 
+\end_layout
+
+\begin_layout Standard
+Por ejemplo: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lista}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $3+2=5$
+\end_inset
+
+.
+ De acuerdo con la definición de adición entre naturales, este enunciado
+ es verdadero, por lo tanto es una proposición.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+Mañana llueve.
+ esto es algo que no se puede saber antes de termine el día, por lo tanto
+ no se le puede asignar un valor de verdad, es decir este enunciado no es
+ una proposición.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+notacion
+\backslash
+
+\end_layout
+
+\end_inset
+
+ Las proposiciones lógicas serán denotadas generalmente con letras minúsculas
+ 
+\begin_inset Formula $p,\,q,\,r\,,t$
+\end_inset
+
+, etc.
+ A la veracidad o falsedad de una proposición se denomina valor de verdad.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+ Valor de verdad 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+ Se llama valores de verdad de una proposición a sus dos valores posibles;
+ verdadero o falso.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estos posibles valores se puede esquematizar en una tabla, llamada tabla
+ de verdad, en la forma.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de verdad
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabularnewline[6ex]
+\backslash
+arrayrulecolor{ptctitle}
+\backslash
+hline
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{gray!50}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ptcbackground}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $f$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ptcbackground}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $v$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabularnewline
+\backslash
+arrayrulecolor{ptctitle}
+\backslash
+hline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Clasificación de proposiciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1pt}
+\end_layout
+
+\end_inset
+
+
+\series bold
+Proposiciones atomicas o simples
+\end_layout
+
+\begin_layout Standard
+Las proposiciones atómicas ó simples, son las proposiciones que no utiliza
+ conectivos lógicos.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposiciones Moleculares o compuestas
+\end_layout
+
+\begin_layout Standard
+Cuando las proposiciones constan de una única oración es fácil especificar
+ su valor de verdad, pero cuando consta de varias oraciones, no lo es tanto;
+ además debemos establecer la forma de conectar las oraciones para que tengan
+ sentido, completo, por lo que se hace necesario establecer una serie de
+ términos para este fin, estos términos son los llamados conectivos lógicos.
+ Y las proposiciones que los usan se llaman proposiciones compuestas o molecular
+es.
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+Conectivos lógicos
+\end_layout
+
+\begin_layout Standard
+Son expresiones que sirven para unir dos o más proposiciones, entre los
+ más importantes conectivos lógicos tenemos.
+ La conjunción, disyunción, condicional, bicondicional, negación, esto mostrarem
+os en la siguiente tabla:
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de los conectivos lógicos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+arrayrulewidth{1pt}
+\backslash
+arrayrulecolor{ptctitle} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+arrayrulecolor{ptctitle}
+\backslash
+hline
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ptctitle!50}
+\end_layout
+
+\end_inset
+
+Símbolo lógico
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ptctitle!50}
+\end_layout
+
+\end_inset
+
+Expresión
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ptcbackground}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\wedge$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ptcbackground}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p$
+\end_inset
+
+ y 
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{gray!50}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\vee$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{gray!50}
+\end_layout
+
+\end_inset
+
+o 
+\begin_inset Formula $p$
+\end_inset
+
+ o 
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ptcbackground}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\veebar$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ptcbackground}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p$
+\end_inset
+
+ ó 
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{gray!50}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{gray!50}
+\end_layout
+
+\end_inset
+
+Si 
+\begin_inset Formula $p,$
+\end_inset
+
+ entonces 
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ptcbackground}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\longleftrightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ptcbackground}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p$
+\end_inset
+
+ si y sólo si 
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{gray!50}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\sim$
+\end_inset
+
+o 
+\begin_inset Formula $\neg$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{gray!50}
+\end_layout
+
+\end_inset
+
+ni 
+\begin_inset Formula $p$
+\end_inset
+
+, no 
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+obs
+\backslash
+
+\end_layout
+
+\end_inset
+
+ Generalmente usamos el conectivo 
+\begin_inset Formula $\vee$
+\end_inset
+
+ de la siguiente forma 2 es par o 3 es impar, en vez de o 2 es par o 3 es
+ impar.
+ también se puede usar: 
+\begin_inset Formula $2$
+\end_inset
+
+ es par o/y 
+\begin_inset Formula $3$
+\end_inset
+
+es impar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Ejemplos de proposiciones atómicas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+6 es par.
+ 
+\end_layout
+
+\begin_layout Enumerate
+2+5=7.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\sqrt{2}$
+\end_inset
+
+ es un número real.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Ejemplos de proposiciones moleculares.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+6 es par y 5 es primo.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Si 3+5=8, entonces la suma de primos no es primo.
+ 
+\end_layout
+
+\begin_layout Enumerate
+o 
+\begin_inset Formula $\sqrt{-2}$
+\end_inset
+
+ no es un número real o 
+\begin_inset Formula $\sqrt{2}$
+\end_inset
+
+ es real.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Tipo de proposiciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{20pt}
+\backslash
+begin{ideabox}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Tautología:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Una 
+\series bold
+tautología
+\series default
+ es una proposición que siempre es verdadera.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A las tautologías a veces en matemáticas se les llama verdades o afirmaciones.
+ Las verdades generales de las matemáticas se deducen a partir del razonamiento
+ lógico, siendo las premisas o afirmaciones, las definiciones, postulados
+ o principios previamente establecidos.
+ El razonamiento utilizado para establecer cualquier verdad o principio
+ es llamado una demostración.
+\end_layout
+
+\begin_layout Standard
+El objetivo de las matemáticas es encontrar 
+\series bold
+tautologías
+\series default
+, como por ejemplo algunas de las más conocidas:
+\end_layout
+
+\begin_layout Itemize
+Sea 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+triangulo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $ABC$
+\end_inset
+
+ un triángulo rectángulo con la medida de lado más largo 
+\begin_inset Formula $c$
+\end_inset
+
+ y con la medida de los otro dos lados 
+\begin_inset Formula $b$
+\end_inset
+
+ y 
+\begin_inset Formula $c$
+\end_inset
+
+ respectivamente entonces 
+\begin_inset Formula 
+\[
+a^{2}=b^{2}+c^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Sea 
+\begin_inset Formula $ax^{2}+bx+c=0$
+\end_inset
+
+, una ecuación con 
+\begin_inset Formula $a\ne0$
+\end_inset
+
+ se cumple que 
+\begin_inset Formula 
+\[
+x=\dfrac{-b\pm\sqrt{b^{2}-4ac}}{2a}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cos^{2}\left(x\right)+\sen^{2}(x)=1.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-70pt}
+\backslash
+begin{ideabox}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Falacia:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una 
+\series bold
+falacia o contradicción
+\series default
+ es una proposición que siempre es falsa.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En Matemáticas generalmente las falacias no las usamos, al saber que siempre
+ son falsas nos ayuda a encontrar resultados interesantes.
+ como por ejemplo 
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $x$
+\end_inset
+
+ es un numero real se puede dar que 
+\begin_inset Formula $x^{2}<0.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Si usamos la suma usual 
+\begin_inset Formula $1+1=3.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+siempre a las 10 pm el sol esta sobre nosotros.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-70pt}
+\backslash
+begin{ideabox}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Contingencia:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las contingencia son proporciones compuestas que no son ni tautología ni
+ contradicciones, es decir, son proposiciones que en algunos casos es 
+\begin_inset Formula $f$
+\end_inset
+
+, y en otros es 
+\begin_inset Formula $v$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Este tipo de proposiciones son las más comunes, pero en Matemáticas son
+ las menos interesantes, porque no podemos saber si son verdaderas o falsas
+ al utilizarlas, tenemos que realizar un análisis cada vez que la usemos.
+\end_layout
+
+\begin_layout Subsubsection
+Tipos de tautologías
+\end_layout
+
+\begin_layout Standard
+Los siguientes términos son siempre tautologías
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-100pt}
+\backslash
+begin{ideabox}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Definición:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Una 
+\series bold
+definición
+\series default
+ es una afirmación que explica el significado de un término o una palabra,
+ en función de palabras o términos conocidos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En caso de que un término no se pueda expresar en función de otros términos
+ ya establecidos, se dice que es un término no definido.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-100pt}
+\backslash
+begin{ideabox}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Teorema:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un 
+\series bold
+teorema
+\series default
+ es una verdad que requiere demostración.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+aquí se debe utilizar el razonamiento lógico para realizar las demostraciones
+ como lo veremos más adelante.
+ Usaremos algunos de los razonamientos lógicos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-80pt}
+\backslash
+begin{ideabox}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Axioma:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un 
+\series bold
+axioma
+\series default
+ es una verdad auto-evidente.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Un 
+\series bold
+PROBLEMA
+\series default
+ es una situación o proposición que requiere solución.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-80pt}
+\backslash
+begin{ideabox}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Postulado:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un 
+\series bold
+Postulado
+\series default
+ es un problema auto-evidente.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-80pt}
+\backslash
+begin{ideabox}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Hipótesis:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una 
+\series bold
+hipótesis
+\series default
+ es una suposición hecha, bien en el texto de una proposición, o en el curso
+ de una demostración.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+Teoría intuitiva de conjuntos 
+\end_layout
+
+\begin_layout Standard
+La 
+\family sans
+teoría de conjuntos
+\family default
+, es la rama de las matemáticas a la que el matemático alemán Georg Cantor
+ dio su primer tratamiento formal en el siglo XIX.
+ El concepto de conjunto es uno de los más fundamentales en matemáticas,
+ incluso más que la operación de contar, pues se puede encontrar, implícita
+ o explícitamente, en todas las ramas de las matemáticas puras y aplicadas.
+ En su forma explícita, los principios y terminología de los conjuntos se
+ utilizan para construir proposiciones matemáticas más claras y precisas
+ y para explicar conceptos abstractos como el de infinito.
+\end_layout
+
+\begin_layout Standard
+La definición inicial de Cantor es totalmente intuitiva: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{Conjunto según Cantor}{}
+\end_layout
+
+\end_inset
+
+un conjunto es cualquier colección 
+\begin_inset Formula $C$
+\end_inset
+
+ de objetos determinados y bien distintos de nuestra percepción o nuestro
+ pensamiento (objetos 
+\begin_inset Formula $x$
+\end_inset
+
+ que se denominan elementos de 
+\begin_inset Formula $C$
+\end_inset
+
+), reunidos en un todo.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Igual que en Frege su idea de lo que es un conjunto coincide con la extensión
+ de un predicado (la colección de objetos que satisface el predicado).
+ Esta idea sencilla y tan intuitiva resulta ser también ingenua porque produce
+ enormes contradicciones de inmediato, como por ejemplo la paradoja de Russell.
+\end_layout
+
+\begin_layout Standard
+Para poder mostrarlo es necesario empezar por formalizar esta teoría intuitiva
+ que, aparte de los símbolos para los conjuntos y sus elementos (
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $C$
+\end_inset
+
+, etc.), tendrá los símbolos de pertenencia, 
+\begin_inset Formula $\in$
+\end_inset
+
+ e igualdad 
+\begin_inset Formula $=$
+\end_inset
+
+ (de los objetos del lenguaje formal).
+ 
+\end_layout
+
+\begin_layout Standard
+Que 
+\begin_inset Formula $x$
+\end_inset
+
+ es un elemento del conjunto 
+\begin_inset Formula $C$
+\end_inset
+
+ se expresa 
+\begin_inset Quotes eld
+\end_inset
+
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ pertenece a 
+\begin_inset Formula $C$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ o bien 
+\begin_inset Formula $x$
+\end_inset
+
+ 
+\begin_inset Formula $\in$
+\end_inset
+
+ 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Que 
+\begin_inset Formula $x$
+\end_inset
+
+ no es un elemento de 
+\begin_inset Formula $C$
+\end_inset
+
+ se expresa 
+\begin_inset Quotes eld
+\end_inset
+
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ no pertenece a 
+\begin_inset Formula $C$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ o bien 
+\begin_inset Formula $x\notin C$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Tendremos en cuenta que no es necesario denotar siempre con mayúsculas a
+ los conjuntos y con minúsculas a sus elementos, ya que un conjunto puede
+ ser a su vez un elemento de otro conjunto e incluso podemos considerar
+ que en nuestra teoría no hay objetos que no sean conjuntos.
+\end_layout
+
+\begin_layout Standard
+El problema ahora el el siguiente:
+\end_layout
+
+\begin_layout Standard
+¿Cómo se determina una colección? 
+\end_layout
+
+\begin_layout Standard
+De acuerdo con la definición intuitiva de Cantor un conjunto queda definido
+ si es posible describir completamente sus elementos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+ El procedimiento mas sencillo de descripción es nombrar cada uno de sus
+ elementos, esta descripción se llama definición por extensión; es conocida
+ la notación de encerrar entre llaves los elementos del conjunto.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Listar un conjunto 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{enumerate}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $A=\{a,b,c\}$
+\end_inset
+
+.
+ Donde 
+\begin_inset Formula $A$
+\end_inset
+
+ es el conjunto formado por la colección de objetos 
+\begin_inset Formula $a,b$
+\end_inset
+
+ y 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $B=\left\{ \oplus,\ominus,\otimes,\oslash,\odot\right\} $
+\end_inset
+
+ Donde 
+\begin_inset Formula $B$
+\end_inset
+
+ es el conjunto formado exactamente por esos cinco círculos.
+ Entonces es cierto que 
+\begin_inset Formula $b\in A$
+\end_inset
+
+ y que 
+\begin_inset Formula $\oplus\in B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{enumerate}
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El inconveniente para este método de listado o enumeración de los elementos
+ del conjunto es que éstos deben poseer un número finito de elementos y,
+ en la práctica, un número muy pequeño.
+\end_layout
+
+\begin_layout Standard
+¿Entonces qué hacer cuando la colección es infinita, o cuando es finita
+ pero numerosa? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Cuando el número de elementos del conjunto es infinito (como el de los
+ número impares) o demasiado numeroso (como el de todas las palabras que
+ pueden formarse con el alfabeto latino) se utiliza el método de definición
+ por extensión, que consiste en la descripción de un conjunto como la extensión
+ de un predicado, esto es, mediante una o varias propiedades (el predicado)
+ que caracterizan a los elementos de ese conjunto.
+\end_layout
+
+\begin_layout Standard
+En principio podría tomarse cualquier lengua natural para describir los
+ objetos (español, inglés, italiano, vasco, catalán, etc), sin embargo es
+ preferible utilizar un lenguaje formal que ofrezca rigor y precisión.
+ 
+\end_layout
+
+\begin_layout Standard
+Dicho lenguaje debe ser suficientemente rico; esto es, lo suficientemente
+ expresivo como para poder describir todas las colecciones matemáticas.
+ Pero también lo suficientemente restrictivo como para limitarse a sólo
+ las colecciones de objetos matemáticos.
+ 
+\end_layout
+
+\begin_layout Standard
+Para expresar predicados utilizaremos el lenguaje formal de la la lógica
+ de predicados de primer orden (el lenguaje de la lógica de proposiciones
+ con los símbolos lógicos de las conectivas 
+\begin_inset Formula $\sim,\wedge,\vee,\rightarrow,\leftrightarrow$
+\end_inset
+
+ más los cuantificadores universal 
+\begin_inset Formula $\forall$
+\end_inset
+
+ y existencial 
+\begin_inset Formula $\exists$
+\end_inset
+
+) al que se añade variables, igualdad y el relator binario de pertenencia.
+\end_layout
+
+\begin_layout Standard
+Este lenguaje puede ser ampliado con los símbolos propios de las operaciones,
+ relaciones o funciones del lenguaje específico de teoría de conjuntos.
+\end_layout
+
+\begin_layout Standard
+En la primera parte, al presentar la Teoría básica de conjuntos, utilizaremos
+ con frecuencia el lenguaje natural para describir propiedades.
+\end_layout
+
+\begin_layout Standard
+Estas propiedades pueden ser aritméticas (
+\begin_inset Formula $>,<,/$
+\end_inset
+
+, etc.) o matemáticas en general, pero también pueden ser propiedades expresadas
+ en lenguaje natural (nombres, verbos,...) que describan colecciones no estrictamen
+te matemáticas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Descripción de un conjunto por extensión
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{enumerate}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $C=\{x\in I\!\!N\::\text{\,}0<x<230000\wedge\frac{2}{x}\}$
+\end_inset
+
+, donde 
+\begin_inset Formula $I\!\!N$
+\end_inset
+
+ es el conjunto de los números naturales con la ordenación habitual, 
+\begin_inset Formula $<$
+\end_inset
+
+ significa “menor que” y 
+\begin_inset Formula $\frac{2}{x}$
+\end_inset
+
+ significa que “
+\begin_inset Formula $2$
+\end_inset
+
+ divide a 
+\begin_inset Formula $x$
+\end_inset
+
+”.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $D=\{x\,:\,x$
+\end_inset
+
+ es una palabra de 
+\begin_inset Formula $2$
+\end_inset
+
+ letras del alfabeto griego (pueden estar repetidas)
+\begin_inset Formula $\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $E={x\,:\,P_{2}(x)\vee P_{3}(x)\vee\cdots\vee P_{10}(x)}$
+\end_inset
+
+ .
+ Donde 
+\begin_inset Formula $P_{i}(x)$
+\end_inset
+
+ significa “
+\begin_inset Formula $x$
+\end_inset
+
+ es una palabra de
+\begin_inset Formula $i$
+\end_inset
+
+ letras del alfabeto griego (pueden estar repetidas).
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{enumerate}
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Problemas en la teoría intuitiva de conjuntos: la paradoja de Russell 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+La paradoja original era sobre el barbero de un pueblo que afeitaba a todos
+ los del pueblo que no se afeitaban a sí mismos: ¿Se afeita entonces el
+ barbero a sí mismo? 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pero la definición intuitiva de conjunto como el de una colección de objetos
+ ‘describible’ por un predicado conduce inevitablemente a ciertas contradiccione
+s que se llaman paradojas, la más célebre es la conocida como paradoja de
+ Russell: 
+\end_layout
+
+\begin_layout Standard
+Consideremos el conjunto 
+\begin_inset Formula $A=\{x:x\notin x\}$
+\end_inset
+
+, descrito mediante el predicado del lenguaje formal 
+\begin_inset Formula $x\notin x$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+Obviamente, para cualquier 
+\begin_inset Formula $b$
+\end_inset
+
+, 
+\begin_inset Formula $b\in A$
+\end_inset
+
+ si y sólo si 
+\begin_inset Formula $b\notin b$
+\end_inset
+
+.
+ Es decir, está en 
+\begin_inset Formula $A$
+\end_inset
+
+ cuando verifica las condiciones que definen a 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Pero, ¿qué sucede con el propio 
+\begin_inset Formula $A$
+\end_inset
+
+? 
+\end_layout
+
+\begin_layout Standard
+Evidentemente, 
+\begin_inset Formula $A\in A$
+\end_inset
+
+ si y sólo si 
+\begin_inset Formula $A\notin A$
+\end_inset
+
+.
+ Pero este resultado es contradictorio.
+ En vano se debe intentar descubrir un error en el razonamiento, más bien
+ parece que el problema proviene de admitir expresiones como 
+\begin_inset Formula $A\in A$
+\end_inset
+
+ (o conjuntos como el conjunto de todos los conjuntos que produce también
+ paradojas).
+ Se ha visto claramente que el concepto de conjunto no es tan sencillo y
+ que identificarlo sin mayor investigación con el de colección resulta problemát
+ico.
+ Para evitar la paradoja de Russell, y otras de esta naturaleza, es necesario
+ tener más cuidado en la definición de conjunto, lo veremos en lo que sigue.
+ Otras paradojas, de hecho las primeras en descubrirse, afectaban a colecciones
+ grandes, como por ejemplo la de los ordinales, o la de todos los conjuntos.
+ entonces estas colecciones no podrían ser conjuntos.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Solución de las paradojas
+\end_layout
+
+\begin_layout Standard
+Una solución radical al problema de las paradojas es la propuesta en 1903
+ por Russell, su Teoría de Tipos.
+ 
+\end_layout
+
+\begin_layout Standard
+Observa que en todas las paradojas conocidas hay una componente de reflexividad,
+ de circularidad.
+ Técnicamente se evitan las paradojas al eliminar del lenguaje las formaciones
+ circulares.
+\end_layout
+
+\begin_layout Standard
+Se reconoce que nuestro universo matemático no es plano, sino jerarquizado,
+ por niveles, y que el lenguaje más adecuado para hablar de un universo
+ debe tener diversos tipos de variables que correspondan a cada nivel; en
+ particular, la relación de pertenencia se da entre objetos de distinto
+ nivel.
+ 
+\end_layout
+
+\begin_layout Standard
+En 1908 Zermelo da como solución la definición axiomática de la Teoría de
+ Conjuntos, refinada más tarde por Fraenkel, Skolem, von Neumann y otros.
+ En esta teoría se evita que las colecciones que llevaban a las paradojas
+ puedan ser conjuntos.
+ De hecho, en la solución de Zermelo-Fraenkel, una colección de objetos
+ será un conjunto si los axiomas la respaldan.
+ Dichos axiomas permiten formar conjuntos a partir de conjuntos previamente
+ construídos y postulan la existencia del 
+\begin_inset Formula $\textrm{Ø}$
+\end_inset
+
+ y de al menos un conjunto infinito.
+ Sin embargo, en la solución de von Neumann se admiten colecciones que no
+ son conjuntos, las denominadas clases últimas.
+\end_layout
+
+\begin_layout Standard
+Se definen clases mediante propiedades, sin restricción, pero habrá que
+ mostrar que se trata de conjuntos viendo que pertenecen a alguna clase.
+ Las clases últimas, como la clase universal o la de los ordinales, no pertenece
+n a ninguna otra clase.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+El Universo matemático
+\end_layout
+
+\begin_layout Standard
+La idea intuitivamente más fructífera y también la más extendida es nuestro
+ universo matemático, esto es, el que contiene todas las colecciones de
+ objetos matemáticos, pero solamente los objetos matemáticos constituyen
+ una jerarquía de conjuntos, la denominada Jerarquía de Zermelo.
+ 
+\end_layout
+
+\begin_layout Standard
+En la construcción de los conjuntos que formarán la jerarquía se parte de
+ una colección inicial 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ de objetos dados y a continuación se construye una colección 
+\begin_inset Formula $M_{1}$
+\end_inset
+
+ de conjuntos de elementos de 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ , después una colección 
+\begin_inset Formula $M_{2}$
+\end_inset
+
+ de conjuntos de objetos de 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ y 
+\begin_inset Formula $M_{1}$
+\end_inset
+
+ , etc..., el universo de conjuntos construídos es una jerarquía.
+\end_layout
+
+\begin_layout Standard
+Para proporcionar mayor precisión debemos responder a las preguntas siguientes:
+\end_layout
+
+\begin_layout Enumerate
+¿Cual será nuestra colección de partida, ?
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+¿Qué conjuntos de objetos de niveles inferiores se toman para formar nuevos
+ niveles en la jerarquía? 
+\end_layout
+
+\begin_layout Enumerate
+¿Hasta dónde se extiende esta jerarquía?.
+ 
+\end_layout
+
+\begin_layout Standard
+Para responder a la primera pregunta debemos considerar si nos interesa
+ tomar objetos que no sean conjuntos o si nos basta con partir de un primer
+ nivel que sea sencillamente el conjunto 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Está claro que se toman sólo objetos matemáticos, pero habrá que ver que
+ es suficiente y que podremos finalmente contar en la jerarquía con todos
+ los objetos matemáticos.
+\end_layout
+
+\begin_layout Standard
+Una respuesta a la segunda pregunta que parece razonable es, al ir tomando
+ nuevos conjuntos, que éstos se puedan describir con nuestro lenguaje.
+ Al tomar esta opción formamos la Jerarquía de conjuntos que se pueden construir.
+ Otra posibilidad es tomar como objetos de un nuevo nivel a todos los posibles.
+ Veremos que esta es la opción de Zermelo.
+ 
+\end_layout
+
+\begin_layout Standard
+Finalmente, la tercera de las preguntas es hasta donde se extiende la jerarquía.
+ 
+\end_layout
+
+\begin_layout Standard
+La respuesta es que la jerarquía de conjuntos no tiene fin, siempre se pueden
+ construir nuevos niveles.
+ Para precisar un poco más esta imagen intuitiva de nuestro Universo matemático
+ es conveniente contar con algunas nociones de teoría de conjuntos básica
+ y con el concepto de ordinal.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Teoría axiomática de conjuntos 
+\end_layout
+
+\begin_layout Standard
+Recordemos los componentes de una teoría axiomática: 
+\end_layout
+
+\begin_layout Enumerate
+El lenguaje o símbolos formales de la teoría.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Los axiomas, que son proposiciones acerca de los objetos de la teoría y
+ que imponen el funcionamiento de dichos objetos.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Los teoremas, que son todas las proposiciones demostrables con herramientas
+ lógicas a partir de los axiomas.
+ 
+\end_layout
+
+\begin_layout Standard
+En la teoría de conjuntos axiomática de Zermelo Fraenkel se usará el lenguaje
+ formal de la lógica de predicados de primer orden.
+ 
+\end_layout
+
+\begin_layout Standard
+Las variables de dicho lenguaje formal se referirán a conjuntos; es decir,
+ en la interpretación usual todos los objetos son conjuntos.
+\end_layout
+
+\begin_layout Standard
+Es decir, existir será sinónimo de ser un conjunto.
+\end_layout
+
+\begin_layout Standard
+El lenguaje básico sólo tiene el relator binario de pertenencia, pero se
+ extiende, mediante definiciones pertinentes, para dar cabida a operaciones.
+ 
+\end_layout
+
+\begin_layout Standard
+Los conceptos primitivos de esta teoría son el de conjunto y el de pertenencia.
+ 
+\end_layout
+
+\begin_layout Standard
+En realidad la mayoría de los axiomas sirven para garantizar la existencia
+ de los conjuntos que nos interesa tener.
+ 
+\end_layout
+
+\begin_layout Standard
+Por ello la idea de construcción es esencial en la teoría axiomática de
+ Zermelo-Fraenkel (que notaremos ZF).
+ En la teoría axiomática de conjuntos se respeta la idea fundamental de
+ aceptar que una colección de objetos pueda ser un conjunto, pero se impone
+ la condición de que todos los objetos de una colección deben haberse formado
+ antes de definir dicha colección, y de esta manera se evitarán los problemas
+ que conducen a las paradojas.
+\end_layout
+
+\begin_layout Standard
+Uno de los axiomas de la teoría (se verá más adelante) impondrá esta restricción
+: ”Si 
+\begin_inset Formula $X$
+\end_inset
+
+ es un conjunto ya construido existe un conjunto 
+\begin_inset Formula $Y$
+\end_inset
+
+ formado por los elementos de 
+\begin_inset Formula $X$
+\end_inset
+
+ que satisfacen un predicado 
+\begin_inset Formula $P$
+\end_inset
+
+ que los describe (o lo que es lo mismo, una fórmula con al menos una variable
+ libre)”.
+ Así un predicado describirá un conjunto sólo si los objetos han sido ya
+ construidos (son de otro conjunto X) y además satisfacen el predicado.
+ Con esta restricción a la definición de conjunto de Cantor desaparece la
+ paradoja de Rusell ya que para que 
+\begin_inset Formula $A=\{x:x\notin x\}$
+\end_inset
+
+ sea un conjunto se debería tener un conjunto 
+\begin_inset Formula $X$
+\end_inset
+
+ a partir del cual construirse; es decir, 
+\begin_inset Formula $A=\{x\in X:x\notin x\}$
+\end_inset
+
+.
+ ¿Cómo se resuelve la paradoja? 
+\end_layout
+
+\begin_layout Standard
+Al construirse a partir de un conjunto ya construido desaparece el problema.
+ Ahora, para cualquier 
+\begin_inset Formula $b$
+\end_inset
+
+ se verifica: 
+\begin_inset Formula $b\in A$
+\end_inset
+
+ si y sólo si 
+\begin_inset Formula $b\in X$
+\end_inset
+
+ y 
+\begin_inset Formula $b\notin b$
+\end_inset
+
+.
+ En realidad, puesto que la condición 
+\begin_inset Formula $b\notin b$
+\end_inset
+
+ la cumplen todos, 
+\begin_inset Formula $A$
+\end_inset
+
+ será el propio 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Además, es imposible que exista el conjunto de todos los conjuntos.
+ 
+\end_layout
+
+\begin_layout Standard
+Desgraciadamente, Bertrand Russell descubrió que la axiomática de Frege
+ era contradictoria.
+\end_layout
+
+\begin_layout Standard
+En efecto, uno de los axiomas básicos de Frege afirmaba lo a siguiente:
+ 
+\end_layout
+
+\begin_layout Standard
+Para toda propiedad 
+\begin_inset Formula $\phi(X)$
+\end_inset
+
+ definida en la teoría, existe un conjunto 
+\begin_inset Formula $Y$
+\end_inset
+
+ cuyos elementos son exactamente los conjuntos 
+\begin_inset Formula $X$
+\end_inset
+
+ que cumplen 
+\begin_inset Formula $\phi(X)$
+\end_inset
+
+.
+ En otros términos, Frege postulaba la existencia del conjunto 
+\begin_inset Formula $Y=\{X\,:\,\phi(X)\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Lo que Russell observó fue que esto podía aplicarse a 
+\begin_inset Formula $\phi(X)\equiv X\notin X$
+\end_inset
+
+, que era una propiedad trivialmente definida en la teoría de Frege, de
+ modo que debía existir un conjunto 
+\begin_inset Formula $R=\{X:X\notin X\}$
+\end_inset
+
+, que claramente nos lleva a la contradicción 
+\begin_inset Formula $R\in R\Leftrightarrow R\notin R$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+A partir de aquí la minuciosa lógica de Frege permitía probar con el mismo
+ rigor que 
+\begin_inset Formula $2+2=4$
+\end_inset
+
+ y que 
+\begin_inset Formula $2+2=5$
+\end_inset
+
+, por lo que su teoría se volvía inservible.
+ El mismo Russell, junto con A.
+ N.
+ Whitehead, presentó́ un tiempo después otra teoría axiomática que, al menos
+ en apariencia, estaba exenta de contradicciones, si bien era tan inútil
+ como la de Frege, esta vez no por contradictoria sino por complicada.
+ Se trata de los Principia Mathematica.
+ 
+\end_layout
+
+\begin_layout Standard
+La primera teoría axiomática construida por un matemático a gusto de los
+ matemáticos fue la de Zermelo.
+ La forma en que Zermelo evitó la paradoja de Russell fue debilitar el axioma
+ de formación de conjuntos de Frege, reduciéndolo a: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axioma}{Zermelo}{}
+\end_layout
+
+\end_inset
+
+Para toda propiedad 
+\begin_inset Formula $\phi(X)$
+\end_inset
+
+ definible en la teoría y todo conjunto 
+\begin_inset Formula $U$
+\end_inset
+
+ , existe un conjunto 
+\begin_inset Formula $Y$
+\end_inset
+
+ cuyos elementos son exactamente los elementos 
+\begin_inset Formula $X\in U$
+\end_inset
+
+ que cumplen 
+\begin_inset Formula $\phi(X).$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axioma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así, lo que Zermelo postulaba era la existencia de 
+\begin_inset Formula 
+\[
+Y=\left\{ X\in U:\phi\left(X\right)\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora bien, este axioma sólo permite definir conjuntos a partir de otros
+ conjuntos, por lo que Zermelo tuvo que añadir otros axiomas que garantizaran
+ la existencia de aquellos conjuntos necesarios que no podían obtenerse
+ como subconjuntos de otros conjuntos dados.
+ Enseguida describiremos con detalle la axiomática de Zermelo, pero antes
+ daremos a algunas indicaciones sobre la lógica matemática que subyace a
+ toda teoría de conjuntos moderna.
+\end_layout
+
+\begin_layout Subsubsection
+El lenguaje de la Teoría de Conjuntos
+\end_layout
+
+\begin_layout Standard
+Un lenguaje formalizado está constituido por un conjunto de símbolos básicos
+ y por reglas que nos permiten formar expresiones más complicadas partir
+ de esos símbolos originales.
+ 
+\end_layout
+
+\begin_layout Standard
+A continuación presentamos el lenguaje formalizado 
+\begin_inset Formula $L_{\in}$
+\end_inset
+
+ con le cual escribiremos la Teoría de Conjuntos.
+ 
+\end_layout
+
+\begin_layout Standard
+Este lenguaje puede entenderse de dos maneras distintas: como lenguaje formal
+ y como abreviaturas de expresiones en español.
+ Esta segunda interpretación será posiblemente la conveniente en un curso
+ introductorio como este.
+\end_layout
+
+\begin_layout Standard
+Los símbolos del lenguaje formal de la teoría de conjuntos serán:
+\end_layout
+
+\begin_layout Enumerate
+Los símbolos de conjuntos serán las letras del alfabeto, mayúsculas y minúsculas
+, es decir: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantom{xxxxxxxxxxxxxxxxxxxxxxx}
+\backslash
+phantom{xxxxmmmmmmmmmmmmmmmmmmmm}
+\end_layout
+
+\end_inset
+
+ Variables: 
+\begin_inset Formula $x,z,X,x_{1},x_{2},...$
+\end_inset
+
+, en general, las últimas letras del alfabeto latino, minúsculas o mayúsculas
+ con o sin subíndices.
+ Su significado es el habitual en matemáticas y su rango son los conjuntos.
+\end_layout
+
+\begin_layout Enumerate
+Constantes: 
+\begin_inset Formula $a,b,c,A,B,C,...$
+\end_inset
+
+ , en general, las primeras letras del alfabeto latino.
+ Sirven para referirnos a conjuntos específicos.
+\end_layout
+
+\begin_layout Enumerate
+El símbolo de la relación de pertenencia entre conjuntos es 
+\begin_inset Formula $\in$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Los símbolos lógicos de la lógica de predicados: (
+\begin_inset Formula $\sim$
+\end_inset
+
+negación), 
+\begin_inset Formula $\wedge$
+\end_inset
+
+(conjunción), 
+\begin_inset Formula $\vee$
+\end_inset
+
+(disyunción), 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+(condicional), 
+\begin_inset Formula $\leftrightarrow$
+\end_inset
+
+(bicondicional),
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ (implicación), 
+\begin_inset Formula $\Leftrightarrow$
+\end_inset
+
+ o 
+\begin_inset Formula $\equiv$
+\end_inset
+
+ (equivalencia), 
+\begin_inset Formula $\forall$
+\end_inset
+
+ (cuantificador universal) y 
+\begin_inset Formula $\exists$
+\end_inset
+
+ (cuantificador existencial).
+ Con estos signos básicos se generan todas las fórmulas de la teoría de
+ con juntos.
+ 
+\begin_inset VSpace defskip
+\end_inset
+
+Cualquier cadena finita formada por estos símbolos es una expresión o del
+ lenguaje, pero no toda expresión es aceptable o significativa.
+ Sólo aceptaremos aquellas a las que llamaremos Fórmulas de 
+\begin_inset Formula $L_{\in}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $($
+\end_inset
+
+, 
+\begin_inset Formula $)$
+\end_inset
+
+ (paréntesis).
+ Usados como signos de puntuación
+\end_layout
+
+\begin_layout Enumerate
+Las reglas de formación de fórmulas son las habituales en la lógica de primer
+ orden.
+ A saber:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $x\in y$
+\end_inset
+
+ y 
+\begin_inset Formula $x=y$
+\end_inset
+
+ son fórmulas.
+ Para cualesquiera variables 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Si  
+\begin_inset Formula $\phi$
+\end_inset
+
+ y 
+\begin_inset Formula $\psi$
+\end_inset
+
+ son fórmulas, también lo son: 
+\begin_inset Formula $\sim\phi$
+\end_inset
+
+, 
+\begin_inset Formula $\phi\wedge\psi$
+\end_inset
+
+, 
+\begin_inset Formula $\phi\vee\psi$
+\end_inset
+
+, 
+\begin_inset Formula $\phi\rightarrow\psi$
+\end_inset
+
+y 
+\begin_inset Formula $\phi\leftrightarrow\psi$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Si 
+\begin_inset Formula $\phi$
+\end_inset
+
+ es una fórmula, 
+\begin_inset Formula $\left(\forall x\right)\phi$
+\end_inset
+
+ y 
+\begin_inset Formula $\left(\exists x\right)\phi$
+\end_inset
+
+ también lo son.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Solamente aquellas expresiones obtenidas por la aplicación de (un o número
+ finito de) estas reglas es una fórmula de 
+\begin_inset Formula $L_{\in}$
+\end_inset
+
+ .
+ Entonces el lenguaje 
+\begin_inset Formula $L_{\in}$
+\end_inset
+
+ se generan mediante las reglas precedentes: .
+\end_layout
+
+\begin_layout Paragraph
+Interpretación de conjunto
+\end_layout
+
+\begin_layout Standard
+Dejando a un lado el lenguaje lógico ahora daremos una interpretación intuitiva
+ de lo que es un conjunto y sus elementos, pero antes presentaremos la idea
+ de lo que significa que un objeto sea representado por otro o por una estructur
+a dada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-100pt}
+\backslash
+begin{ideabox}{
+\backslash
+bf Representación}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se dice que un nombre, diagrama o una proposición representa a un objeto
+ si explica de forma precisa cuales son sus propiedades.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como ejemplos de representación están:
+\end_layout
+
+\begin_layout Enumerate
+La fórmula 
+\begin_inset Formula $y=f(x)$
+\end_inset
+
+ que representa a la función 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Si 
+\begin_inset Formula $A:=\{1,2,3,4,5\}$
+\end_inset
+
+, en este caso 
+\begin_inset Formula $A$
+\end_inset
+
+ representa al conjunto 
+\begin_inset Formula $\{1,2,3,4,5\}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Los grafos dirigidos son diagramas que representan a las relaciones.
+\end_layout
+
+\begin_layout Enumerate
+Una tabla de datos es un diagrama que representa a una relación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-70pt}
+\backslash
+begin{apunte}{
+\backslash
+bf Conjunto y elemento}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los términos conjunto y elemento, los consideramos como primitivos, esto
+ es no definidos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{apunte}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A pesar que el término conjunto no se puede definir, podemos dar una idea
+ concreta de lo que puede ser un conjunto para poder así identificar cuando
+ en objeto real o abstracto lo podemos representar con un conjunto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-70pt}
+\backslash
+begin{ideabox}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Conjunto
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+:}
+\end_layout
+
+\end_inset
+
+
+\family sans
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+Un conjunto es o la existencia o agrupación de objetos que poseen varias
+ características en común, ó la ausencia de 
+\family default
+objetos.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Realmente un conjunto es una estructura mental con alguna de las siguientes
+ características :
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+ No posee objetos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+ Posee sólo un objeto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+ Posee muchos objetos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+ Posee infinitos objetos
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+ Pertenencia
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a\in B$
+\end_inset
+
+ significa que el objeto 
+\begin_inset Formula $a$
+\end_inset
+
+ es un elemento del conjunto 
+\begin_inset Formula $B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+ No pertenece
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a\,\notin A$
+\end_inset
+
+ significa que el objeto 
+\begin_inset Formula $a$
+\end_inset
+
+ no es un elemento del conjunto 
+\begin_inset Formula $A.$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+ Dado el conjunto 
+\begin_inset Formula $A=\{1,2,3,4\}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $1\in A$
+\end_inset
+
+, porque 
+\begin_inset Formula $1$
+\end_inset
+
+ es un elemento de 
+\begin_inset Formula $A.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En cambio 
+\begin_inset Formula $b\,\notin A$
+\end_inset
+
+, porque 
+\begin_inset Formula $b$
+\end_inset
+
+ no es un elemento del conjunto 
+\begin_inset Formula $A.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+obs
+\backslash
+
+\end_layout
+
+\end_inset
+
+ como los expresamos anteriormente los objetos que se encuentran en un conjunto
+ se les llama elementos
+\end_layout
+
+\begin_layout Standard
+Hasta ahora no hemos explicado como se representan los conjuntos , ya que
+ recordemos que los conjuntos son estructuras abstractas.
+\end_layout
+
+\begin_layout Standard
+Los conjuntos se pueden representar de dos maneras por extensión y por comprensi
+ón.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-70pt}
+\backslash
+begin{ideabox}{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Conjuntos por extensión:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ Un conjunto esta representado por extensión cuando los elementos del conjunto
+ se listan entre llaves.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por ejemplo 
+\begin_inset Formula $A=\{1,2,3,4,5,6,\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-70pt}
+\backslash
+begin{ideabox}{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Conjuntos por compresión
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ Un conjunto esta representado por comprensión cuando los elementos del
+ conjunto se clasifican especificando una o varias propiedades que los identific
+a.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ representación de conjuntos:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Description
+* Los números pares.
+\end_layout
+
+\begin_layout Description
+* Los carros marca Ford.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+notacion
+\backslash
+
+\end_layout
+
+\end_inset
+
+ A los conjuntos se les representa con letras mayúsculas 
+\begin_inset Formula $A,\,B\,C,\dots\,,$
+\end_inset
+
+ etc.
+ Y a los elementos se les representa con letras minúsculas 
+\begin_inset Formula $a,\,b,\,c\,\dots\,$
+\end_inset
+
+ etc.
+ Cuando un elemento 
+\begin_inset Formula $a$
+\end_inset
+
+ se encuentra en un conjunto 
+\begin_inset Formula $B$
+\end_inset
+
+ se denota 
+\begin_inset Formula $a\in B.$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+ Se lee 
+\begin_inset Formula $a$
+\end_inset
+
+ pertenece a 
+\begin_inset Formula $B.$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Notación de conjuntos
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ Dados los conjuntos 
+\begin_inset Formula $A=\{1,2,3\}$
+\end_inset
+
+ y 
+\begin_inset Formula $B=\{3,4,5.6\}$
+\end_inset
+
+ tenemos.
+\end_layout
+
+\begin_layout Description
+* 
+\begin_inset Formula $3\in A,$
+\end_inset
+
+ se lee 3 pertenece al conjunto 
+\begin_inset Formula $A.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+* 
+\begin_inset Formula $5\notin A,$
+\end_inset
+
+ se lee 2 no pertenece al conjunto 
+\begin_inset Formula $A.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+obs
+\end_layout
+
+\end_inset
+
+ Se dice que dos conjuntos son iguales si tienen los mismos elementos
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-70pt}
+\backslash
+begin{ideabox}{
+\backslash
+bf Igualad}
+\backslash
+label{tii}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se dice que dos representaciones son iguales si representan al mismo objeto,
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ideabox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por ejemplo 
+\begin_inset Formula $x=2$
+\end_inset
+
+, en este caso los nombres equis y dos representan al mismo número.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{20pt}
+\backslash
+begin{axioma}{Propiedades de la igualdad}{}
+\backslash
+label{ax:igualdad}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left(\forall x\right)\left(x=x\right),$
+\end_inset
+
+ propiedad reflexiva.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left(\forall x\right)\left(\text{\forall\ensuremath{y}}\right)\left(x=y\Longleftrightarrow y=x\right),$
+\end_inset
+
+ propiedad simétrica.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left(\forall x\right)\left(\text{\forall\ensuremath{y}}\right)\left(\forall z\right)\left(x=y\wedge y=z\Rightarrow x=z\right),$
+\end_inset
+
+ propiedad transitiva.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axioma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{30pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El siguiente axioma nos muestra el uso de la idea de igualad.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{30pt}
+\backslash
+begin{axioma}{
+\end_layout
+
+\end_inset
+
+ (Axioma de extensión)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "A1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dos conjuntos son iguales si y solo si tienen los mismos elementos.
+ Esto es: el conjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ es igual al conjunto 
+\begin_inset Formula $B$
+\end_inset
+
+ si todo elemento de 
+\begin_inset Formula $A$
+\end_inset
+
+ es elemento de 
+\begin_inset Formula $B$
+\end_inset
+
+ y si todo elemento de 
+\begin_inset Formula $B$
+\end_inset
+
+ es elemento de 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+En el lenguaje 
+\begin_inset Formula $L_{\in}$
+\end_inset
+
+ se expresa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $∀x(x\in A\Leftrightarrow x∈B)\Rightarrow\left(A=B\right)$
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axioma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este axioma en la teoría formal de conjuntos, nos permite demostrar la unicidad
+ de muchos conjuntos definidos de alguna forma concreta.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}{
+\end_layout
+
+\end_inset
+
+ Igualdad de conjuntos 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por ejemplo A = { Los ríos de de América} y B = { Los Ríos de Colombia}.
+\end_layout
+
+\begin_layout Standard
+Es claro que en Colombia no están todos los ríos de América, por tanto 
+\begin_inset Formula $A\neq B$
+\end_inset
+
+, Es decir que los conjuntos 
+\begin_inset Formula $A$
+\end_inset
+
+ y 
+\begin_inset Formula $B$
+\end_inset
+
+ no tienen los mismos elementos.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Veamos otro ejemplo :
+\end_layout
+
+\begin_layout Standard
+El primer axioma de extensión, afirma que si dos conjuntos tienen los mismos
+ elementos entonces son iguales (el recíproco es un caso particular de un
+ principio lógico: si 
+\begin_inset Formula $X=Y$
+\end_inset
+
+ entonces todo lo que vale para 
+\begin_inset Formula $X$
+\end_inset
+
+ vale para 
+\begin_inset Formula $Y$
+\end_inset
+
+ ).
+\end_layout
+
+\begin_layout Subsection
+Proposiciones abiertas
+\end_layout
+
+\begin_layout Standard
+Regresando al concepto de proposición lógica, donde las expresiones solo
+ pueden ser falsas o verdaderas, nos encontramos regularmente en matemáticas
+ con expresiones como 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $x^{2}-5x+6=0.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $x+1=3.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $x^{2}-9=\left(x-3\right)\left(x+3\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $x^{2}=25\wedge x+1=6.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En estos enunciados no es posible deducir el valor de verdad, porque no
+ conocemos el valor de 
+\begin_inset Formula $x$
+\end_inset
+
+, pero si por ejemplo en la expresión 
+\begin_inset Formula $x+1=3$
+\end_inset
+
+ decimos que 
+\begin_inset Formula $x=3$
+\end_inset
+
+ entonces el enunciado es verdadero y es falso si 
+\begin_inset Formula $x\neq3,$
+\end_inset
+
+ por lo tanto la expresión es una proposición.
+\end_layout
+
+\begin_layout Standard
+Para poder trabajar con este tipo de expresiones es necesario especificar
+ que es 
+\begin_inset Formula $x$
+\end_inset
+
+, esto lo estudiaremos a continuación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+Variable
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+Una variable es un termino que representa cualquier elemento de un conjunto
+ en particular y puede ser sustituido por cualquier elemento del conjunto.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Variable:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\backslash
+; 
+\end_layout
+
+\end_inset
+
+ Sea 
+\begin_inset Formula $A=\{1,2,3,4,5\}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ es par, para algún
+\begin_inset Formula $x\in A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En este caso la variable es 
+\begin_inset Formula $x$
+\end_inset
+
+ y la proposición es cierta si 
+\begin_inset Formula $x=2,$
+\end_inset
+
+ ya que 
+\begin_inset Formula $2\in A.$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+Constante
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+ Una constante es un termino que representa a un elemento fijo de un conjunto.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+notacion
+\backslash
+
+\end_layout
+
+\end_inset
+
+ Las variables se representan generalmente con las letras minúsculas 
+\begin_inset Formula $l,\cdots,\,u,\,v,\,w\,x,\,y,\,z$
+\end_inset
+
+ y las constantes generalmente con las letras minúsculas 
+\begin_inset Formula $a,\,b\,c,\,\cdots,k.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+obs
+\backslash
+
+\end_layout
+
+\end_inset
+
+ Las letras 
+\begin_inset Formula $i,\,j,\,k,\:n$
+\end_inset
+
+ y 
+\begin_inset Formula $m,$
+\end_inset
+
+ como variables, generalmente representan números naturales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+Proposiciones abiertas
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+ Una proposición abierta es aquella donde el sujeto o los sujetos son representa
+dos por variables
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}{
+\backslash
+bf Proposiciones abiertas:}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lista}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{ejem1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $x^{2}-5x+6=0,\:x\in I\!\!R.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $x+1=3,\:x\in I\!\!R.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $x^{2}-9=\left(x-3\right)\left(x+3\right),\:x\in I\!\!R.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $x^{2}=25\wedge x+1=6,\:x\in I\!\!R.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+Dominio de una proposición abierta
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+ El dominio de una proposición abierta o una variable, es el conjunto de
+ valores que puede tomar una variable.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En los ejemplos 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{ejem1}
+\end_layout
+
+\end_inset
+
+ el dominio de las proposiciones o de la variable es el conjunto de los
+ números reales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+Conjunto solución
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+ El conjunto solución de una proposición abierta el el conjunto de valores
+ del dominio de una variable que hacen que la proposición sea verdadera.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}{
+\backslash
+bf Conjuto solución:}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Dada la proposición 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $x^{2}-5x+6=0,\:x\in I\!\!R$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang spanish
+ encuentre el conjunto solución.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+solu
+\end_layout
+
+\end_inset
+
+ Tenemos que el conjunto solución es 
+\begin_inset Formula $\{-3,2\}$
+\end_inset
+
+ ya que
+\end_layout
+
+\begin_layout Description
+*
+\begin_inset Formula $\left(-3\right)^{2}-5\left(-3\right)+6=0$
+\end_inset
+
+ y,
+\end_layout
+
+\begin_layout Description
+* 
+\begin_inset Formula $\left(2\right)^{2}-5\left(2\right)+6=0.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Además 
+\begin_inset Formula $-3,2\in I\!\!R.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+notacion
+\end_layout
+
+\end_inset
+
+ Las proposiciones abiertas se denotan 
+\begin_inset Formula $p\left(x\right)$
+\end_inset
+
+ ó 
+\begin_inset Formula $p(x,y,\cdots,z)$
+\end_inset
+
+ para indicar cuales son las variables.
+\end_layout
+
+\begin_layout Standard
+Esta notación nos ayuda a representar mejor los conjuntos por extensión
+ usando la estructura: 
+\begin_inset Formula $A=\{x:\,p(x),\,x\in A\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como por ejemplo 
+\begin_inset Formula $A=\{x:\:x\,\mbox{es impar, \ensuremath{x\in I\!\!N}}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Conjuntos especiales
+\end_layout
+
+\begin_layout Subsubsection
+Conjunto vacío
+\end_layout
+
+\begin_layout Standard
+Según hemos comentado en la introducción , el problema que presenta la fundament
+ación de la teoría de conjuntos es que no podemos permitirnos el lujo de
+ postular que toda propiedad define un conjunto.
+ 
+\end_layout
+
+\begin_layout Standard
+En su lugar, la teoría de Zermelo postula la existencia de conjuntos definidos
+ por ciertas propiedades inofensivas (no como 
+\begin_inset Formula $X\notin X$
+\end_inset
+
+).
+ Tal vez el conjunto más inofensivo de todos sea el que nos da el axioma
+ del conjunto vacío 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{20pt}
+\backslash
+begin{axioma}{
+\end_layout
+
+\end_inset
+
+ Conjunto vacío
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+ Existe un conjunto que no contiene ningún elemento.
+\begin_inset Formula 
+\[
+\left(\exists X\forall x\right)x\notin X
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axioma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este axioma afirma la existencia de un conjunto que no tiene elementos.
+ Dicho conjunto es único, pues dos conjuntos sin elementos tendrían los
+ mismos elementos, como lo probaremos mas adelante.
+ Esto nos permite definir el término
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\textrm{\emptyset}\equiv\left\{ X:\left(\forall U\right)U\notin X\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+obs
+\backslash
+
+\end_layout
+
+\end_inset
+
+ Observe que 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+ no es un signo del lenguaje de la teoría de conjuntos, si no una abreviatura
+ de un término que puede eliminarse de cualquier expresión sin más que sustituir
+la por el miembro derecho de la definición.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lema}{
+\end_layout
+
+\end_inset
+
+ Unicidad del vacío
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+ Existe un único conjunto que no contiene ningún elemento.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lema}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+notacion
+\backslash
+
+\end_layout
+
+\end_inset
+
+ El conjunto vacío es único y se representa con los símbolos 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+ ó 
+\begin_inset Formula $\{\}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Conjunto unitario
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+ Conjunto unitario
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+ Un conjunto unitario es aquel que posee un solo elemento.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}{
+\backslash
+bf Conjuntos unitarios}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Description
+* 
+\begin_inset Formula $\{1\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+* 
+\begin_inset Formula $\{a\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+* 
+\begin_inset Formula $\{\emptyset\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Conjunto universal
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+Conjunto universal
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+ Un conjunto es universal cuando es el conjunto referencia, es decir es
+ el conjunto que contiene a todos los elementos con las mismas propiedades.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+notacion
+\end_layout
+
+\end_inset
+
+ Al conjunto universal se le representa con la letra 
+\begin_inset Formula $U.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}{
+\backslash
+bf Conjuntos universales}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Description
+* El conjunto de los números naturales.
+\end_layout
+
+\begin_layout Description
+* El conjunto de las letras del alfabeto.
+\end_layout
+
+\begin_layout Description
+* El conjunto de todos los alumnos de la Universidad Del Atlántico.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Subconjunto
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+ Subconjunto
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+ Se dice que un conjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ es un subconjunto de un conjunto 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Si 
+\begin_inset Formula $A$
+\end_inset
+
+ contiene sólo elementos de 
+\begin_inset Formula $B$
+\end_inset
+
+ ó ningún elemento.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta definición nos asegura que el vacío es subconjunto de cualquier conjunto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+notacion
+\backslash
+
+\end_layout
+
+\end_inset
+
+ Si 
+\begin_inset Formula $A$
+\end_inset
+
+ es subconjunto de 
+\begin_inset Formula $B$
+\end_inset
+
+ se denota 
+\begin_inset Formula $A\subseteq B$
+\end_inset
+
+ ó 
+\begin_inset Formula $B\supseteq A.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}{
+\backslash
+bf Subconjunto}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $A=\{x:\,x$
+\end_inset
+
+ es una letra del alfabeto español} ¿Cuales de los siguientes conjuntos
+ son subconjunto de 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $B=\{a,b,c,d\}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $C=\{\emptyset\}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $D=\emptyset$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $E=\{\alpha,a,b\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+solu
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $B$
+\end_inset
+
+ y 
+\begin_inset Formula $D$
+\end_inset
+
+ ya que 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$C
+\backslash
+cancel
+\backslash
+subset A $
+\backslash
+,
+\end_layout
+
+\end_inset
+
+ porque 
+\begin_inset Formula $\varnothing$
+\end_inset
+
+ no es un elemento de 
+\begin_inset Formula $A$
+\end_inset
+
+ sino un subconjunto y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$D
+\backslash
+cancel
+\backslash
+subset A $
+\backslash
+,
+\end_layout
+
+\end_inset
+
+ porque 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ no es una letra del alfabeto español.
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+Diagramas de Venn
+\end_layout
+
+\begin_layout Standard
+Anteriormente dijimos que los conjuntos podíamos representarlos por extensión
+ y por comprensión, pero en algunas ocasiones es mejor representarlos gráficamen
+te, utilizando un rectángulo para el conjunto universal y los conjuntos
+ con figuras geométricas en su interior.
+\end_layout
+
+\begin_layout Standard
+por ejemplo sea 
+\begin_inset Formula $U=\left\{ 1,2,3,4,5,6,7,8\right\} $
+\end_inset
+
+ el conjunto referencia de los conjuntos 
+\begin_inset Formula $A=\left\{ 1,4,5,7\right\} ,B=\left\{ 2,4,7,6\right\} $
+\end_inset
+
+ y 
+\begin_inset Formula $C=\left\{ 3,5,6,7\right\} $
+\end_inset
+
+ entonces podemos representarlos así.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{venndiagram3sets}[shadeA=red!80,shadeB=blue!20,shadeC=green!40!black,label
+OnlyA={1},labelOnlyB={2},labelOnlyC={3}, labelOnlyAB={4},labelOnlyAC={5},labelOn
+lyBC={6},labelABC={7}, labelNotABC={8},tikzoptions={scale=0.8,thick,opacity=0.5}]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fillA 
+\backslash
+fillB 
+\backslash
+fillC
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+fillNotABC 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{venndiagram3sets}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Producto cruz
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+Producto cruz
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+ Sean 
+\begin_inset Formula $A$
+\end_inset
+
+ y 
+\begin_inset Formula $B$
+\end_inset
+
+ conjuntos no vacíos, se llama producto cruz al conjunto de elementos que
+ tienen la forma 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ de tal manera que 
+\begin_inset Formula $x\in A$
+\end_inset
+
+ y 
+\begin_inset Formula $y\in B$
+\end_inset
+
+.
+ Es decir los elementos de 
+\begin_inset Formula $A$
+\end_inset
+
+ están en la primera posición y los elementos de 
+\begin_inset Formula $B$
+\end_inset
+
+ están en la segunda posición del termino 
+\begin_inset Formula $\left(x,y\right).$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+notacion
+\end_layout
+
+\end_inset
+
+ Sean 
+\begin_inset Formula $A$
+\end_inset
+
+ y 
+\begin_inset Formula $B$
+\end_inset
+
+ dos conjuntos diferentes del vacío, el producto cruz entre los conjuntos
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ y 
+\begin_inset Formula $B$
+\end_inset
+
+ se denota 
+\begin_inset Formula $A\times B.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+obs
+\backslash
+
+\end_layout
+
+\end_inset
+
+ Al elemento 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ se le llama pareja ordenada y a 
+\begin_inset Formula $x$
+\end_inset
+
+ se le llama primera componente y a 
+\begin_inset Formula $y$
+\end_inset
+
+ segunda componente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+ Sean 
+\begin_inset Formula $A=\{1,2,3\}$
+\end_inset
+
+ y 
+\begin_inset Formula $B=\{4,5,6\}$
+\end_inset
+
+ hallar 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+a.
+ 
+\begin_inset Formula $A\times B.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+b.
+ 
+\begin_inset Formula $B\times A.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+c.
+ 
+\begin_inset Formula $A\times A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sol
+\backslash
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+a.
+ 
+\begin_inset Formula $A\times B=\{\left(1,4\right),\left(1,5\right),\left(1,6\right),\left(2,4\right),\left(2,5\right),\left(2,6\right),\left(3,4\right),\left(3,5\right),\left(3,6\right)\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+b.
+ 
+\begin_inset Formula $B\times A=\{\left(4,1\right),\left(5,1\right),\left(6,1\right),\left(4,2\right),\left(5,2\right),\left(6,2\right),\left(4,3\right),\left(5,3\right),\left(6,3\right)\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+c.
+ 
+\begin_inset Formula $A\times A=\{\left(1,1\right),\left(1,2\right),\left(1,3\right),\left(2,1\right),\left(2,2\right),\left(2,3\right),\left(3,1\right),\left(3,2\right),\left(3,3\right)\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Observe que 
+\begin_inset Formula $A\times B\neq B\times A.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+Productos cruz con el vacío
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\text{\emptyset\times\emptyset=\emptyset.}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A\times\emptyset=\emptyset.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Relación binaria
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+Relación binaria
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+ Una relación binaria es un subconjunto del producto cruz diferente del
+ vacío .
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+notacion
+\end_layout
+
+\end_inset
+
+ Si una pareja 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ pertenece a una relación binaria 
+\begin_inset Formula $R$
+\end_inset
+
+ se denota 
+\begin_inset Formula $xRy.$
+\end_inset
+
+ Que se lee 
+\begin_inset Formula $x$
+\end_inset
+
+ está relacionada con 
+\begin_inset Formula $y.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}{
+\backslash
+bf
+\end_layout
+
+\end_inset
+
+ Relación binaria:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Sean 
+\begin_inset Formula $A=\{2,4,6,8,10\}$
+\end_inset
+
+ y 
+\begin_inset Formula $B=\{1,2,3,4,5\}$
+\end_inset
+
+, indique cuales conjuntos son relaciones binarias,
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $R_{1}=\{\left(x,y\right):\:x=y,\:x\in A,y\in B\}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $R_{2}=\{\left(x,y\right):\:x<y,\:x\in A,y\in B\}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $R_{3}=\{\left(2,1\right),\left(4,1\right),\left(6,1\right),\left(8,1\right),\left(10,1\right)\}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $R_{4}=\{\left(1,2\right),\mbox{\mbox{\ensuremath{\left(4,5\right)}}}\}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+solu
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $R_{1}=\{\left(2,2\right),\left(4,4\right)\}\subseteq A\times B,$
+\end_inset
+
+ entonces 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ es relación binaria .
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $R_{2}=\{\left(2,3\right),\left(2,4\right),\left(2,5\right),\left(4,5\right)\}\subseteq A\times B,$
+\end_inset
+
+ entonces 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ es relación binaria.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $R_{3}=\{\left(x,y\right):\:y=1,\:x\in A,y\in B\}\subseteq A\times B,$
+\end_inset
+
+ entonces 
+\begin_inset Formula $R_{3}$
+\end_inset
+
+ es relación binaria.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $R_{4}$
+\end_inset
+
+ no es relación binaria de 
+\begin_inset Formula $A$
+\end_inset
+
+ en 
+\begin_inset Formula $B$
+\end_inset
+
+, ya que 
+\begin_inset Formula $\left(1,2\right)\notin A\times B.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+obs
+\end_layout
+
+\end_inset
+
+ De aquí en adelante a las relaciones binarias las nombraremos sólo relaciones.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent
+\backslash
+obs
+\end_layout
+
+\end_inset
+
+ En las relaciones a los conjuntos 
+\begin_inset Formula $A$
+\end_inset
+
+ y 
+\begin_inset Formula $B$
+\end_inset
+
+ se les llaman conjunto de partida y conjunto de llegada respectivamente
+\end_layout
+
+\begin_layout Subsubsection
+Formas de representar una relación
+\end_layout
+
+\begin_layout Standard
+Existen varias formas de representar una relación, estas son:
+\end_layout
+
+\begin_layout Enumerate
+Diagrama sagital
+\begin_inset VSpace defskip
+\end_inset
+
+Los diagramas sagitales son representaciones donde los conjuntos de partida
+ y de llegada son ovalos y las parejas ordenadas se representan con flechas,
+ como se indica en la figura
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{diagramas1}
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{qqqqff}{rgb}{0,0,1}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{qqzzff}{rgb}{0,0.6,1}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[H]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.8,line cap=round,line join=round,>=triangle 45,x=1.0cm,
+y=1.0cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [rotate around={90:(0,0.5)},color=qqzzff,fill=qqzzff,fill opacity=0.4]
+ (0,0.5) ellipse (3.64cm and 1.01cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (0,4) -- (5,4);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [rotate around={90:(5,0.5)},color=qqzzff,fill=qqzzff,fill opacity=0.35]
+ (5,0.5) ellipse (3.64cm and 1.01cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (0,3) -- (5,3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (-0.1,1.48) -- (5,3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (-0.1,1.48) -- (5,-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (0,0) -- (5,1); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (0.04,-1.46) -- (5,-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (-0.18,5) node[anchor=north west] {$A$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (4.84,5) node[anchor=north west] {$B$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (2.26,4.8) node[anchor=north west] {$R$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (-0.36,3.46) node[anchor=north west] {$1$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (-0.44,1.7) node[anchor=north west] {2};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (-0.38,0.12) node[anchor=north west] {3}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (-0.26,-1.32) node[anchor=north west] {4}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (5.26,3.38) node[anchor=north west] {$a$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (5.18,1.34) node[anchor=north west] {$b$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (5.18,-0.62) node[anchor=north west] {$c$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{scriptsize} 
+\backslash
+fill [color=qqqqff] (0,3) circle (1.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fill [color=qqqqff] (-0.1,1.48) circle (1.5pt); 
+\backslash
+fill [color=qqqqff] (0,0) circle (1.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fill [color=qqqqff] (0.04,-1.46) circle (1.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fill [color=qqqqff] (5,3) circle (1.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fill [color=qqqqff] (5,1) circle (1.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fill [color=qqqqff] (5,-1) circle (1.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{scriptsize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Diagrama Sagital}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{diagramas1}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+La figura 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{diagramas1}
+\end_layout
+
+\end_inset
+
+ representa la relación 
+\begin_inset Formula $R=\{\left(1,a\right),(2,a),(2,c),(3,b),(4,c)\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Tabla de datos
+\begin_inset VSpace defskip
+\end_inset
+
+en esta representación se colocan las parejas en una tabla de la forma 
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+cdots$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+cdots$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de datos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+ Sean 
+\begin_inset Formula $A=B=\{1,2,3,4\}$
+\end_inset
+
+, indicar si la siguiente tabla representa una relación
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ejemplo de una tabla de datos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+Como observamos la tabla representa un subconjunto de 
+\begin_inset Formula $A\times B$
+\end_inset
+
+, por tanto es una relación de 
+\begin_inset Formula $A$
+\end_inset
+
+ en 
+\begin_inset Formula $B.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Una gráfica
+\begin_inset VSpace defskip
+\end_inset
+
+Esta forma de representar una relación su usa generalmente cuando los conjuntos
+ de partida y de llegada son números ordenados y para ello se usan las coordenad
+as rectangulares que se dibujan de la siguiente forma 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El conjunto de partida se representa con una linea horizontal llamada eje
+ 
+\begin_inset Formula $X$
+\end_inset
+
+, y en el se coloca un punto por cada elemento del conjunto
+\end_layout
+
+\begin_layout Enumerate
+El conjunto de llegada se representa con una linea vertical llamada eje
+ 
+\begin_inset Formula $Y$
+\end_inset
+
+, y en el se coloca un punto por cada elemento del conjunto.
+\end_layout
+
+\begin_layout Enumerate
+Para representar la pareja 
+\begin_inset Formula $\left(x_{4},y_{5}\right)$
+\end_inset
+
+ se traza una paralela al eje 
+\begin_inset Formula $X$
+\end_inset
+
+ que pase por 
+\begin_inset Formula $y_{5}$
+\end_inset
+
+, luego se traza una paralela al eje 
+\begin_inset Formula $Y$
+\end_inset
+
+ que pase por 
+\begin_inset Formula $x_{4}$
+\end_inset
+
+ y el punto de intersección de estas dos rectas representa a 
+\begin_inset Formula $\left(x_{4},y_{5}\right)$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{qqwuqq}{rgb}{0,0.39,0}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{uuuuuu}{rgb}{0.27,0.27,0.27}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{qqzzff}{rgb}{0,0.6,1}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1.0cm,
+y=1.0cm]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-1.02,-1.0
+6) grid (6,6.97);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->,color=black] (-1.02,0) -- (6,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+foreach 
+\backslash
+x in {-1,1,2,3,4,5} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[shift={(
+\backslash
+x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {
+\backslash
+footnotesize $x_{
+\backslash
+x}$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->,color=black] (0,-1.06) -- (0,6.97);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+foreach 
+\backslash
+y in {-1,1,2,3,4,5} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[shift={(0,
+\backslash
+y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {
+\backslash
+footnotesize $y_{
+\backslash
+y}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[color=black] (0pt,-10pt) node[right] {
+\backslash
+footnotesize $0$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+clip(-1.02,-1.06) rectangle (6,6.97);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (4.39,0) -- (4.39,0.39) -- (4,0.39)
+ -- (4,0) -- cycle;
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,4.61) -- (0.39,4.61) -- (0.39,5)
+ -- (0,5) -- cycle;
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0.39,0) -- (0.39,0.39) -- (0,0.39)
+ -- (0,0) -- cycle; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (5.23,0.03) node[anchor=north west] {$X$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (-0.62,6.34) node[anchor=north west] {$Y$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [line width=1.2pt,dash pattern=on 1pt off 1pt,color=qqzzff] (4,6)--
+ (4,0); 
+\backslash
+draw [line width=1.2pt,dash pattern=on 1pt off 1pt,color=qqzzff] (0,5)--
+ (5,5); 
+\backslash
+draw (3.8,6.05) node[anchor=north west] {$(x_4,y_5)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{scriptsize} 
+\backslash
+fill [color=uuuuuu] (4,5) circle (1.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fill [color=uuuuuu] (0,5) circle (1.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fill [color=uuuuuu] (4,0) circle (1.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fill [color=uuuuuu] (0,0) circle (1.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[color=uuuuuu] (0.14,0.25) node {$O$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{scriptsize} 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Utilizando el paso anterior se representan todas las parejas de la relación.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+ Sean 
+\begin_inset Formula $A=B=(-1,7)$
+\end_inset
+
+, representar gráficamente la relación 
+\begin_inset Formula $R=\left\{ \left(x,y\right)\in A\times B\,:\:y\leq x\right\} $
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{qqwuqq}{rgb}{0,0.39,0}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{uuuuuu}{rgb}{0.27,0.27,0.27}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{qqzzff}{rgb}{0,0.6,1}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1.0cm,
+y=1.0cm] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-1.04,-0.7
+6) grid (7.26,7.14);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->,color=black] (-1.04,0) -- (7.26,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+foreach 
+\backslash
+x in {-1,1,2,3,4,5,6,7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[shift={(
+\backslash
+x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {
+\backslash
+footnotesize $
+\backslash
+x$}; 
+\backslash
+draw[->,color=black] (0,-0.76) -- (0,7.14); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+foreach 
+\backslash
+y in {,1,2,3,4,5,6,7}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[shift={(0,
+\backslash
+y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {
+\backslash
+footnotesize $
+\backslash
+y$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[color=black] (0pt,-10pt) node[right] {
+\backslash
+footnotesize $0$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+clip(-1.04,-0.76) rectangle (7.26,7.14); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (-0.7,6.88) node[anchor=north west] {$Y$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (6.32,0.12) node[anchor=north west] {$X$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[dash pattern=on 1pt off 1pt,color=qqzzff,fill=qqzzff,fill opacity=0.3](-1,-1
+) -- (7,7)-- (7,-1)--cycle;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[dash pattern=on 1pt off 1pt,->,color=cqcqcq](-1,-1) -- (7,7);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Una proposición abierta.
+ Las proposiciones abierta o fórmulas como por ejemplo anterior 
+\begin_inset Formula $y\leq x.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Consideremos ahora las relaciones sobre el mismo conjunto es decir si 
+\begin_inset Formula $A$
+\end_inset
+
+ es un conjunto entonces la relación 
+\begin_inset Formula $R\,:\,A\rightarrow A,$
+\end_inset
+
+ cuando 
+\begin_inset Formula $A$
+\end_inset
+
+es un conjunto finito.
+ En este caso usamos un diagrama llamado 
+\series bold
+\shape italic
+grafo dirigido
+\series default
+\shape default
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[5pt]
+\end_layout
+
+\end_inset
+
+ Un grafo dirigido es un conjunto de puntos (llamados vértices) y un conjunto
+ de flechas entre los vértices como mostraremos en el siguiente ejemplo
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+Dado el conjunto 
+\begin_inset Formula $A=\left\{ 1,2,3,4\right\} $
+\end_inset
+
+ y la relación 
+\begin_inset Formula $R=\left\{ (1,2),\left(2,3\right)\right\} \subset A\times A$
+\end_inset
+
+ construya su grafo dirigido.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+solu
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[H]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm, 
+  thick,main node/.style={circle,fill=blue!20,draw,font=
+\backslash
+sffamily
+\backslash
+Large
+\backslash
+bfseries}]
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+node[main node] (1) {1}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+node[main node] (2) [right of=1] {2}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+node[main node] (3) [below of=2] {3}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+node[main node] (4) [below of=1]{4};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[every node/.style={font=
+\backslash
+sffamily
+\backslash
+small}]
+\end_layout
+
+\begin_layout Plain Layout
+
+    (1) edge node [left] {} (2)   
+\end_layout
+
+\begin_layout Plain Layout
+
+    % edge [bend right] node[left] {} (3) 
+\end_layout
+
+\begin_layout Plain Layout
+
+      % edge [loop above] node {} (1)  
+\end_layout
+
+\begin_layout Plain Layout
+
+  (2) edge  node {} (3); 
+\end_layout
+
+\begin_layout Plain Layout
+
+  % (3) edge [loop above] node {} (3); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Grafo de una relación}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{grafo}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+La manera de asociarle un grafo a una relación 
+\begin_inset Formula $R\subset A\times A$
+\end_inset
+
+ es poner como vértice los elementos del conjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ y luego una flecha por cada elemento de 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[5pt]
+\end_layout
+
+\end_inset
+
+ Si 
+\begin_inset Formula $\left(x,y\right)\in R,$
+\end_inset
+
+ la flecha asociada es la parte del vértice 
+\begin_inset Formula $a$
+\end_inset
+
+ y llega al vértice 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ Por ejemplo
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+Dado el conjunto 
+\begin_inset Formula $A=\left\{ 1,2,3,4\right\} $
+\end_inset
+
+ y la relación 
+\begin_inset Formula $R=\left\{ (1,1),\left(1,3\right),\left(3,2\right),\left(2,4\right),\left(4,2\right)\right\} \subset A\times A$
+\end_inset
+
+ construya su grafo dirigido.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+solu
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[H]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm, 
+  thick,main node/.style={circle,fill=blue!20,draw,font=
+\backslash
+sffamily
+\backslash
+Large
+\backslash
+bfseries}]
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+node[main node] (1) {1};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+node[main node] (2) [right of=1] {2};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+node[main node] (3) [below of=2] {3}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+node[main node] (4) [below of=1]{4};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[every node/.style={font=
+\backslash
+sffamily
+\backslash
+small}] 
+\end_layout
+
+\begin_layout Plain Layout
+
+   (1) edge node [left] {} (3) 
+\end_layout
+
+\begin_layout Plain Layout
+
+      % edge [bend right] node[left] {}
+\end_layout
+
+\begin_layout Plain Layout
+
+    (1) edge [loop above] node {} (1)
+\end_layout
+
+\begin_layout Plain Layout
+
+    (2) edge  node {} (4)
+\end_layout
+
+\begin_layout Plain Layout
+
+   (4) edge node{} (2)
+\end_layout
+
+\begin_layout Plain Layout
+
+    (3) edge  node {} (2); 
+\end_layout
+
+\begin_layout Plain Layout
+
+  % (3) edge [loop above] node {} (3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Grafo de una relación $
+\backslash
+{(1,1),(1,3),(3,2),(2,4),(4,2)
+\backslash
+}$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{grafo2}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+obs 
+\end_layout
+
+\end_inset
+
+ A los conceptos de igualdad y subconjunto se les llama relaciones de contenenci
+a entre conjuntos.
+\end_layout
+
+\begin_layout Subsubsection
+Función
+\end_layout
+
+\begin_layout Standard
+Se va a introducir el concepto de función, hablando libremente una función
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ de un conjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ en un conjunto 
+\begin_inset Formula $B$
+\end_inset
+
+ es una regla (procedimiento o mecanismo) que nos transporta de un conjunto
+ a otro de manera que asociamos cada elemento de 
+\begin_inset Formula $A$
+\end_inset
+
+ un único elemento en 
+\begin_inset Formula $B.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+Función
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+ Consideremos dos conjuntos cualquiera 
+\begin_inset Formula $A$
+\end_inset
+
+ y 
+\begin_inset Formula $B$
+\end_inset
+
+ no vacíos, al conjunto 
+\begin_inset Formula $f$
+\end_inset
+
+ le llamaremos función de 
+\begin_inset Formula $A$
+\end_inset
+
+ en 
+\begin_inset Formula $B$
+\end_inset
+
+, si y sólo si, se verifica: 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+i) 
+\begin_inset Formula $f\subseteq A\times B$
+\end_inset
+
+, es decir 
+\begin_inset Formula $f$
+\end_inset
+
+ es una relación de 
+\begin_inset Formula $A\times B.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ii) Si 
+\begin_inset Formula $\left(x_{1},y_{1}\right)\in f$
+\end_inset
+
+ y 
+\begin_inset Formula $\left(x_{1},y_{2}\right)\in f$
+\end_inset
+
+, entonces 
+\begin_inset Formula $y_{1}=y_{2}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+obs
+\end_layout
+
+\end_inset
+
+ La segunda condición indica, que dos parejas ordenadas distintas no pueden
+ tener la misma primera componente.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Observaciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ A una función 
+\begin_inset Formula $f$
+\end_inset
+
+ de 
+\begin_inset Formula $A$
+\end_inset
+
+ en 
+\begin_inset Formula $B$
+\end_inset
+
+ la denotaremos por 
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f$
+\end_inset
+
+ :
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+\begin_inset Formula $B$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mapsto$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ ó 
+\begin_inset Formula $A\overset{f}{\rightarrow}B$
+\end_inset
+
+ y se lee 
+\begin_inset Quotes eld
+\end_inset
+
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ es una función de 
+\begin_inset Formula $A$
+\end_inset
+
+ en 
+\begin_inset Formula $B$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+, donde el conjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ le llamamos conjunto de partida y el conjunto 
+\begin_inset Formula $B$
+\end_inset
+
+ le llamaremos conjunto de llegada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+ Si el par 
+\begin_inset Formula $\left(x,y\right)\in f$
+\end_inset
+
+, escribimos 
+\begin_inset Formula $y=\mbox{\ensuremath{f\left(x\right)}}$
+\end_inset
+
+ y se dice que 
+\begin_inset Formula $y$
+\end_inset
+
+ es imagen de 
+\begin_inset Formula $x$
+\end_inset
+
+ por 
+\begin_inset Formula $f$
+\end_inset
+
+ ó también, que 
+\begin_inset Formula $y=f\left(x\right)$
+\end_inset
+
+ es el valor de 
+\begin_inset Formula $f$
+\end_inset
+
+ en 
+\begin_inset Formula $x.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ También se puede decir que 
+\begin_inset Formula $y=f\left(x\right)\,\mbox{si y sólo si}\left(x,y\right)\in f.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+ Otra forma de representar una función es 
+\begin_inset Formula $f=\{\left(x,y\right)\in A\times B:\,y=f\left(x\right)\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Una consecuencia inmediata de la definición es que toda función es una
+ relación pero no toda relación es una función.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}{
+\backslash
+bf Función:}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dada la relación 
+\begin_inset Formula $R=\{\left(1,2\right),\left(2,3\right),\left(3,4\right),\left(2,5\right)\}$
+\end_inset
+
+ indicar si 
+\begin_inset Formula $R$
+\end_inset
+
+ es una función.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+solu
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $R$
+\end_inset
+
+ no es una función, puesto que para la componente 
+\begin_inset Formula $2$
+\end_inset
+
+ existen dos componentes 
+\begin_inset Formula $3$
+\end_inset
+
+ y 
+\begin_inset Formula $5$
+\end_inset
+
+ tales que 
+\begin_inset Formula $\left(2,3\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\left(2,5\right)\in R$
+\end_inset
+
+, lo que contradice la segunda condición de la definición de función.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sean 
+\begin_inset Formula $A=\left\{ 1,5,7,11\right\} $
+\end_inset
+
+ y 
+\begin_inset Formula $B=\left\{ a,b,c,d\right\} $
+\end_inset
+
+.
+ Indique si el diagrama representa una función
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfdeclarelayer{background}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfdeclarelayer{foreground} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfsetlayers{background,main,foreground} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (a) at (0,0) {1};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (b) at (0,1)  {5}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (c) at (0,2) {7}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (d) at (0,3) {11}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (1) at (3,0) {a}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (2) at (3,1)  {b};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (3) at (3,2) {c}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (4) at (3,3) {d};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{pgfonlayer}{background}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (A) [xscale=1.5,yscale=1,fill=red!20,inner sep=0pt,ellipse,fit={(a)
+ (b) (c) (d) }] {}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node (C)[xscale=1.8,yscale=1,fill=red!20,inner sep=1pt,ellipse,fit={(1) (2)
+ (3) (4) }] {}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{pgfonlayer}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node(A1) at (0,4.2){A}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node(B) at (3,4.2){B};
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw[->, thick] (A) to[out=45, in=135] (C);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->, blue!50, very thick] (A1) to[bend left =20] node[above ]{$f$}(B);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->, blue!50, very thick] (a) to (1); 
+\backslash
+draw[->, blue!50, very thick] (a) to (3); 
+\backslash
+draw[->, blue!50, very thick] (b) to (4); 
+\backslash
+draw[->, blue!50, very thick] (c) to (2); 
+\backslash
+draw[->, blue!50, very thick] (d) to (1); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+solu 
+\end_layout
+
+\end_inset
+
+ El diagrama nos indica que 
+\begin_inset Formula $1fa$
+\end_inset
+
+ y que 
+\begin_inset Formula $1fc$
+\end_inset
+
+, por tanto existen dos parejas diferentes de 
+\begin_inset Formula $f$
+\end_inset
+
+ con la primera componente igual, lo que contradice la definición de función.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+obs
+\end_layout
+
+\end_inset
+
+ Sea 
+\begin_inset Formula $f\,:\,A\overset{f}{\rightarrow}B$
+\end_inset
+
+ una función de 
+\begin_inset Formula $A$
+\end_inset
+
+ en 
+\begin_inset Formula $B$
+\end_inset
+
+, llamaremos dominio de la función 
+\begin_inset Formula $f$
+\end_inset
+
+, al conjunto de todas las primeras componentes, el cual denotaremos por
+ 
+\begin_inset Formula $D_{f}$
+\end_inset
+
+ , es decir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mbox{Dom\ensuremath{\left(f\right)=}}D_{f}=\left\{ x\in A:\:\mbox{tal que existe un }y\in B\wedge\left(x,y\right)\in f\right\} \subseteq A.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Llamaremos rango de la función 
+\begin_inset Formula $f$
+\end_inset
+
+ al conjunto de las imágenes de todos los elementos de 
+\begin_inset Formula $A$
+\end_inset
+
+, mediante 
+\begin_inset Formula $f$
+\end_inset
+
+ al cual denotaremos por 
+\begin_inset Formula $R_{f}$
+\end_inset
+
+ es decir: 
+\begin_inset Formula 
+\[
+\mbox{Im}\ensuremath{\left(f\right)=}R_{f}=\left\{ y\in B:\:\mbox{tal que existe un }x\in A\wedge\left(x,y\right)\in f\right\} \subseteq B.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+ Sea 
+\begin_inset Formula $f=\{(1,2),(3,4),(5,6).(7,8)\}$
+\end_inset
+
+ una función, entonces su dominio y rango son: 
+\begin_inset Formula $D_{f}=\{1,3,5,7\}$
+\end_inset
+
+; 
+\begin_inset Formula $R_{f}=\{2,4,6,8\}.$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent
+\end_layout
+
+\end_inset
+
+ Aplicación
+\end_layout
+
+\begin_layout Standard
+A una función 
+\begin_inset Formula $f$
+\end_inset
+
+, le llamaremos aplicación de 
+\begin_inset Formula $A$
+\end_inset
+
+ en 
+\begin_inset Formula $B$
+\end_inset
+
+, si y sólo si: 
+\begin_inset Formula $D_{f}=A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+ Sean 
+\begin_inset Formula $A=\{1,3,5\}$
+\end_inset
+
+, 
+\begin_inset Formula $B=\{2,4,6\}$
+\end_inset
+
+, calcule 
+\begin_inset Formula $A\times B$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+a) El conjunto 
+\begin_inset Formula $f=\{(1,4),(3,2)\}$
+\end_inset
+
+ es función, donde 
+\begin_inset Formula $D_{f}=\{1,3\}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{f}=\{4,2\}$
+\end_inset
+
+ pero 
+\begin_inset Formula $f$
+\end_inset
+
+ no es una aplicación de 
+\begin_inset Formula $A$
+\end_inset
+
+ en 
+\begin_inset Formula $B$
+\end_inset
+
+ puesto que 
+\begin_inset Formula $D_{f}\neq A.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+b) El conjunto 
+\begin_inset Formula $f=\{(1,2),(3,4),(5,6)\}$
+\end_inset
+
+ es una función donde: 
+\begin_inset Formula $D_{f}=\{1,3,5\}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{f}=\{2,4,6\}$
+\end_inset
+
+, como 
+\begin_inset Formula $D_{f}=A$
+\end_inset
+
+ entonces 
+\begin_inset Formula $f$
+\end_inset
+
+ es una aplicación de 
+\begin_inset Formula $A$
+\end_inset
+
+ en 
+\begin_inset Formula $B.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent
+\end_layout
+
+\end_inset
+
+ Función Compuesta
+\end_layout
+
+\begin_layout Standard
+En matemáticas se conoce la composición como el anidamiento de dos o más
+ funciones para formar una nueva función única.
+ La composición de dos funciones se denota como: 
+\begin_inset Formula $\left(f\circ g\right)\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En otras palabras entendemos la composición de funciones como la aplicación
+ de dos o más funciones de forma consecutiva, es decir primero se compone
+ una, con el resultado obtenido se compone la segunda, con el resultado
+ de la segunda se compone la tercera y así sucesivamente.
+ 
+\end_layout
+
+\begin_layout Standard
+El procedimiento que lleva a cabo la composición es denominado como la regla
+ de la cadena.
+\end_layout
+
+\begin_layout Standard
+Dadas dos funciones 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ y 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ , definimos la composición como la función que obtenemos en aplicarle a
+ la función 
+\begin_inset Formula $f$
+\end_inset
+
+ las imágenes de 
+\begin_inset Formula $g(x)$
+\end_inset
+
+.
+ Es decir primero se aplica la función 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ y después 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ al resultado, quedando 
+\begin_inset Formula $f\left[g\left(x\right)\right]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "funcionc.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como vemos gráficamente, debemos seguir un orden inverso para aplicar la
+ composición.
+ Con orden descendente, desde la función de más hacia la derecha hasta la
+ función inicial
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}{
+\end_layout
+
+\end_inset
+
+Función Compuesta
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}{}
+\end_layout
+
+\end_inset
+
+Consideremos tres conjuntos cualquiera 
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+ y 
+\begin_inset Formula $C$
+\end_inset
+
+ no vacíos y las funciones denotadas por 
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $g$
+\end_inset
+
+ :
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+\begin_inset Formula $B$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mapsto$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $z$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ y 
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f$
+\end_inset
+
+ :
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $B$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $z$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mapsto$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+, definimos la función 
+\begin_inset Formula $f$
+\end_inset
+
+ compuesta 
+\begin_inset Formula $g$
+\end_inset
+
+ al conjunto 
+\begin_inset Formula 
+\[
+\left(f\circ g\right)=\left\{ \left(x,y\right)\in A\times C\,:\,y=f\left[g\left(x\right)\right],\:g\left(x\right)\in B\right\} 
+\]
+
+\end_inset
+
+o
+\begin_inset Formula 
+\[
+\left(f\circ g\right)=\left\{ \left(x,y\right)\,:\,\exists z\in B,\:\mbox{ que forma las parejas \ensuremath{\left(x,z\right)\in g}\,\wedge\,\ensuremath{\left(z,y\right)\in f}}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El siguiente diagrama nos muestra la estructura la composición de funciones.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\backslash
+begin{tikzpicture}[every node/.style={midway}] 
+\backslash
+matrix[column sep={4em,between origins},         row sep={2em}] at (0,0)
+ { 
+\backslash
+node(A)   {$A$}  ; & 
+\backslash
+node(B) {$B$}; 
+\backslash
+
+\backslash
+   
+\backslash
+node(C) {$C$};                   
+\backslash
+
+\backslash
+}; 
+\backslash
+draw[<-,thick] (C) -- (A) node[anchor=east]  {$f
+\backslash
+circ g$}; 
+\backslash
+draw[->,thick] (B) -- (C) node[anchor=north]  {$f$}; 
+\backslash
+draw[->,thick] (A)   -- (B) node[anchor=south] {$g$}; 
+\backslash
+end{tikzpicture}
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sean 
+\begin_inset Formula $A=\left\{ 1,2,3,4,5\right\} ,\:B=\left\{ 1,2,3\right\} $
+\end_inset
+
+, 
+\begin_inset Formula $C=\left\{ 1,4,5,8\right\} $
+\end_inset
+
+ y las funciones 
+\begin_inset Formula $g=\left\{ \left(1,2\right),\left(3,2\right),\left(4,1\right),\left(2,1\right)\right\} ,$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f=\left\{ \left(2,1\right),\left(1,4\right),\left(3,5\right)\right\} $
+\end_inset
+
+.
+ Determine 
+\begin_inset Formula $f\circ g$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejemplo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+solu 
+\end_layout
+
+\end_inset
+
+Note que 
+\begin_inset Formula $\left(1,2\right)\in g$
+\end_inset
+
+ y 
+\begin_inset Formula $\left(2,1\right)\in f$
+\end_inset
+
+, entonces 
+\begin_inset Formula $\left(1,1\right)\in f\circ g$
+\end_inset
+
+ de manera análoga se encuentran todos los elementos del conjunto 
+\begin_inset Formula $f\circ g=\left\{ \left(1,1\right),\left(3,1\right),\left(4,4\right),\left(2,4\right)\right\} $
+\end_inset
+
+, ¿será 
+\begin_inset Formula $f\circ g$
+\end_inset
+
+ función?, se podrá asegurar de acuerdo con este ejemplo que dada dos funciones,
+ la composición entre ellas existe y es función.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{questionbox} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si suponemos que 
+\begin_inset Formula $\begin{array}{ccccc}
+g & : & A & \rightarrow & B\end{array}$
+\end_inset
+
+ y 
+\begin_inset Formula $\begin{array}{ccccc}
+f & : & C & \rightarrow & D.\end{array}$
+\end_inset
+
+ ¿ Que condición hay que pedirle a 
+\begin_inset Formula $f$
+\end_inset
+
+ y 
+\begin_inset Formula $g$
+\end_inset
+
+ para poder hacer la composición 
+\begin_inset Formula $f\circ g$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{questionbox} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resp 
+\end_layout
+
+\end_inset
+
+ Si queremos definir 
+\begin_inset Formula $\left(f\circ g\right)\left(a\right)=f\left[g\left(a\right)\right]$
+\end_inset
+
+, entonces precisamos que 
+\begin_inset Formula $g\left(a\right)\in C$
+\end_inset
+
+.
+ Luego la condición necesaria y suficiente para poder componer 
+\begin_inset Formula $f$
+\end_inset
+
+ con 
+\begin_inset Formula $g$
+\end_inset
+
+ es que 
+\begin_inset Formula $\mbox{Im\ensuremath{\left(f\right)\subset C,}}$
+\end_inset
+
+ o sea que la imagen de 
+\begin_inset Formula $g$
+\end_inset
+
+ está contenida en el dominio de 
+\begin_inset Formula $f$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\end_body
+\end_document
